@@ -354,11 +354,11 @@ export default function Home() {
             </div>
 
             <h1 className="mt-4 line-clamp-2 max-w-[calc(100vw-2rem)] text-[1.35rem] font-bold leading-[1.14] tracking-tight text-white min-[375px]:text-[1.5rem] sm:mt-6 sm:max-w-3xl sm:text-4xl lg:text-5xl lg:leading-[1.15]">
-              Prepara tu visa con experiencia e inteligencia artificial
+              Especialistas en visas de turismo para Estados Unidos
             </h1>
 
             <p className="mt-3 line-clamp-2 max-w-[calc(100vw-2rem)] text-[0.8rem] leading-snug text-slate-300 min-[375px]:text-sm sm:mt-4 sm:max-w-3xl sm:text-lg sm:leading-relaxed">
-              Visas de turismo para Estados Unidos, Canadá y México. Más de 10 años ayudando a viajeros a aplicar con mayor confianza.
+              Asesoramos solicitudes para Estados Unidos, Canadá y México. Más de 10 años ayudando a viajeros a aplicar con mayor confianza.
             </p>
 
             <div className="mt-5 flex max-w-[calc(100vw-2rem)] flex-col gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:items-start">
