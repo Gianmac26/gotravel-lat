@@ -19,8 +19,8 @@ const IA_EVALUATION_URL = "/analisis-perfil-ia";
 
 const NAV_LINKS = [
   { label: "Servicios", href: "#servicios" },
-  { label: "Visa USA", href: "#visa-usa" },
-  { label: "Visa Canadá", href: "#visa-canada" },
+  { label: "Visa USA", href: "/visa-usa" },
+  { label: "Visa Canadá", href: "/visa-canada" },
   { label: "Visa México", href: "#visa-mexico" },
   { label: "Blog", href: "#blog" },
   { label: "FAQ", href: "#faq" },
@@ -33,8 +33,8 @@ const TRUST_ITEMS = [
 ] as const;
 
 const QUICK_LINKS = [
-  { label: "Visa USA", icon: "🇺🇸", href: "#visa-usa" },
-  { label: "Visa Canadá", icon: "🇨🇦", href: "#visa-canada" },
+  { label: "Visa USA", icon: "🇺🇸", href: "/visa-usa" },
+  { label: "Visa Canadá", icon: "🇨🇦", href: "/visa-canada" },
   { label: "Visa México", icon: "🇲🇽", href: "#visa-mexico" },
   { label: "Adelanto de cita", icon: "📅", href: "#adelanto-citas" },
 ] as const;
@@ -77,13 +77,13 @@ const SERVICES = [
   {
     title: "Visa Americana",
     description: "Perfilado previo, DS-160 y documentación para tu entrevista consular B1/B2.",
-    href: "#visa-usa",
+    href: "/visa-usa",
     featured: true,
   },
   {
     title: "Renovación Visa Americana",
     description: "Evaluamos tu historial y te guiamos según tu caso particular.",
-    href: "#visa-usa",
+    href: "/visa-usa",
     featured: false,
   },
   {
@@ -95,7 +95,7 @@ const SERVICES = [
   {
     title: "Visa Canadá",
     description: "Requisitos, formularios y preparación de tu solicitud canadiense.",
-    href: "#visa-canada",
+    href: "/visa-canada",
     featured: false,
   },
   {
@@ -967,8 +967,8 @@ export default function Home() {
             <div>
               <h3 className="text-sm font-semibold uppercase tracking-wide text-[#0B1F3A]">Servicios</h3>
               <ul className="mt-4 space-y-2.5">
-                <li><a href="#visa-usa" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Visa USA</a></li>
-                <li><a href="#visa-canada" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Visa Canadá</a></li>
+                <li><a href="/visa-usa" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Visa USA</a></li>
+                <li><a href="/visa-canada" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Visa Canadá</a></li>
                 <li><a href="#visa-mexico" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Visa México</a></li>
                 <li><a href="#adelanto-citas" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Adelanto de cita</a></li>
               </ul>
