@@ -18,10 +18,10 @@ const WHATSAPP_CITA_URL =
 const IA_EVALUATION_URL = "/analisis-perfil-ia";
 
 const NAV_LINKS = [
-  { label: "Servicios", href: "#servicios" },
   { label: "Visa USA", href: "/visa-usa" },
   { label: "Visa Canadá", href: "/visa-canada" },
   { label: "Visa México", href: "#visa-mexico" },
+  { label: "Evaluar perfil", href: "/analisis-perfil-ia" },
   { label: "Blog", href: "#blog" },
   { label: "FAQ", href: "#faq" },
 ] as const;
@@ -321,7 +321,7 @@ export default function Home() {
       {/* ═══════════ HEADER ═══════════ */}
       <header className="sticky top-0 z-50 border-b border-[#E2E8F0]/80 bg-white/90 backdrop-blur-lg">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-          <a href="#" className="text-xl font-bold tracking-tight text-[#0B1F3A]">
+          <a href="/" className="text-xl font-bold tracking-tight text-[#0B1F3A]">
             Go<span className="text-[#00C896]">Travel</span>
           </a>
 
@@ -932,7 +932,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             <div className="sm:col-span-2">
-              <a href="#" className="text-xl font-bold tracking-tight text-[#0B1F3A]">
+              <a href="/" className="text-xl font-bold tracking-tight text-[#0B1F3A]">
                 Go<span className="text-[#00C896]">Travel</span>
               </a>
               <p className="mt-3 max-w-sm text-sm leading-relaxed text-slate-600">

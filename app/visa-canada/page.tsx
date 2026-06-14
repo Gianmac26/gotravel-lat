@@ -188,8 +188,9 @@ export default function VisaCanada() {
               href={WA_GENERAL}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/15 sm:inline-flex"
+              className="hidden items-center gap-2 rounded-full bg-[#25D366] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#1fb855] sm:inline-flex"
             >
+              <WAIcon className="h-4 w-4 shrink-0" />
               WhatsApp
             </a>
           </header>
