@@ -5,7 +5,17 @@
 
 const WHATSAPP_URL =
   "https://wa.me/51928672932?text=Hola%20GoTravel,%20quiero%20asesoría%20para%20mi%20visa";
-const IA_EVALUATION_URL = "/evaluacion-ia";
+const WHATSAPP_HERO_URL =
+  "https://wa.me/51928672932?text=Hola%20GoTravel,%20quiero%20evaluar%20mi%20caso%20para%20una%20visa%20de%20turismo.";
+const WHATSAPP_USA_URL =
+  "https://wa.me/51928672932?text=Hola%20GoTravel,%20quiero%20información%20sobre%20la%20visa%20de%20turismo%20para%20Estados%20Unidos.";
+const WHATSAPP_CANADA_URL =
+  "https://wa.me/51928672932?text=Hola%20GoTravel,%20quiero%20información%20sobre%20la%20visa%20de%20turismo%20para%20Canadá.";
+const WHATSAPP_MEXICO_URL =
+  "https://wa.me/51928672932?text=Hola%20GoTravel,%20quiero%20información%20sobre%20la%20visa%20de%20turismo%20para%20México.";
+const WHATSAPP_CITA_URL =
+  "https://wa.me/51928672932?text=Hola%20GoTravel,%20quiero%20consultar%20disponibilidad%20para%20adelantar%20mi%20cita.";
+const IA_EVALUATION_URL = "/analisis-perfil-ia";
 
 const NAV_LINKS = [
   { label: "Servicios", href: "#servicios" },
@@ -17,8 +27,8 @@ const NAV_LINKS = [
 ] as const;
 
 const TRUST_ITEMS = [
-  "+10 años de experiencia",
-  "Evaluación con IA",
+  "Más de 10 años de experiencia",
+  "Revisión documental especializada",
   "Atención 100% online",
 ] as const;
 
@@ -30,11 +40,30 @@ const QUICK_LINKS = [
 ] as const;
 
 const WHY_CHOOSE = [
-  "Más de 10 años de experiencia.",
-  "Atención 100% online.",
-  "Especialistas en visas de turismo.",
-  "Evaluación predictiva con IA.",
-  "Acompañamiento personalizado.",
+  {
+    title: "Más de 10 años de experiencia",
+    desc: "Llevamos más de una década asesorando solicitudes de visa para Estados Unidos, Canadá y México. Conocemos qué revisa el consulado y cómo preparar un caso sólido.",
+  },
+  {
+    title: "Especialistas en visas, no en viajes",
+    desc: "No vendemos paquetes ni vuelos. Nos dedicamos exclusivamente a la gestión de visas de turismo. Eso nos permite conocer a fondo cada solicitud y sus requisitos.",
+  },
+  {
+    title: "Evaluación inteligente de tu caso",
+    desc: "Analizamos tu perfil antes de iniciar el proceso para identificar fortalezas, riesgos y oportunidades de mejora en tu solicitud.",
+  },
+  {
+    title: "Revisión documental rigurosa",
+    desc: "Revisamos cada documento antes de presentarlo. Detectamos errores y observaciones que podrían afectar tu proceso.",
+  },
+  {
+    title: "Acompañamiento durante todo el proceso",
+    desc: "Te guiamos desde la evaluación inicial hasta la presentación de tu solicitud para que avances con claridad y confianza.",
+  },
+  {
+    title: "Atención 100% online",
+    desc: "Realiza todo tu proceso desde cualquier lugar. Atendemos viajeros de distintos países de Latinoamérica de forma remota.",
+  },
 ] as const;
 
 const IA_EVALUATION_BENEFITS = [
@@ -350,24 +379,24 @@ export default function Home() {
           <div className="relative mx-auto w-full min-w-0 max-w-6xl">
             <div className="inline-flex max-w-[calc(100vw-2rem)] items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-[#00C896] sm:max-w-none sm:text-sm">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#00C896]" />
-              <span className="truncate">Especialistas en visas de turismo • 100% online</span>
+              <span className="truncate">Especialistas en visas de turismo</span>
             </div>
 
             <h1 className="mt-4 line-clamp-2 max-w-[calc(100vw-2rem)] text-[1.35rem] font-bold leading-[1.14] tracking-tight text-white min-[375px]:text-[1.5rem] sm:mt-6 sm:max-w-3xl sm:text-4xl lg:text-5xl lg:leading-[1.15]">
-              Especialistas en visas de turismo para Estados Unidos
+              Aumenta tus posibilidades de aprobación
             </h1>
 
-            <p className="mt-3 line-clamp-2 max-w-[calc(100vw-2rem)] text-[0.8rem] leading-snug text-slate-300 min-[375px]:text-sm sm:mt-4 sm:max-w-3xl sm:text-lg sm:leading-relaxed">
-              Asesoramos solicitudes para Estados Unidos, Canadá y México. Más de 10 años ayudando a viajeros a aplicar con mayor confianza.
+            <p className="mt-3 max-w-[calc(100vw-2rem)] text-[0.8rem] leading-snug text-slate-300 min-[375px]:text-sm sm:mt-4 sm:max-w-3xl sm:text-lg sm:leading-relaxed">
+              Más de 10 años de experiencia ayudando a viajeros a preparar solicitudes de visa para Estados Unidos y Canadá.
             </p>
 
             <div className="mt-5 flex max-w-[calc(100vw-2rem)] flex-col gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:items-start">
               <BtnPrimary href={IA_EVALUATION_URL} className="w-full max-w-full sm:w-auto">
-                Conocer la evaluación con IA
+                Evalúa tu caso ahora
                 <IconArrow />
               </BtnPrimary>
               <a
-                href={WHATSAPP_URL}
+                href={WHATSAPP_HERO_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-12 w-full max-w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10 sm:w-auto sm:text-base"
@@ -421,24 +450,33 @@ export default function Home() {
             <div className="text-center">
               <SectionTitle>¿Por qué elegir GoTravel?</SectionTitle>
               <p className="mx-auto mt-3 max-w-2xl text-base text-slate-600">
-                Combinamos experiencia humana y tecnología para que tomes decisiones informadas sobre tu visa.
+                Gestionamos tu solicitud de visa con rigor, transparencia y acompañamiento real en cada etapa.
               </p>
             </div>
 
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {WHY_CHOOSE.map((item, index) => (
                 <div
-                  key={item}
-                  className={`rounded-2xl border border-[#E2E8F0] bg-white p-6 shadow-sm transition hover:border-[#00C896]/30 hover:shadow-md ${
-                    index === 0 ? "sm:col-span-2 lg:col-span-1" : ""
-                  }`}
+                  key={item.title}
+                  className="rounded-2xl border border-[#E2E8F0] bg-white p-6 shadow-sm transition hover:border-[#00C896]/30 hover:shadow-md"
                 >
                   <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#00C896]/10 text-sm font-bold text-[#00A87D]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <p className="mt-4 text-base font-semibold leading-snug text-[#0B1F3A]">{item}</p>
+                  <p className="mt-4 text-base font-semibold leading-snug text-[#0B1F3A]">{item.title}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.desc}</p>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <BtnPrimary href={IA_EVALUATION_URL} className="w-full sm:w-auto">
+                Evalúa tu caso ahora
+                <IconArrow />
+              </BtnPrimary>
+              <BtnWhatsApp href={WHATSAPP_URL} className="w-full sm:w-auto">
+                Hablar por WhatsApp
+              </BtnWhatsApp>
             </div>
           </div>
         </section>
@@ -506,7 +544,7 @@ export default function Home() {
                     Conocer la evaluación con IA
                     <IconArrow />
                   </BtnPrimary>
-                  <BtnWhatsApp href={WHATSAPP_URL} className="w-full sm:w-auto">
+                  <BtnWhatsApp href={WHATSAPP_USA_URL} className="w-full sm:w-auto">
                     Asesoría por WhatsApp
                   </BtnWhatsApp>
                 </div>
@@ -567,7 +605,7 @@ export default function Home() {
                 </p>
                 <FeatureList items={CANADA_FEATURES} />
                 <div className="mt-8">
-                  <BtnWhatsApp href={WHATSAPP_URL} className="w-full sm:w-auto">
+                  <BtnWhatsApp href={WHATSAPP_CANADA_URL} className="w-full sm:w-auto">
                     Consultar visa Canadá
                   </BtnWhatsApp>
                 </div>
@@ -588,7 +626,7 @@ export default function Home() {
                 </p>
                 <FeatureList items={MEXICO_FEATURES} />
                 <div className="mt-8">
-                  <BtnWhatsApp href={WHATSAPP_URL} className="w-full sm:w-auto">
+                  <BtnWhatsApp href={WHATSAPP_MEXICO_URL} className="w-full sm:w-auto">
                     Consultar visa México
                   </BtnWhatsApp>
                 </div>
@@ -621,7 +659,7 @@ export default function Home() {
         </section>
 
         {/* ═══════════ EVALUACIÓN IA ═══════════ */}
-        <section id="evaluacion-ia" className="px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+        <section id="analisis-perfil-ia" className="px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
           <div className="mx-auto max-w-6xl">
             <div className="overflow-hidden rounded-3xl border border-[#E2E8F0] bg-white shadow-sm">
               <div className="grid lg:grid-cols-2">
@@ -701,7 +739,7 @@ export default function Home() {
                 <p className="mt-4 rounded-xl border border-amber-200/80 bg-amber-50 px-4 py-3 text-xs leading-relaxed text-amber-900 sm:text-sm">
                   El adelanto depende exclusivamente de la disponibilidad de citas en el sistema oficial.
                 </p>
-                <BtnOutline href={WHATSAPP_URL} external className="mt-8 w-full sm:w-auto">
+                <BtnOutline href={WHATSAPP_CITA_URL} external className="mt-8 w-full sm:w-auto">
                   Consultar disponibilidad
                   <IconArrow />
                 </BtnOutline>
@@ -756,6 +794,22 @@ export default function Home() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-6 text-center sm:mt-12 sm:p-10">
+              <h3 className="text-xl font-bold text-white sm:text-2xl">¿Listo para iniciar tu proceso?</h3>
+              <p className="mx-auto mt-3 max-w-xl text-base text-slate-300">
+                Recibe una evaluación profesional de tu caso y conoce los pasos a seguir.
+              </p>
+              <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <BtnPrimary href={IA_EVALUATION_URL} className="w-full sm:w-auto">
+                  Evalúa tu caso ahora
+                  <IconArrow />
+                </BtnPrimary>
+                <BtnWhatsApp href={WHATSAPP_HERO_URL} className="w-full sm:w-auto">
+                  Hablar por WhatsApp
+                </BtnWhatsApp>
+              </div>
             </div>
           </div>
         </section>
@@ -828,6 +882,22 @@ export default function Home() {
                   </div>
                 </details>
               ))}
+            </div>
+
+            <div className="mt-10 rounded-2xl bg-[#F1F5F9] p-6 text-center sm:p-8">
+              <h3 className="text-xl font-bold text-[#0B1F3A] sm:text-2xl">¿Todavía tienes dudas?</h3>
+              <p className="mx-auto mt-3 max-w-xl text-base text-slate-600">
+                Nuestro equipo puede orientarte sobre tu situación específica.
+              </p>
+              <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <BtnWhatsApp href={WHATSAPP_HERO_URL} className="w-full sm:w-auto">
+                  Hablar por WhatsApp
+                </BtnWhatsApp>
+                <BtnPrimary href={IA_EVALUATION_URL} className="w-full sm:w-auto">
+                  Evaluar mi caso
+                  <IconArrow />
+                </BtnPrimary>
+              </div>
             </div>
           </div>
         </section>

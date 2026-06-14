@@ -163,13 +163,14 @@ export default function EvaluacionIA() {
               Factores que suelen influir en la lectura de tu caso
             </h2>
           </div>
-          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+          <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-[#E2E8F0] bg-white px-5 py-3 shadow-sm sm:px-7">
             {ANALYSIS_ITEMS.map((item) => (
-              <div key={item} className="min-h-32 rounded-3xl border border-[#E2E8F0] bg-white p-4 shadow-sm">
-                <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#00C896]/10 text-[#00A87D]">
-                  <CheckIcon className="h-5 w-5" />
-                </div>
-                <p className="mt-5 text-sm font-black leading-snug text-[#0B1F3A]">{item}</p>
+              <div
+                key={item}
+                className="flex items-center gap-4 border-b border-[#E2E8F0] py-5 last:border-b-0"
+              >
+                <CheckIcon className="h-5 w-5 shrink-0 text-[#00A87D]" />
+                <p className="text-base font-black leading-snug text-[#0B1F3A]">{item}</p>
               </div>
             ))}
           </div>
