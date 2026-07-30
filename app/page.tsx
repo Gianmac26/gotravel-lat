@@ -20,7 +20,7 @@ const CONSULTATION_URL = WHATSAPP_HERO_URL;
 const NAV_LINKS = [
   { label: "Visa USA", href: "/visa-usa" },
   { label: "Visa Canadá", href: "/visa-canada" },
-  { label: "Visa México", href: "#visa-mexico" },
+  { label: "Visa México", href: "/visa-mexico" },
   { label: "Agendar asesoría", href: WHATSAPP_HERO_URL, external: true },
   { label: "Blog", href: "#blog" },
   { label: "FAQ", href: "#faq" },
@@ -35,7 +35,7 @@ const TRUST_ITEMS = [
 const QUICK_LINKS = [
   { label: "Visa USA", icon: "🇺🇸", href: "/visa-usa" },
   { label: "Visa Canadá", icon: "🇨🇦", href: "/visa-canada" },
-  { label: "Visa México", icon: "🇲🇽", href: "#visa-mexico" },
+  { label: "Visa México", icon: "🇲🇽", href: "/visa-mexico" },
   { label: "Adelanto de cita", icon: "📅", href: "#adelanto-citas" },
 ] as const;
 
@@ -94,7 +94,7 @@ const SERVICES = [
   {
     title: "Visa México",
     description: "Acompañamiento en el trámite para ingresar a México.",
-    href: "#visa-mexico",
+    href: "/visa-mexico",
     featured: false,
   },
 ] as const;
@@ -635,10 +635,14 @@ export default function Home() {
                 <SectionLabel>México</SectionLabel>
                 <SectionTitle className="mt-3">Visa de turismo a México</SectionTitle>
                 <p className="mt-4 text-base leading-relaxed text-slate-600">
-                  Si necesitas visa para ingresar a México como turista, te orientamos según tu país de origen con un proceso claro, remoto y sin intermediación de viajes.
+                  Desde 2024, México exige visa de visitante a los peruanos para ingresar como turistas. Te acompañamos en todo el proceso, desde la evaluación hasta tu entrevista en la Embajada de México en Lima.
                 </p>
                 <FeatureList items={MEXICO_FEATURES} />
-                <div className="mt-8">
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <BtnPrimary href="/visa-mexico" className="w-full sm:w-auto">
+                    Ver planes desde S/180
+                    <IconArrow />
+                  </BtnPrimary>
                   <BtnWhatsApp href={WHATSAPP_MEXICO_URL} className="w-full sm:w-auto">
                     Consultar visa México
                   </BtnWhatsApp>
@@ -903,22 +907,34 @@ export default function Home() {
         {/* ═══════════ RECURSOS PARA TU VIAJE ═══════════ */}
         <section className="px-4 pb-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
-            <div className="flex flex-col items-start gap-4 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
-              <div>
-                <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-                  Recursos para tu viaje
-                </span>
-                <p className="mt-1 text-sm font-medium text-slate-700 sm:text-base">
-                  ¿Ya tienes tu visa lista? Consigue eSIM internacional para tu viaje con descuento.
-                </p>
+            <div className="flex flex-col items-start gap-5 rounded-2xl border border-[#00C896]/30 bg-gradient-to-br from-[#00C896]/10 via-white to-white p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-7">
+              <div className="flex items-start gap-4">
+                <div className="hidden h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#00C896]/15 text-[#00A87D] sm:flex">
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9Z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.6 9h16.8M3.6 15h16.8" />
+                  </svg>
+                </div>
+                <div>
+                  <span className="inline-flex items-center rounded-full bg-[#00C896] px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#0B1F3A]">
+                    Recursos para tu viaje
+                  </span>
+                  <p className="mt-2 text-base font-semibold text-[#0B1F3A] sm:text-lg">
+                    ¿Ya tienes tu visa lista? Consigue tu eSIM internacional con descuento.
+                  </p>
+                  <p className="mt-1 text-sm text-slate-600">
+                    Internet en tu celular desde que aterrizas, sin roaming ni chips físicos.
+                  </p>
+                </div>
               </div>
               <a
                 href="https://datosdeviaje.com?sca_ref=155885.qqrcgiz8z5q"
                 target="_blank"
                 rel="sponsored noopener noreferrer"
-                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-[#0B1F3A]/15 bg-white px-5 py-2.5 text-sm font-semibold text-[#0B1F3A] transition hover:border-[#0B1F3A]/30 hover:shadow-sm"
+                className="inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-full bg-[#00C896] px-6 py-3.5 text-sm font-black text-[#0B1F3A] shadow-lg shadow-[#00C896]/30 transition hover:bg-[#00A87D] sm:w-auto sm:text-base"
               >
                 Usar código GOVIAJESIM
+                <IconArrow className="h-4 w-4" />
               </a>
             </div>
           </div>
@@ -967,7 +983,7 @@ export default function Home() {
               <ul className="mt-4 space-y-2.5">
                 <li><a href="/visa-usa" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Visa USA</a></li>
                 <li><a href="/visa-canada" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Visa Canadá</a></li>
-                <li><a href="#visa-mexico" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Visa México</a></li>
+                <li><a href="/visa-mexico" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Visa México</a></li>
                 <li><a href="#adelanto-citas" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Adelanto de cita</a></li>
               </ul>
             </div>

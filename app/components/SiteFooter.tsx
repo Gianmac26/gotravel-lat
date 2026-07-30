@@ -48,7 +48,7 @@ export default function SiteFooter() {
             <ul className="mt-4 space-y-2.5">
               <li><a href="/visa-usa" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Visa USA</a></li>
               <li><a href="/visa-canada" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Visa Canadá</a></li>
-              <li><a href="/#visa-mexico" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Visa México</a></li>
+              <li><a href="/visa-mexico" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Visa México</a></li>
               <li><a href="/#adelanto-citas" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Adelanto de cita</a></li>
             </ul>
           </div>
