@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SiteHeader from "../components/SiteHeader";
+import SiteFooter from "../components/SiteFooter";
 
 function wa(text: string) {
   return `https://wa.me/51928672932?text=${encodeURIComponent(text)}`;
 }
 
-const WA_GENERAL = wa("Hola GoTravel, quiero información sobre la visa de turismo para Canadá.");
-const WA_BASICO = wa("Hola GoTravel, quiero cotizar el plan Básico para visa de turismo a Canadá.");
-const WA_SMART = wa("Hola GoTravel, quiero cotizar el plan Smart para visa de turismo a Canadá.");
-const WA_PREMIUM = wa("Hola GoTravel, quiero cotizar el plan Premium para visa de turismo a Canadá.");
-const WA_RECHAZO = wa("Hola GoTravel, me rechazaron una visa para Canadá y quiero saber si puedo volver a aplicar.");
-const WA_ARRAIGO = wa("Hola GoTravel, quiero evaluar mi perfil de arraigo para la visa de Canadá.");
+const WA_GENERAL = wa("Hola Goviaje, quiero información sobre la visa de turismo para Canadá.");
+const WA_BASICO = wa("Hola Goviaje, quiero cotizar el plan Básico para visa de turismo a Canadá.");
+const WA_SMART = wa("Hola Goviaje, quiero cotizar el plan Smart para visa de turismo a Canadá.");
+const WA_PREMIUM = wa("Hola Goviaje, quiero cotizar el plan Premium para visa de turismo a Canadá.");
+const WA_RECHAZO = wa("Hola Goviaje, me rechazaron una visa para Canadá y quiero saber si puedo volver a aplicar.");
+const WA_ARRAIGO = wa("Hola Goviaje, quiero evaluar mi perfil de arraigo para la visa de Canadá.");
 
-const IA_URL = "/analisis-perfil-ia";
+const CONSULTATION_URL = WA_GENERAL;
 
 type Plan = {
   name: string;
@@ -167,34 +169,51 @@ const FAQS = [
 ] as const;
 
 export const metadata: Metadata = {
-  title: "Visa de Turismo a Canadá — Asesoría Profesional | GoTravel",
+  title: "Visa de Turismo a Canadá — Asesoría Profesional | Goviaje",
   description:
     "Gestiona tu visa de turismo a Canadá con asesoría profesional ante el IRCC. Sin entrevista consular, expediente 100% en línea. Más de 10 años acompañando solicitudes.",
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Asesoría para visa de turismo a Canadá (TRV)",
+  provider: { "@type": "Organization", name: "Goviaje", url: "https://goviaje.uk" },
+  areaServed: ["PE", "CO", "MX", "EC"],
+  description:
+    "Asesoría profesional para la solicitud de visa de turismo a Canadá (Temporary Resident Visa) ante el IRCC: revisión documental, carta de invitación y evaluación de arraigo.",
 };
 
 export default function VisaCanada() {
   return (
     <main className="min-h-screen bg-white pb-20 text-slate-900 sm:pb-0">
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+
+      <SiteHeader />
 
       {/* ═══ HERO ═══ */}
       <section className="relative overflow-hidden bg-[#0B1F3A] px-4 pb-14 pt-5 text-white sm:px-6 sm:pb-20 sm:pt-8 lg:px-8">
         <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(0,200,150,0.14),transparent_42%),linear-gradient(315deg,rgba(255,255,255,0.08),transparent_36%)]" />
         <div className="relative mx-auto max-w-6xl">
-          <header className="flex items-center justify-between">
-            <Link href="/" className="text-xl font-bold tracking-tight text-white" aria-label="GoTravel">
-              Go<span className="text-[#00C896]">Travel</span>
-            </Link>
-            <a
-              href={WA_GENERAL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden items-center gap-2 rounded-full bg-[#25D366] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#1fb855] sm:inline-flex"
-            >
-              <WAIcon className="h-4 w-4 shrink-0" />
-              WhatsApp
-            </a>
-          </header>
-
           <div className="pt-14 sm:pt-20 lg:grid lg:grid-cols-[1.1fr_0.9fr] lg:items-end lg:gap-10">
             <div className="max-w-3xl">
               <p className="inline-flex rounded-full border border-[#00C896]/30 bg-[#00C896]/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-[#00C896]">
@@ -207,7 +226,7 @@ export default function VisaCanada() {
                 En Canadá no hay entrevista consular. Tu expediente es lo único que evalúa el IRCC. Nosotros te ayudamos a construirlo correctamente — con rigor, experiencia y acompañamiento real.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <BtnPrimary href={IA_URL} className="w-full sm:w-auto">
+                <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
                   Evalúa tu caso ahora
                   <ArrowIcon />
                 </BtnPrimary>
@@ -427,7 +446,7 @@ export default function VisaCanada() {
               <p className="text-base font-semibold text-[#0B1F3A]">¿No estás seguro si tu perfil está listo?</p>
               <p className="mt-2 text-sm text-slate-600">Evalúa tu caso antes de iniciar. Es el primer paso que recomendamos.</p>
               <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <BtnPrimary href={IA_URL} className="w-full sm:w-auto">
+                <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
                   Evalúa tu caso ahora
                   <ArrowIcon />
                 </BtnPrimary>
@@ -466,7 +485,7 @@ export default function VisaCanada() {
               Recibe una evaluación profesional de tu caso y conoce los pasos a seguir.
             </p>
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <BtnPrimary href={IA_URL} className="w-full sm:w-auto">
+              <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
                 Evalúa tu caso ahora
                 <ArrowIcon />
               </BtnPrimary>
@@ -534,7 +553,7 @@ export default function VisaCanada() {
               ))}
             </div>
             <div className="mt-6 rounded-2xl border border-[#E2E8F0] bg-white p-5 text-sm leading-7 text-slate-600 sm:p-6">
-              <strong className="text-[#0B1F3A]">Recomendación:</strong> Inicia el proceso con al menos 3 meses de anticipación a tu fecha planificada de viaje. Los tiempos de respuesta del IRCC no están bajo el control de GoTravel ni del solicitante.
+              <strong className="text-[#0B1F3A]">Recomendación:</strong> Inicia el proceso con al menos 3 meses de anticipación a tu fecha planificada de viaje. Los tiempos de respuesta del IRCC no están bajo el control de Goviaje ni del solicitante.
             </div>
           </div>
         </div>
@@ -549,7 +568,7 @@ export default function VisaCanada() {
               El pago al Gobierno de Canadá es de CAD 185
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
-              Independientemente del plan que elijas con GoTravel, existe un costo oficial establecido por el Gobierno de Canadá que se paga directamente al IRCC al momento de presentar la solicitud. Este monto es obligatorio y no forma parte del servicio de asesoría.
+              Independientemente del plan que elijas con Goviaje, existe un costo oficial establecido por el Gobierno de Canadá que se paga directamente al IRCC al momento de presentar la solicitud. Este monto es obligatorio y no forma parte del servicio de asesoría.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <div className="rounded-2xl border border-[#E2E8F0] bg-[#F1F5F9] p-6">
@@ -562,7 +581,7 @@ export default function VisaCanada() {
               <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6">
                 <p className="text-sm font-black uppercase tracking-wide text-amber-900">Importante</p>
                 <p className="mt-3 text-sm leading-6 text-amber-800">
-                  Este pago va directamente al Gobierno de Canadá y es independiente del costo del servicio de GoTravel. Si la solicitud es denegada, el IRCC no reembolsa esta tasa. El plan Premium de GoTravel incluye un seguro de trámite gratuito ante rechazo.
+                  Este pago va directamente al Gobierno de Canadá y es independiente del costo del servicio de Goviaje. Si la solicitud es denegada, el IRCC no reembolsa esta tasa. El plan Premium de Goviaje incluye un seguro de trámite gratuito ante rechazo.
                 </p>
               </div>
             </div>
@@ -731,7 +750,7 @@ export default function VisaCanada() {
         </div>
       </section>
 
-      {/* ═══ CTA EVALUACIÓN IA ═══ */}
+      {/* ═══ CTA ASESORÍA ═══ */}
       <section className="bg-[#F1F5F9] px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-5xl text-center">
           <Eyebrow>Antes de aplicar</Eyebrow>
@@ -742,7 +761,7 @@ export default function VisaCanada() {
             Nuestro análisis de perfil identifica fortalezas, alertas y oportunidades de mejora antes de que inviertas tiempo y dinero en el proceso.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <BtnPrimary href={IA_URL} className="w-full sm:w-auto">
+            <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
               Evalúa tu caso ahora
               <ArrowIcon />
             </BtnPrimary>
@@ -785,7 +804,7 @@ export default function VisaCanada() {
               <BtnWA href={WA_GENERAL} className="w-full sm:w-auto">
                 Hablar por WhatsApp
               </BtnWA>
-              <BtnPrimary href={IA_URL} className="w-full sm:w-auto">
+              <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
                 Evaluar mi caso
                 <ArrowIcon />
               </BtnPrimary>
@@ -804,7 +823,7 @@ export default function VisaCanada() {
             Evaluamos tu perfil, identificamos los puntos que reforzar y te acompañamos en cada etapa del proceso — para que llegues al IRCC con la mejor solicitud posible.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <BtnPrimary href={IA_URL} className="w-full sm:w-auto">
+            <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
               Evalúa tu caso ahora
               <ArrowIcon />
             </BtnPrimary>
@@ -816,13 +835,17 @@ export default function VisaCanada() {
         </div>
       </section>
 
+      <SiteFooter />
+
       {/* ═══ STICKY MOBILE BAR ═══ */}
       <div className="fixed bottom-0 left-0 right-0 z-50 flex gap-2 border-t border-slate-200 bg-white/95 px-4 py-3 backdrop-blur sm:hidden">
         <a
-          href={IA_URL}
+          href={CONSULTATION_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex flex-1 items-center justify-center rounded-full bg-[#0B1F3A] px-4 py-3 text-sm font-bold text-white"
         >
-          Evaluar caso
+          Asesoría gratis
         </a>
         <a
           href={WA_GENERAL}
@@ -852,10 +875,21 @@ function Eyebrow({ children, dark = false }: { children: React.ReactNode; dark?:
   );
 }
 
-function BtnPrimary({ href, children, className = "" }: { href: string; children: React.ReactNode; className?: string }) {
+function BtnPrimary({
+  href,
+  children,
+  external = false,
+  className = "",
+}: {
+  href: string;
+  children: React.ReactNode;
+  external?: boolean;
+  className?: string;
+}) {
   return (
     <a
       href={href}
+      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#00C896] px-6 py-3 text-sm font-black text-[#0B1F3A] shadow-lg shadow-[#00C896]/20 transition hover:bg-[#00b386] min-[375px]:text-base ${className}`}
     >
       {children}

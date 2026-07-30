@@ -1,27 +1,27 @@
 /* ─────────────────────────────────────────────
-   GoTravel — Landing Page (mobile-first)
+   Goviaje — Landing Page (mobile-first)
    Colores: navy #0B1F3A · green #00C896 · gray #F1F5F9
 ───────────────────────────────────────────── */
 
 const WHATSAPP_URL =
-  "https://wa.me/51928672932?text=Hola%20GoTravel,%20quiero%20asesoría%20para%20mi%20visa";
+  "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20asesoría%20para%20mi%20visa";
 const WHATSAPP_HERO_URL =
-  "https://wa.me/51928672932?text=Hola%20GoTravel,%20quiero%20evaluar%20mi%20caso%20para%20una%20visa%20de%20turismo.";
+  "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20evaluar%20mi%20caso%20para%20una%20visa%20de%20turismo.";
 const WHATSAPP_USA_URL =
-  "https://wa.me/51928672932?text=Hola%20GoTravel,%20quiero%20información%20sobre%20la%20visa%20de%20turismo%20para%20Estados%20Unidos.";
+  "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20información%20sobre%20la%20visa%20de%20turismo%20para%20Estados%20Unidos.";
 const WHATSAPP_CANADA_URL =
-  "https://wa.me/51928672932?text=Hola%20GoTravel,%20quiero%20información%20sobre%20la%20visa%20de%20turismo%20para%20Canadá.";
+  "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20información%20sobre%20la%20visa%20de%20turismo%20para%20Canadá.";
 const WHATSAPP_MEXICO_URL =
-  "https://wa.me/51928672932?text=Hola%20GoTravel,%20quiero%20información%20sobre%20la%20visa%20de%20turismo%20para%20México.";
+  "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20información%20sobre%20la%20visa%20de%20turismo%20para%20México.";
 const WHATSAPP_CITA_URL =
-  "https://wa.me/51928672932?text=Hola%20GoTravel,%20quiero%20consultar%20disponibilidad%20para%20adelantar%20mi%20cita.";
-const IA_EVALUATION_URL = "/analisis-perfil-ia";
+  "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20consultar%20disponibilidad%20para%20adelantar%20mi%20cita.";
+const CONSULTATION_URL = WHATSAPP_HERO_URL;
 
 const NAV_LINKS = [
   { label: "Visa USA", href: "/visa-usa" },
   { label: "Visa Canadá", href: "/visa-canada" },
   { label: "Visa México", href: "#visa-mexico" },
-  { label: "Evaluar perfil", href: "/analisis-perfil-ia" },
+  { label: "Agendar asesoría", href: WHATSAPP_HERO_URL, external: true },
   { label: "Blog", href: "#blog" },
   { label: "FAQ", href: "#faq" },
 ] as const;
@@ -49,7 +49,7 @@ const WHY_CHOOSE = [
     desc: "No vendemos paquetes ni vuelos. Nos dedicamos exclusivamente a la gestión de visas de turismo. Eso nos permite conocer a fondo cada solicitud y sus requisitos.",
   },
   {
-    title: "Evaluación inteligente de tu caso",
+    title: "Evaluación previa de tu caso",
     desc: "Analizamos tu perfil antes de iniciar el proceso para identificar fortalezas, riesgos y oportunidades de mejora en tu solicitud.",
   },
   {
@@ -64,13 +64,6 @@ const WHY_CHOOSE = [
     title: "Atención 100% online",
     desc: "Realiza todo tu proceso desde cualquier lugar. Atendemos viajeros de distintos países de Latinoamérica de forma remota.",
   },
-] as const;
-
-const IA_EVALUATION_BENEFITS = [
-  "Evaluación previa",
-  "Identificación de riesgos",
-  "Orientación profesional",
-  "Más confianza para aplicar",
 ] as const;
 
 const SERVICES = [
@@ -110,7 +103,7 @@ const USA_FEATURES = [
   "Visa de turismo B1/B2 — primera solicitud",
   "Renovación de visa americana",
   "Preparación de formulario DS-160",
-  "Perfilado previo con evaluación de IA",
+  "Perfilado previo del caso",
   "Orientación para entrevista consular",
   "Adelanto de cita con Agenda VisaBot",
 ] as const;
@@ -161,7 +154,7 @@ const BLOG_POSTS = [
 
 const FAQS = [
   {
-    q: "¿GoTravel garantiza la aprobación de la visa?",
+    q: "¿Goviaje garantiza la aprobación de la visa?",
     a: "No. Ninguna empresa puede garantizar la aprobación. Nuestro trabajo es asesorarte con un proceso riguroso, transparente y basado en más de 10 años de experiencia para maximizar la calidad de tu solicitud.",
   },
   {
@@ -315,14 +308,32 @@ function FeatureList({ items }: { items: readonly string[] }) {
 
 /* ── Página principal ── */
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 antialiased">
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* ═══════════ HEADER ═══════════ */}
       <header className="sticky top-0 z-50 border-b border-[#E2E8F0]/80 bg-white/90 backdrop-blur-lg">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
           <a href="/" className="text-xl font-bold tracking-tight text-[#0B1F3A]">
-            Go<span className="text-[#00C896]">Travel</span>
+            Go<span className="text-[#00C896]">viaje</span>
           </a>
 
           <nav className="hidden items-center gap-6 lg:flex">
@@ -330,6 +341,7 @@ export default function Home() {
               <a
                 key={link.href}
                 href={link.href}
+                {...("external" in link && link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 className="text-sm font-medium text-slate-600 transition hover:text-[#0B1F3A]"
               >
                 {link.label}
@@ -354,6 +366,7 @@ export default function Home() {
                   <a
                     key={link.href}
                     href={link.href}
+                    {...("external" in link && link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-[#F1F5F9]"
                   >
                     {link.label}
@@ -391,7 +404,7 @@ export default function Home() {
             </p>
 
             <div className="mt-5 flex max-w-[calc(100vw-2rem)] flex-col gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:items-start">
-              <BtnPrimary href={IA_EVALUATION_URL} className="w-full max-w-full sm:w-auto">
+              <BtnPrimary href={CONSULTATION_URL} external className="w-full max-w-full sm:w-auto">
                 Evalúa tu caso ahora
                 <IconArrow />
               </BtnPrimary>
@@ -448,7 +461,7 @@ export default function Home() {
         <section className="px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
           <div className="mx-auto max-w-6xl">
             <div className="text-center">
-              <SectionTitle>¿Por qué elegir GoTravel?</SectionTitle>
+              <SectionTitle>¿Por qué elegir Goviaje?</SectionTitle>
               <p className="mx-auto mt-3 max-w-2xl text-base text-slate-600">
                 Gestionamos tu solicitud de visa con rigor, transparencia y acompañamiento real en cada etapa.
               </p>
@@ -470,8 +483,8 @@ export default function Home() {
             </div>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <BtnPrimary href={IA_EVALUATION_URL} className="w-full sm:w-auto">
-                Evalúa tu caso ahora
+              <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
+                Agenda tu asesoría gratuita
                 <IconArrow />
               </BtnPrimary>
               <BtnWhatsApp href={WHATSAPP_URL} className="w-full sm:w-auto">
@@ -540,8 +553,8 @@ export default function Home() {
                 </p>
                 <FeatureList items={USA_FEATURES} />
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <BtnPrimary href={IA_EVALUATION_URL} className="w-full sm:w-auto">
-                    Conocer la evaluación con IA
+                  <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
+                    Agendar asesoría gratuita
                     <IconArrow />
                   </BtnPrimary>
                   <BtnWhatsApp href={WHATSAPP_USA_URL} className="w-full sm:w-auto">
@@ -554,7 +567,7 @@ export default function Home() {
                 <h3 className="text-lg font-semibold text-[#0B1F3A]">¿Qué incluye la asesoría USA?</h3>
                 <div className="mt-5 space-y-3">
                   {[
-                    { label: "Evaluación de probabilidad", value: "IA predictiva" },
+                    { label: "Evaluación de tu caso", value: "Asesor especializado" },
                     { label: "Formulario DS-160", value: "Revisión experta" },
                     { label: "Documentación", value: "Checklist personalizado" },
                     { label: "Entrevista consular", value: "Simulación y tips" },
@@ -658,68 +671,29 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ═══════════ EVALUACIÓN IA ═══════════ */}
-        <section id="analisis-perfil-ia" className="px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+        {/* ═══════════ ASESORÍA GRATUITA ═══════════ */}
+        <section id="asesoria" className="px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
           <div className="mx-auto max-w-6xl">
-            <div className="overflow-hidden rounded-3xl border border-[#E2E8F0] bg-white shadow-sm">
-              <div className="grid lg:grid-cols-2">
-                <div className="p-6 sm:p-10 lg:p-12">
-                  <SectionLabel>Evaluación de Probabilidad con IA</SectionLabel>
-                  <SectionTitle className="mt-3">
-                    Conoce tus probabilidades antes de aplicar
-                  </SectionTitle>
-                  <p className="mt-4 text-base leading-relaxed text-slate-600">
-                    Analizamos factores clave de tu perfil para identificar fortalezas, posibles riesgos y oportunidades antes de iniciar tu solicitud.
-                  </p>
-                  <div className="mt-6 rounded-2xl border border-[#00C896]/20 bg-[#00C896]/5 p-5">
-                    <ul className="grid gap-3 sm:grid-cols-2">
-                      {IA_EVALUATION_BENEFITS.map((item) => (
-                        <li key={item} className="flex items-center gap-2.5 text-sm font-medium text-[#0B1F3A]">
-                          <IconCheck className="h-4 w-4 shrink-0 text-[#00C896]" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <a
-                    href={IA_EVALUATION_URL}
-                    className="mt-8 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#132D52] sm:w-auto sm:text-base"
-                  >
-                    Conocer la evaluación con IA
-                    <IconArrow />
-                  </a>
-                  <p className="mt-4 text-xs text-slate-500 sm:text-sm">
-                    La evaluación no garantiza aprobación. La decisión final depende del oficial consular.
-                  </p>
-                </div>
-
-                <div className="flex items-center justify-center bg-gradient-to-br from-[#0B1F3A] to-[#132D52] p-6 sm:p-10 lg:p-12">
-                  <div className="w-full max-w-sm rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-white/80">Análisis de probabilidad</span>
-                      <span className="rounded-full bg-[#00C896]/20 px-2.5 py-0.5 text-xs font-semibold text-[#00C896]">IA</span>
-                    </div>
-                    <div className="mt-6 space-y-3">
-                      {[
-                        { label: "Historial migratorio", pct: 72 },
-                        { label: "Vínculos país origen", pct: 65 },
-                        { label: "Propósito del viaje", pct: 80 },
-                        { label: "Documentación", pct: 58 },
-                      ].map((bar) => (
-                        <div key={bar.label} className="flex items-center gap-3">
-                          <div className="h-2 flex-1 overflow-hidden rounded-full bg-white/10">
-                            <div className="h-full rounded-full bg-[#00C896]" style={{ width: `${bar.pct}%` }} />
-                          </div>
-                          <span className="w-28 text-xs text-white/70">{bar.label}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <p className="mt-6 text-center text-xs text-white/50">
-                      Resultado orientativo · No es decisión consular
-                    </p>
-                  </div>
-                </div>
+            <div className="overflow-hidden rounded-3xl border border-[#E2E8F0] bg-gradient-to-br from-[#0B1F3A] to-[#132D52] p-8 text-center shadow-sm sm:p-12">
+              <SectionLabel>Antes de aplicar</SectionLabel>
+              <SectionTitle className="mt-3 text-white">
+                Agenda una asesoría gratuita con un especialista
+              </SectionTitle>
+              <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-300">
+                Conversamos sobre tu caso, identificamos fortalezas y posibles riesgos, y te orientamos sobre el mejor camino antes de que inicies tu solicitud.
+              </p>
+              <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <BtnPrimary href={CONSULTATION_URL} external>
+                  Agendar asesoría gratuita
+                  <IconArrow />
+                </BtnPrimary>
+                <BtnWhatsApp href={WHATSAPP_URL}>
+                  Hablar por WhatsApp
+                </BtnWhatsApp>
               </div>
+              <p className="mt-4 text-xs text-slate-400 sm:text-sm">
+                La asesoría no garantiza aprobación. La decisión final depende del oficial consular.
+              </p>
             </div>
           </div>
         </section>
@@ -802,8 +776,8 @@ export default function Home() {
                 Recibe una evaluación profesional de tu caso y conoce los pasos a seguir.
               </p>
               <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <BtnPrimary href={IA_EVALUATION_URL} className="w-full sm:w-auto">
-                  Evalúa tu caso ahora
+                <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
+                  Agenda tu asesoría gratuita
                   <IconArrow />
                 </BtnPrimary>
                 <BtnWhatsApp href={WHATSAPP_HERO_URL} className="w-full sm:w-auto">
@@ -893,8 +867,8 @@ export default function Home() {
                 <BtnWhatsApp href={WHATSAPP_HERO_URL} className="w-full sm:w-auto">
                   Hablar por WhatsApp
                 </BtnWhatsApp>
-                <BtnPrimary href={IA_EVALUATION_URL} className="w-full sm:w-auto">
-                  Evaluar mi caso
+                <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
+                  Agendar asesoría
                   <IconArrow />
                 </BtnPrimary>
               </div>
@@ -912,8 +886,8 @@ export default function Home() {
               Recibe orientación especializada para tu visa de turismo y conoce tus posibilidades antes de aplicar.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <BtnPrimary href={IA_EVALUATION_URL} className="w-full sm:w-auto">
-                Conocer la evaluación con IA
+              <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
+                Agendar asesoría gratuita
                 <IconArrow />
               </BtnPrimary>
               <BtnWhatsApp href={WHATSAPP_URL} className="w-full sm:w-auto">
@@ -925,6 +899,30 @@ export default function Home() {
             </p>
           </div>
         </section>
+
+        {/* ═══════════ RECURSOS PARA TU VIAJE ═══════════ */}
+        <section className="px-4 pb-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <div className="flex flex-col items-start gap-4 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+              <div>
+                <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+                  Recursos para tu viaje
+                </span>
+                <p className="mt-1 text-sm font-medium text-slate-700 sm:text-base">
+                  ¿Ya tienes tu visa lista? Consigue eSIM internacional para tu viaje con descuento.
+                </p>
+              </div>
+              <a
+                href="https://datosdeviaje.com?sca_ref=155885.qqrcgiz8z5q"
+                target="_blank"
+                rel="sponsored noopener noreferrer"
+                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-[#0B1F3A]/15 bg-white px-5 py-2.5 text-sm font-semibold text-[#0B1F3A] transition hover:border-[#0B1F3A]/30 hover:shadow-sm"
+              >
+                Usar código GOVIAJESIM
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* ═══════════ FOOTER ═══════════ */}
@@ -933,7 +931,7 @@ export default function Home() {
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             <div className="sm:col-span-2">
               <a href="/" className="text-xl font-bold tracking-tight text-[#0B1F3A]">
-                Go<span className="text-[#00C896]">Travel</span>
+                Go<span className="text-[#00C896]">viaje</span>
               </a>
               <p className="mt-3 max-w-sm text-sm leading-relaxed text-slate-600">
                 Especialistas en gestión de visas de turismo. Asesoría profesional, honesta y 100% online para viajeros de Latinoamérica.
@@ -980,13 +978,16 @@ export default function Home() {
                 <li><a href="#blog" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Blog</a></li>
                 <li><a href="#faq" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">FAQ</a></li>
                 <li><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Contacto</a></li>
-                <li><a href={IA_EVALUATION_URL} className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Evaluación con IA</a></li>
               </ul>
             </div>
           </div>
 
-          <div className="mt-10 border-t border-[#E2E8F0] pt-6 text-center text-xs text-slate-500 sm:text-left">
-            © {new Date().getFullYear()} GoTravel. Todos los derechos reservados. No somos agencia de viajes.
+          <div className="mt-10 flex flex-col gap-3 border-t border-[#E2E8F0] pt-6 text-center text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:text-left">
+            <span>© {new Date().getFullYear()} Goviaje. Todos los derechos reservados. No somos agencia de viajes.</span>
+            <span className="flex justify-center gap-4 sm:justify-start">
+              <a href="/privacidad" className="transition hover:text-[#0B1F3A]">Política de privacidad</a>
+              <a href="/terminos" className="transition hover:text-[#0B1F3A]">Términos y condiciones</a>
+            </span>
           </div>
         </div>
       </footer>
@@ -995,10 +996,12 @@ export default function Home() {
       <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-[#E2E8F0] bg-white/95 p-3 backdrop-blur-lg sm:hidden">
         <div className="flex gap-2">
           <a
-            href={IA_EVALUATION_URL}
+            href={CONSULTATION_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex min-h-12 min-w-0 flex-1 items-center justify-center gap-1.5 rounded-full bg-[#00C896] px-3 py-3 text-xs font-semibold leading-tight text-[#0B1F3A] min-[375px]:text-sm"
           >
-            Conocer IA
+            Asesoría gratis
             <IconArrow className="h-3.5 w-3.5 shrink-0" />
           </a>
           <a
