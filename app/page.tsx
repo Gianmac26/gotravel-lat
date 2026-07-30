@@ -136,19 +136,34 @@ const PROCESS_STEPS = [
 
 const BLOG_POSTS = [
   {
-    title: "Requisitos para visa americana de turismo",
-    excerpt: "Documentos, formularios y criterios que evalúa el consulado antes de tu entrevista.",
+    title: "Requisitos para la visa americana de turismo (2026)",
+    excerpt: "Documentos, costos y tiempos de espera para la visa B1/B2 desde Perú, Colombia, México y Ecuador.",
     tag: "Estados Unidos",
+    href: "/blog/requisitos-visa-americana-turismo",
   },
   {
-    title: "Errores comunes al solicitar una visa",
-    excerpt: "Fallas frecuentes en formularios, documentación y respuestas en la entrevista.",
+    title: "Por qué niegan la visa americana: 5 razones comunes",
+    excerpt: "Las causas más frecuentes de rechazo y cómo preparar mejor tu solicitud para evitarlas.",
     tag: "Consejos",
+    href: "/blog/razones-rechazo-visa-americana",
   },
   {
-    title: "Cómo prepararte para tu entrevista consular",
-    excerpt: "Tips para presentar tu caso con claridad, honestidad y confianza.",
-    tag: "Entrevista",
+    title: "¿Cuánto cuesta y cuánto demora la visa americana?",
+    excerpt: "Tasas oficiales vigentes en 2026 y plazos recomendados para tramitar tu visa a tiempo.",
+    tag: "Estados Unidos",
+    href: "/blog/cuanto-cuesta-demora-visa-americana",
+  },
+  {
+    title: "Carta de invitación y arraigo: qué evalúa Canadá",
+    excerpt: "Cómo funciona la carta de invitación y qué solvencia económica pide el IRCC.",
+    tag: "Canadá",
+    href: "/blog/carta-invitacion-arraigo-visa-canada",
+  },
+  {
+    title: "Visa mexicana para peruanos: guía completa",
+    excerpt: "Desde 2024 los peruanos necesitan visa para México. Requisitos, costo y excepciones.",
+    tag: "México",
+    href: "/blog/visa-mexico-peruanos-requisitos",
   },
 ] as const;
 
@@ -805,8 +820,9 @@ export default function Home() {
 
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {BLOG_POSTS.map((post) => (
-                <article
+                <a
                   key={post.title}
+                  href={post.href}
                   className="group flex flex-col overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white shadow-sm transition hover:shadow-md"
                 >
                   <div className="h-36 bg-gradient-to-br from-[#0B1F3A] to-[#132D52] sm:h-40" />
@@ -819,7 +835,7 @@ export default function Home() {
                       <IconArrow className="h-3.5 w-3.5" />
                     </span>
                   </div>
-                </article>
+                </a>
               ))}
             </div>
           </div>
