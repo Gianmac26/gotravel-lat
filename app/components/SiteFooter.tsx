@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { EMPRESA } from "../lib/empresa";
 
@@ -97,11 +98,15 @@ export default function SiteFooter() {
 
         {/* Aviso Indecopi */}
         <div className="mt-8 flex items-center gap-4">
-          {/* TODO: reemplazar con <Image> cuando se agregue public/aviso-libro-reclamaciones.png */}
-          {/* Descargar de: https://www.consumidor.indecopi.gob.pe */}
-          <div className="flex h-12 w-32 items-center justify-center rounded-lg border border-dashed border-slate-300 bg-white text-center text-[10px] text-slate-400">
-            Aviso Indecopi<br />pendiente
-          </div>
+          <Link href="/libro-de-reclamaciones">
+            <Image
+              src="/aviso-libro-reclamaciones.png"
+              alt="Libro de Reclamaciones virtual disponible"
+              width={130}
+              height={184}
+              className="rounded transition hover:opacity-80"
+            />
+          </Link>
           <p className="text-xs text-slate-400">
             Conforme a la Ley N° 29571 — Código de Protección y Defensa del Consumidor
           </p>
