@@ -1,21 +1,33 @@
+import Link from "next/link";
+import { EMPRESA } from "../lib/empresa";
+
 const WHATSAPP_URL =
   "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20asesor%C3%ADa%20para%20mi%20visa";
 
-/**
- * Footer completo, compartido por las landings internas (Visa USA, Visa Canadá),
- * que hasta ahora no tenían acceso a políticas, redes ni navegación secundaria.
- */
+function IconLibro({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+    </svg>
+  );
+}
+
 export default function SiteFooter() {
   return (
     <footer className="border-t border-[#E2E8F0] bg-[#F1F5F9] px-4 py-12 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+
+          {/* Marca */}
           <div className="sm:col-span-2">
-            <a href="/" className="text-xl font-bold tracking-tight text-[#0B1F3A]" aria-label="Goviaje">
+            <Link href="/" className="text-xl font-bold tracking-tight text-[#0B1F3A]" aria-label="Goviaje">
               Go<span className="text-[#00C896]">viaje</span>
-            </a>
+            </Link>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-slate-600">
               Especialistas en gestión de visas de turismo. Asesoría profesional, honesta y 100% online para viajeros de Latinoamérica.
+            </p>
+            <p className="mt-2 text-xs text-slate-400">
+              {EMPRESA.razonSocial} · RUC {EMPRESA.ruc}
             </p>
             <div className="mt-5 flex gap-3">
               <a
@@ -43,31 +55,70 @@ export default function SiteFooter() {
             </div>
           </div>
 
+          {/* Servicios */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wide text-[#0B1F3A]">Servicios</h3>
             <ul className="mt-4 space-y-2.5">
-              <li><a href="/visa-usa" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Visa USA</a></li>
-              <li><a href="/visa-canada" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Visa Canadá</a></li>
-              <li><a href="/visa-mexico" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Visa México</a></li>
-              <li><a href="/#adelanto-citas" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Adelanto de cita</a></li>
+              <li><Link href="/visa-usa" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Visa USA</Link></li>
+              <li><Link href="/visa-canada" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Visa Canadá</Link></li>
+              <li><Link href="/visa-mexico" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Visa México</Link></li>
+              <li><Link href="/#adelanto-citas" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Adelanto de cita</Link></li>
             </ul>
           </div>
 
+          {/* Legal */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-[#0B1F3A]">Enlaces</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-[#0B1F3A]">Legal</h3>
             <ul className="mt-4 space-y-2.5">
-              <li><a href="/#blog" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Blog</a></li>
-              <li><a href="/#faq" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">FAQ</a></li>
-              <li><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Contacto</a></li>
+              <li>
+                <Link href="/#blog" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Blog</Link>
+              </li>
+              <li>
+                <Link href="/#faq" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">FAQ</Link>
+              </li>
+              <li>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Contacto</a>
+              </li>
+              <li>
+                <Link href="/terminos-y-condiciones" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Términos y condiciones</Link>
+              </li>
+              <li>
+                <Link href="/politica-de-privacidad" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Política de privacidad</Link>
+              </li>
+              <li>
+                <Link href="/libro-de-reclamaciones" className="inline-flex items-center gap-1.5 text-sm text-slate-600 transition hover:text-[#0B1F3A]">
+                  <IconLibro className="h-3.5 w-3.5" />
+                  Libro de Reclamaciones
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-3 border-t border-[#E2E8F0] pt-6 text-center text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:text-left">
-          <span>© {new Date().getFullYear()} Goviaje. Todos los derechos reservados. No somos agencia de viajes.</span>
-          <span className="flex justify-center gap-4 sm:justify-start">
-            <a href="/privacidad" className="transition hover:text-[#0B1F3A]">Política de privacidad</a>
-            <a href="/terminos" className="transition hover:text-[#0B1F3A]">Términos y condiciones</a>
+        {/* Aviso Indecopi */}
+        <div className="mt-8 flex items-center gap-4">
+          {/* TODO: reemplazar con <Image> cuando se agregue public/aviso-libro-reclamaciones.png */}
+          {/* Descargar de: https://www.consumidor.indecopi.gob.pe */}
+          <div className="flex h-12 w-32 items-center justify-center rounded-lg border border-dashed border-slate-300 bg-white text-center text-[10px] text-slate-400">
+            Aviso Indecopi<br />pendiente
+          </div>
+          <p className="text-xs text-slate-400">
+            Conforme a la Ley N° 29571 — Código de Protección y Defensa del Consumidor
+          </p>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="mt-8 flex flex-col gap-3 border-t border-[#E2E8F0] pt-6 text-center text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:text-left">
+          <span>
+            © {new Date().getFullYear()} {EMPRESA.razonSocial} · RUC {EMPRESA.ruc} · No somos agencia de viajes.
+          </span>
+          <span className="flex flex-wrap justify-center gap-4 sm:justify-start">
+            <Link href="/terminos-y-condiciones" className="transition hover:text-[#0B1F3A]">Términos y condiciones</Link>
+            <Link href="/politica-de-privacidad" className="transition hover:text-[#0B1F3A]">Política de privacidad</Link>
+            <Link href="/libro-de-reclamaciones" className="inline-flex items-center gap-1 transition hover:text-[#0B1F3A]">
+              <IconLibro className="h-3 w-3" />
+              Libro de Reclamaciones
+            </Link>
           </span>
         </div>
       </div>
