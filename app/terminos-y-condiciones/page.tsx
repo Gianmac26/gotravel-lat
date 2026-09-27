@@ -89,6 +89,14 @@ export default function TerminosYCondiciones() {
                 proceso consular y acompañamiento durante la preparación de la solicitud. La atención es
                 100 % online.
               </p>
+              <p className="mt-3 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900">
+                <strong>GoViajes actúa exclusivamente como empresa gestora y asesora.</strong> En ningún
+                caso garantizamos la aprobación de una visa ni el resultado de ninguna solicitud. La
+                decisión de conceder o denegar una visa corresponde de forma exclusiva al oficial consular
+                del país de destino, conforme a su propia normativa y criterios de evaluación. Contratar
+                nuestros servicios mejora la preparación de su expediente, pero no asegura un resultado
+                favorable.
+              </p>
             </section>
 
             {/* 2 */}
@@ -169,11 +177,14 @@ export default function TerminosYCondiciones() {
               <ul className="mt-3 list-disc space-y-1.5 pl-5">
                 <li>Plazo de monitoreo activo: <strong>TODO_DIAS</strong> días hábiles desde la contratación.</li>
                 <li>
-                  Política si no se consigue una fecha: <strong>TODO_POLITICA_ADELANTO</strong>.
+                  Si no se consigue una fecha más próxima durante el plazo de monitoreo activo, el servicio
+                  se considera cumplido y <strong>no procede reembolso</strong>, ya que la disponibilidad
+                  de fechas depende exclusivamente del sistema consular.
                 </li>
                 <li>
-                  El servicio se considera cumplido cuando se ha monitoreado activamente durante el plazo
-                  pactado, independientemente del resultado.
+                  <strong>Si GoViajes no realiza el monitoreo activo durante el plazo acordado</strong>{" "}
+                  (incumplimiento de nuestra parte), procede el <strong>reembolso del 100 %</strong>{" "}
+                  del importe abonado por este servicio.
                 </li>
               </ul>
             </section>
@@ -218,17 +229,25 @@ export default function TerminosYCondiciones() {
               <h2 id="h-reembolsos" className="mb-4 text-xl font-bold text-[#0B1F3A]">6. Reembolsos y cancelaciones</h2>
               <ul className="list-disc space-y-2 pl-5">
                 <li>
-                  <strong>Antes de iniciar el trabajo:</strong> reembolso de <strong>TODO_%</strong> del monto pagado.
+                  <strong>Antes de iniciar el trabajo</strong> (sin ningún entregable trabajado): reembolso
+                  del <strong>100 %</strong> del monto pagado.
                 </li>
                 <li>
-                  <strong>Después de iniciado el servicio</strong> (DS-160 trabajado o perfil evaluado):{" "}
-                  <strong>TODO_POLITICA_REEMBOLSO_PARCIAL</strong>.
+                  <strong>Si GoViajes no entrega los entregables acordados</strong> (revisión documental,
+                  formularios trabajados u orientación de entrevista) por causas imputables a GoViajes:
+                  reembolso del <strong>100 %</strong> del monto pagado.
                 </li>
                 <li>
-                  <strong>Una visa negada no da derecho a reembolso</strong> del servicio de asesoría ya prestado.
+                  <strong>Si el servicio fue prestado íntegramente</strong> conforme a lo contratado, la
+                  denegación de la visa por parte del oficial consular <strong>no da derecho a reembolso</strong>.
+                  La decisión consular es ajena al control de GoViajes.
                 </li>
                 <li>
-                  Plazo de devolución: <strong>TODO_DIAS_HABILES</strong> días hábiles, por el mismo medio de pago utilizado.
+                  Plazo de devolución desde la resolución del reclamo:{" "}
+                  <strong>máximo 30 días calendario</strong> si el pago se realizó con tarjeta de crédito
+                  o débito; <strong>máximo 3 días hábiles</strong> si el pago se realizó por transferencia
+                  bancaria o billetera electrónica (Yape, Plin u otras). La devolución se realiza por el
+                  mismo medio de pago utilizado.
                 </li>
                 <li>
                   Antes de solicitar un contracargo bancario, el cliente debe presentar su reclamo a través
