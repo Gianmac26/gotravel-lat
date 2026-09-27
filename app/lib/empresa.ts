@@ -7,7 +7,6 @@ export const EMPRESA = {
   whatsappHref: "https://wa.me/51928672932",
   descriptorCobro: "IZI*MARCALCORP",
 
-  // TODO: completar con datos reales antes de publicar
-  emailAtencion: "TODO_EMAIL_ATENCION",
-  ciudadJurisdiccion: "TODO_CIUDAD",
+  emailAtencion: "hola@goviaje.uk",
+  ciudadJurisdiccion: "Lima (jueces y tribunales del Distrito Judicial de Lima)",
 } as const;

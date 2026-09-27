@@ -260,9 +260,7 @@ export default function TerminosYCondiciones() {
               </p>
               <p className="mt-3">
                 Ejercicio de derechos ARCO (Acceso, Rectificación, Cancelación, Oposición):{" "}
-                {EMPRESA.emailAtencion !== "TODO_EMAIL_ATENCION"
-                  ? EMPRESA.emailAtencion
-                  : <em>correo de atención por configurar</em>}.
+                {EMPRESA.emailAtencion}.
               </p>
               <p className="mt-3">
                 Consulta nuestra{" "}
@@ -317,7 +315,7 @@ export default function TerminosYCondiciones() {
               <p>
                 Estos términos se rigen por las leyes de la República del Perú. Para cualquier controversia,
                 las partes se someten a los tribunales de{" "}
-                <strong>{EMPRESA.ciudadJurisdiccion !== "TODO_CIUDAD" ? EMPRESA.ciudadJurisdiccion : "TODO_CIUDAD"}</strong>,
+                <strong>{EMPRESA.ciudadJurisdiccion}</strong>,
                 con renuncia a cualquier otro fuero que pudiera corresponderles.
               </p>
             </section>

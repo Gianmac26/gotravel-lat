@@ -40,9 +40,7 @@ export default function PoliticaDePrivacidad() {
             </p>
             <p className="mt-3">
               Contacto del responsable:{" "}
-              {EMPRESA.emailAtencion !== "TODO_EMAIL_ATENCION"
-                ? EMPRESA.emailAtencion
-                : <em className="text-amber-700">correo por configurar</em>} ·{" "}
+              {EMPRESA.emailAtencion} ·{" "}
               <a
                 href={`${EMPRESA.whatsappHref}?text=Hola%20Goviaje,%20tengo%20una%20consulta%20sobre%20mi%20privacidad`}
                 target="_blank"
@@ -159,9 +157,7 @@ export default function PoliticaDePrivacidad() {
             </ul>
             <p className="mt-3">
               Para ejercer estos derechos, escríbanos a{" "}
-              {EMPRESA.emailAtencion !== "TODO_EMAIL_ATENCION"
-                ? <a href={`mailto:${EMPRESA.emailAtencion}`} className="font-medium text-[#00A87D] underline-offset-2 hover:underline">{EMPRESA.emailAtencion}</a>
-                : <em className="text-amber-700">correo por configurar</em>}{" "}
+              <a href={`mailto:${EMPRESA.emailAtencion}`} className="font-medium text-[#00A87D] underline-offset-2 hover:underline">{EMPRESA.emailAtencion}</a>{" "}
               o por{" "}
               <a
                 href={`${EMPRESA.whatsappHref}?text=Hola%20Goviaje,%20quiero%20ejercer%20mis%20derechos%20ARCO`}
