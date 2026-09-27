@@ -175,16 +175,21 @@ export default function TerminosYCondiciones() {
                 control de GoViajes.
               </p>
               <ul className="mt-3 list-disc space-y-1.5 pl-5">
-                <li>Plazo de monitoreo activo: <strong>TODO_DIAS</strong> días hábiles desde la contratación.</li>
                 <li>
-                  Si no se consigue una fecha más próxima durante el plazo de monitoreo activo, el servicio
-                  se considera cumplido y <strong>no procede reembolso</strong>, ya que la disponibilidad
-                  de fechas depende exclusivamente del sistema consular.
+                  Plazo de monitoreo activo: <strong>hasta 90 días calendario</strong> desde la
+                  contratación, o hasta conseguir una fecha anterior a la original, lo que ocurra primero.
+                  El servicio se considera cumplido cuando se agenda una fecha más próxima y se envía
+                  la confirmación al cliente.
+                </li>
+                <li>
+                  Si no se consigue una fecha más próxima dentro de los 90 días: el cliente recibe un
+                  <strong> crédito del 100 %</strong> del importe abonado, aplicable a cualquier otro
+                  servicio de GoViajes.
                 </li>
                 <li>
                   <strong>Si GoViajes no realiza el monitoreo activo durante el plazo acordado</strong>{" "}
-                  (incumplimiento de nuestra parte), procede el <strong>reembolso del 100 %</strong>{" "}
-                  del importe abonado por este servicio.
+                  (incumplimiento de nuestra parte): reembolso del <strong>100 %</strong> del importe
+                  abonado, sin condiciones.
                 </li>
               </ul>
             </section>

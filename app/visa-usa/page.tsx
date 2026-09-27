@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
+import PlanesSection from "./PlanesSection";
 
 const WA_URL =
   "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20asesor%C3%ADa%20para%20mi%20visa%20americana";
@@ -143,53 +144,7 @@ export default function VisaUSA() {
         </div>
       </section>
 
-      <section id="planes" className="mx-auto max-w-6xl px-6 py-20 scroll-mt-10">
-        <div className="mb-10 text-center">
-          <p className="font-bold text-[#00A87D]">Planes disponibles</p>
-          <h2 className="mt-2 text-3xl font-black md:text-4xl">
-            Planes para Visa Nueva B1/B2
-          </h2>
-          <p className="mt-4 text-slate-600">
-            Elige el nivel de acompañamiento según tu necesidad.
-          </p>
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-3">
-          <Plan
-            name="Estándar"
-            price="S/250"
-            items={[
-              "Perfilado del cliente",
-              "Llenado DS-160",
-              "Asesoría documental",
-              "Creación de usuario IVR",
-            ]}
-          />
-
-          <Plan
-            name="Preferente"
-            price="S/350"
-            badge="Más solicitado"
-            featured
-            items={[
-              "Todo lo del plan Estándar",
-              "Evaluación de tu caso por un asesor",
-              "Programación de cita consular",
-            ]}
-          />
-
-          <Plan
-            name="Premium"
-            price="S/450"
-            items={[
-              "Todo lo del plan Preferente",
-              "Preparación para entrevista",
-              "Preguntas frecuentes reales",
-              "Descuento en adelanto de cita",
-            ]}
-          />
-        </div>
-      </section>
+      <PlanesSection />
 
       <section className="bg-white py-20">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 md:grid-cols-2">
@@ -321,53 +276,6 @@ function ServiceCard({
   );
 }
 
-function Plan({
-  name,
-  price,
-  items,
-  badge,
-  featured = false,
-}: {
-  name: string;
-  price: string;
-  items: string[];
-  badge?: string;
-  featured?: boolean;
-}) {
-  return (
-    <div
-      className={`relative rounded-3xl p-6 shadow-sm ${
-        featured
-          ? "border-2 border-[#00C896] bg-white shadow-xl"
-          : "border border-slate-200 bg-white"
-      }`}
-    >
-      {badge && (
-        <span className="absolute -top-4 left-6 rounded-full bg-[#00C896] px-4 py-2 text-sm font-bold text-slate-950">
-          {badge}
-        </span>
-      )}
-      <h3 className="text-2xl font-black">{name}</h3>
-      <p className="mt-4 text-4xl font-black text-[#00A87D]">{price}</p>
-      <ul className="mt-6 space-y-3">
-        {items.map((item) => (
-          <li key={item} className="flex gap-3">
-            <span className="text-[#00A87D]">✓</span>
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-      <a
-        href={WA_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-8 inline-flex w-full justify-center rounded-full bg-[#0B1F3A] px-5 py-4 font-bold text-white"
-      >
-        Solicitar por WhatsApp
-      </a>
-    </div>
-  );
-}
 
 function InfoBox({
   title,
