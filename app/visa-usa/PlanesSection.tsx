@@ -4,12 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { PAYMENTS, izipayLinksActive } from "../lib/payments";
 import { EMPRESA } from "../lib/empresa";
 
-// Precios en USD — deben coincidir con los Hosted Buttons de PayPal (payments.ts)
-const USD_PRICES: Record<string, number> = {
-  estandar: 70,
-  preferente: 110,
-  premium: 150,
-};
+// Alias local — fuente de verdad en PAYMENTS.paypal.usdAmounts
+const USD_PRICES = PAYMENTS.paypal.usdAmounts;
 
 const PLANES = [
   {
@@ -74,30 +70,55 @@ type WinWithAnalytics = Window & {
   paypal?: { HostedButtons: (opts: { hostedButtonId: string }) => { render: (selector: string) => void } };
 };
 
+// Singleton para el SDK de PayPal — evita cargas paralelas y race conditions
+let _sdkLoaded = false;
+const _sdkCallbacks = new Set<() => void>();
+function ensurePaypalSdk(onReady: () => void) {
+  if (_sdkLoaded) { onReady(); return; }
+  _sdkCallbacks.add(onReady);
+  if (document.getElementById("paypal-sdk")) {
+    // Script ya en DOM: si PayPal ya cargó (ej. tras HMR) disparar callbacks ahora
+    if ((window as unknown as WinWithAnalytics).paypal) {
+      _sdkLoaded = true;
+      _sdkCallbacks.forEach((cb) => cb());
+      _sdkCallbacks.clear();
+    }
+    // Si no: aún cargando, onload lo drenará
+    return;
+  }
+  const script = document.createElement("script");
+  script.id = "paypal-sdk";
+  script.src = `https://www.paypal.com/sdk/js?client-id=${PAYMENTS.paypal.clientId}&components=hosted-buttons&disable-funding=venmo&currency=USD`;
+  script.onload = () => {
+    _sdkLoaded = true;
+    _sdkCallbacks.forEach((cb) => cb());
+    _sdkCallbacks.clear();
+  };
+  document.head.appendChild(script);
+}
+
 // PayPal lazy-load section — carga el SDK de PayPal solo cuando #planes es visible
-function PayPalSection({ planKey }: { planKey: "estandar" | "preferente" | "premium" }) {
+export function PayPalSection({
+  planKey,
+  instance = "plan",
+}: {
+  planKey: keyof typeof PAYMENTS.paypal.buttonIds;
+  instance?: string; // permite renderizar el mismo botón en varios lugares sin IDs duplicados
+}) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [sdkReady, setSdkReady] = useState(false);
-  const [mounted, setMounted] = useState(false);
 
   const buttonId = PAYMENTS.paypal.buttonIds[planKey];
   const hasBtnId = !buttonId.startsWith("TODO_");
   const usdAmount = USD_PRICES[planKey];
 
   useEffect(() => {
-    setMounted(true);
     if (!hasBtnId) return;
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) return;
         observer.disconnect();
-        if (document.getElementById("paypal-sdk")) { setSdkReady(true); return; }
-        const script = document.createElement("script");
-        script.id = "paypal-sdk";
-        script.src = `https://www.paypal.com/sdk/js?client-id=${PAYMENTS.paypal.clientId}&components=hosted-buttons&disable-funding=venmo&currency=USD`;
-        script.onload = () => setSdkReady(true);
-        document.head.appendChild(script);
+        ensurePaypalSdk(() => setSdkReady(true));
       },
       { rootMargin: "200px" }
     );
@@ -107,25 +128,25 @@ function PayPalSection({ planKey }: { planKey: "estandar" | "preferente" | "prem
 
   useEffect(() => {
     if (!sdkReady || !hasBtnId || !containerRef.current) return;
-    const containerId = `paypal-container-${planKey}`;
+    const containerId = `paypal-container-${planKey}-${instance}`;
     const container = document.getElementById(containerId);
     if (!container || container.dataset.rendered) return;
+    const paypal = (window as unknown as WinWithAnalytics).paypal;
+    if (!paypal) return;
     container.dataset.rendered = "1";
-    (window as unknown as WinWithAnalytics).paypal
-      ?.HostedButtons({ hostedButtonId: buttonId })
-      .render(`#${containerId}`);
-  }, [sdkReady, hasBtnId, buttonId, planKey]);
+    paypal.HostedButtons({ hostedButtonId: buttonId }).render(`#${containerId}`);
+  }, [sdkReady, hasBtnId, buttonId, planKey, instance]);
 
-  if (!mounted || !hasBtnId) return null;
+  if (!hasBtnId) return null;
 
   return (
     <div className="mt-4 border-t border-slate-100 pt-4">
       <p className="mb-2 text-center text-xs font-medium text-slate-500">
-        ¿Pagas desde el extranjero? ~ USD {usdAmount} con PayPal
+        ¿Pagas desde el extranjero? USD {usdAmount} con PayPal
       </p>
       {/* min-height reservado para evitar CLS mientras carga el SDK */}
-      <div ref={containerRef} className="min-h-[48px]">
-        <div id={`paypal-container-${planKey}`} />
+      <div ref={containerRef} className="min-h-[55px]">
+        <div id={`paypal-container-${planKey}-${instance}`} />
       </div>
     </div>
   );
@@ -308,6 +329,7 @@ export default function PlanesSection() {
               Consultar por WhatsApp
             </a>
           )}
+          <PayPalSection planKey="adelanto" instance="addon" />
         </div>
       </div>
     </section>

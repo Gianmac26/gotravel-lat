@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
-import PlanesSection from "./PlanesSection";
+import PlanesSection, { PayPalSection } from "./PlanesSection";
+import { PAYMENTS } from "../lib/payments";
 
 const WA_URL =
   "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20asesor%C3%ADa%20para%20mi%20visa%20americana";
@@ -129,17 +130,19 @@ export default function VisaUSA() {
           />
           <ServiceCard
             title="Renovación de Visa"
-            price="S/350"
+            price={`S/${PAYMENTS.izipay.links.renovacion.amount} · USD ${PAYMENTS.paypal.usdAmounts.renovacion}`}
             text="Acompañamiento para renovar tu visa americana de forma ordenada."
             href={WA_URL}
             cta="Solicitar renovación"
+            paypalKey="renovacion"
           />
           <ServiceCard
             title="Adelanto de Cita"
-            price="USD 150"
+            price={`S/${PAYMENTS.izipay.links.adelanto.amount} · USD ${PAYMENTS.paypal.usdAmounts.adelanto}`}
             text="Monitoreo de oportunidades de adelanto con Agenda VisaBot."
             href={WA_URL}
             cta="Solicitar adelanto"
+            paypalKey="adelanto"
           />
         </div>
       </section>
@@ -242,6 +245,7 @@ function ServiceCard({
   href,
   cta,
   featured = false,
+  paypalKey,
 }: {
   title: string;
   price: string;
@@ -249,6 +253,7 @@ function ServiceCard({
   href: string;
   cta: string;
   featured?: boolean;
+  paypalKey?: "renovacion" | "adelanto";
 }) {
   return (
     <div
@@ -272,6 +277,7 @@ function ServiceCard({
       >
         {cta}
       </a>
+      {paypalKey && <PayPalSection planKey={paypalKey} instance="card" />}
     </div>
   );
 }
