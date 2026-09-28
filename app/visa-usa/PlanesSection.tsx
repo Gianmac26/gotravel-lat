@@ -4,11 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { PAYMENTS, izipayLinksActive } from "../lib/payments";
 import { EMPRESA } from "../lib/empresa";
 
-// Precios aproximados en USD (equivalencia referencial; botones reales desde PayPal)
+// Precios en USD — deben coincidir con los Hosted Buttons de PayPal (payments.ts)
 const USD_PRICES: Record<string, number> = {
-  estandar: 68,
-  preferente: 95,
-  premium: 122,
+  estandar: 70,
+  preferente: 110,
+  premium: 150,
 };
 
 const PLANES = [

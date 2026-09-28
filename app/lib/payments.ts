@@ -41,15 +41,15 @@ export const PAYMENTS = {
   },
   paypal: {
     // Hosted Button (no REST API). clientId "BAA..." solo identifica el comercio al cargar el SDK.
-    clientId: "BAAfRhMjl4IcMXAHY4Py3DjqWHXWBL3EGMsU1rM0BHQvhFUWFf1cqgN4nO3v8o4fGfFGSCNlM5O6LipFWQzJGOvhXW0OZSg7rDXlr",
+    clientId: "BAARx7f9jXhttLnr1zRiClkt_HVzrvkDm34v19WVfZgnDjFjX1Hq3VM8YDTZz8ODAXq3YA6IdF_vcDr1Cw",
     // IDs de los botones alojados en PayPal (configurados desde el panel PayPal)
-    // TODO: sustituir por los IDs reales de cada Hosted Button al crearlos
+    // Creados 27/09/2026 — USD: estándar 70, preferente 110, premium 150, renovación 110, adelanto 150
     buttonIds: {
-      estandar:   "TODO_PAYPAL_BTN_ESTANDAR",
-      preferente: "TODO_PAYPAL_BTN_PREFERENTE",
-      premium:    "TODO_PAYPAL_BTN_PREMIUM",
-      renovacion: "TODO_PAYPAL_BTN_RENOVACION",
-      adelanto:   "TODO_PAYPAL_BTN_ADELANTO",
+      estandar:   "LXNR3V4RJX84U",
+      preferente: "CP8C9FAAMK48U",
+      premium:    "AW9E474GM7HVS",
+      renovacion: "96EGGFKC28BVE",
+      adelanto:   "STG7DBHANW8HE",
     },
   },
 } as const;
