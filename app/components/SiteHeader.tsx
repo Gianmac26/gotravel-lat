@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const WHATSAPP_URL =
   "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20asesor%C3%ADa%20para%20mi%20visa";
 
@@ -26,9 +28,9 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-[#E2E8F0]/80 bg-white/90 backdrop-blur-lg">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <a href="/" className="text-xl font-bold tracking-tight text-[#0B1F3A]" aria-label="Goviaje">
+        <Link href="/" className="text-xl font-bold tracking-tight text-[#0B1F3A]" aria-label="Goviaje">
           Go<span className="text-[#00C896]">viaje</span>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-6 lg:flex">
           {NAV_LINKS.map((link) => (
