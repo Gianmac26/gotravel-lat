@@ -81,7 +81,18 @@ export default function CuantoCuestaDemoraVisa() {
         faqs={FAQS}
         relatedHref="/visa-usa"
         relatedLabel="Ver planes de asesoría Visa USA"
-      />
+      >
+        <nav className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-5">
+          <p className="text-sm font-semibold text-[#0B1F3A]">Artículos relacionados</p>
+          <ul className="mt-3 space-y-2">
+            <li>
+              <a href="/blog/renovacion-visa-americana-sin-entrevista" className="text-sm text-[#008F6B] hover:underline">
+                → Renovación de visa americana sin entrevista en Perú: requisitos vigentes
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </ArticleLayout>
     </>
   );
 }

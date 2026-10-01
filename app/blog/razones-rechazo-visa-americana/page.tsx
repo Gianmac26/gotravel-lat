@@ -95,7 +95,18 @@ export default function RazonesRechazoVisa() {
         relatedLabel="Ver planes de asesoría Visa USA"
         ctaHeading="¿Ya te negaron la visa antes?"
         ctaText="Tenemos un plan específico para casos con rechazo previo. Revisamos qué falló y preparamos tu próxima solicitud con más rigor."
-      />
+      >
+        <nav className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-5">
+          <p className="text-sm font-semibold text-[#0B1F3A]">Si ya te negaron la visa, también te puede servir:</p>
+          <ul className="mt-3 space-y-2">
+            <li>
+              <a href="/blog/me-negaron-la-visa-americana" className="text-sm text-[#008F6B] hover:underline">
+                → Me negaron la visa americana: qué hacer y cómo volver a aplicar
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </ArticleLayout>
     </>
   );
 }

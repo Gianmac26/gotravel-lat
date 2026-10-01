@@ -11,26 +11,34 @@ const WA_URL =
 const CONSULTATION_URL = WA_URL;
 
 export const metadata: Metadata = {
-  title: "Visa Americana B1/B2 — Asesoría Profesional | Goviaje",
+  title: "Asesoría Visa Americana B1/B2 Lima, Perú | Goviaje",
   description:
-    "Asesoría especializada para tu visa de turismo a Estados Unidos (B1/B2): primera solicitud, renovación y rechazos previos. Evaluación de perfil y revisión documental por un asesor especializado. Más de 10 años de experiencia, 100% online.",
+    "Asesoría para tu visa americana B1/B2 desde Lima y Perú. Primera solicitud, renovación y rechazos previos. Evalúa tu caso gratis. +10 años, 100% online.",
   alternates: { canonical: "https://goviaje.uk/visa-usa" },
 };
 
 const USA_FAQS = [
   {
-    q: "¿Garantizan la aprobación?",
-    a: "No. Ninguna empresa puede garantizar aprobación. Nuestro trabajo es ayudarte a preparar mejor tu solicitud.",
+    q: "¿Desde dónde atienden y qué experiencia tienen con Lima, Perú?",
+    a: "Atendemos 100% online a clientes de Perú, Colombia, México y Ecuador. Tenemos más de 10 años acompañando solicitudes ante la Embajada de EE.UU. en Lima: primera solicitud, renovación y casos con rechazo previo.",
   },
   {
-    q: "¿Atienden 100% online?",
-    a: "Sí. Podemos acompañarte de forma online desde Perú, Colombia, México, Ecuador u otros países.",
+    q: "¿Qué diferencia hace contratar una asesoría vs. tramitar la visa solo?",
+    a: "Una asesoría profesional te ayuda a identificar riesgos antes de aplicar, completar correctamente el DS-160 y prepararte para la entrevista con base en tu perfil real. No garantizamos aprobación — la decisión es del consulado — pero sí reducimos los errores evitables que llevan a rechazos innecesarios.",
   },
   {
-    q: "¿Pueden adelantar mi cita?",
-    a: "Sí, siempre que exista disponibilidad en el sistema consular.",
+    q: "¿Garantizan la aprobación de la visa?",
+    a: "No. Ninguna empresa puede garantizar la aprobación de una visa. La decisión es exclusiva del oficial consular. Nuestro trabajo es preparar el mejor expediente posible según tu situación.",
   },
-] as const;
+  {
+    q: "¿Ayudan con renovaciones y casos con rechazo previo?",
+    a: "Sí. La renovación de visa americana y los casos con rechazo previo son parte de nuestros servicios. En cada caso evaluamos el perfil antes de iniciar cualquier trámite.",
+  },
+  {
+    q: "¿Pueden adelantar mi cita consular?",
+    a: "Sí, monitoreamos oportunidades de adelanto mediante Agenda VisaBot, siempre que exista disponibilidad real en el sistema consular. No garantizamos fechas ni ofrecemos citas al margen del sistema oficial.",
+  },
+];
 
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -48,8 +56,9 @@ const serviceJsonLd = {
   serviceType: "Asesoría para visa americana de turismo B1/B2",
   provider: { "@type": "Organization", name: "Goviaje", url: "https://goviaje.uk" },
   areaServed: ["PE", "CO", "MX", "EC"],
+  serviceArea: { "@type": "City", name: "Lima", containedIn: { "@type": "Country", name: "Perú" } },
   description:
-    "Asesoría profesional para la solicitud de visa americana de turismo B1/B2: perfilado previo, formulario DS-160, preparación de entrevista consular y renovación.",
+    "Asesoría profesional para la solicitud de visa americana de turismo B1/B2 desde Lima y Perú: evaluación de perfil, formulario DS-160, preparación de entrevista consular, renovación y casos con rechazo previo.",
 };
 
 export default function VisaUSA() {
@@ -77,12 +86,13 @@ export default function VisaUSA() {
             </span>
 
             <h1 className="mt-6 text-4xl font-black leading-tight md:text-6xl">
-              Prepara tu visa americana con asesoría profesional
+              Asesoría profesional para tu visa americana en Lima, Perú
             </h1>
 
             <p className="mt-6 text-lg leading-8 text-slate-300">
-              Más de 10 años ayudando a viajeros a aplicar con mayor claridad,
-              mejor preparación y acompañamiento 100% online.
+              Más de 10 años acompañando solicitudes de visa B1/B2 ante la Embajada de EE.UU.
+              en Lima: primera solicitud, renovación y casos con rechazo previo. Evaluación
+              previa de tu caso incluida, 100% online.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -189,20 +199,7 @@ export default function VisaUSA() {
         </h2>
 
         <div className="mt-10 space-y-4">
-          {[
-            [
-              "¿Garantizan la aprobación?",
-              "No. Ninguna empresa puede garantizar aprobación. Nuestro trabajo es ayudarte a preparar mejor tu solicitud.",
-            ],
-            [
-              "¿Atienden 100% online?",
-              "Sí. Podemos acompañarte de forma online desde Perú, Colombia, México, Ecuador u otros países.",
-            ],
-            [
-              "¿Pueden adelantar mi cita?",
-              "Sí, siempre que exista disponibilidad en el sistema consular.",
-            ],
-          ].map(([q, a]) => (
+          {USA_FAQS.map(({ q, a }) => (
             <div key={q} className="rounded-2xl bg-white p-6 shadow-sm">
               <h3 className="font-bold">{q}</h3>
               <p className="mt-2 text-slate-600">{a}</p>
