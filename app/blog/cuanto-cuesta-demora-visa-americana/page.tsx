@@ -90,6 +90,11 @@ export default function CuantoCuestaDemoraVisa() {
                 → Renovación de visa americana sin entrevista en Perú: requisitos vigentes
               </a>
             </li>
+            <li>
+              <a href="/blog/adelantar-cita-visa-americana-peru" className="text-sm text-[#008F6B] hover:underline">
+                → Cómo adelantar tu cita de visa americana en Perú
+              </a>
+            </li>
           </ul>
         </nav>
       </ArticleLayout>
