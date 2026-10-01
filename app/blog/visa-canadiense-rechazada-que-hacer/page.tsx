@@ -64,12 +64,12 @@ const SECTIONS = [
         type: "list" as const,
         items: [
           "Notas del oficial en la carta de rechazo: desde el 29 de julio de 2025, IRCC incluye automáticamente un resumen de las razones del oficial en las cartas de rechazo de visas de turismo. Si recibiste una carta de rechazo después de esa fecha, revísala con atención — es el primer lugar donde buscar.",
-          "GCMS notes vía ATIP: las notas del Sistema Global de Gestión de Casos (GCMS) contienen el registro interno completo de tu solicitud: los comentarios detallados del oficial, los códigos de actividad, el historial de revisión documental y otros datos internos que no aparecen en la carta estándar. Para pedirlas, ingresa a la plataforma ATIP Online en el sitio de IRCC, paga los $5 CAD de tarifa y espera entre 30 días y 12 semanas. Son la fuente más completa de información cuando quieres saber exactamente qué pesó negativamente en tu perfil.",
+          "GCMS notes vía ATIP: las notas del Sistema Global de Gestión de Casos (GCMS) son el registro interno completo de tu solicitud — comentarios del oficial, códigos de actividad, historial de revisión documental y datos que no aparecen en la carta. La tarifa es CAD $5 y el plazo oficial es 30 días (en la práctica, 6 a 12 semanas). Requisito importante: el gobierno de Canadá solo acepta solicitudes ATIP de ciudadanos canadienses, residentes permanentes o personas y empresas físicamente en Canadá. Si resides en Perú, necesitas que alguien en Canadá la presente por ti con tu consentimiento (formulario IMM 5744 de IRCC). Opciones: un familiar o amigo en Canadá, o un representante autorizado. Si no tienes a nadie allá, escríbenos y evaluamos tu caso.",
         ],
       },
       {
         type: "callout" as const,
-        text: "Verificado: octubre 2026. La inclusión automática de notas del oficial en cartas de rechazo entró en vigor el 29 de julio de 2025 (fuente: ircc.canada.ca). Las GCMS notes vía ATIP siguen disponibles para quienes necesitan información más detallada. Fuente de tarifas y procedimientos: ircc.canada.ca.",
+        text: "Verificado: octubre 2026. La inclusión de notas del oficial en cartas de rechazo está documentada en la página oficial de IRCC 'Explaining application refusals: Officer decision note' (canada.ca). Las GCMS notes vía ATIP siguen disponibles pero requieren un representante en Canadá si el solicitante reside fuera del país (ver fuente oficial de ATIP enlazada al final del artículo). Tarifas: ircc.canada.ca.",
       },
     ],
   },
@@ -169,7 +169,11 @@ const FAQS = [
   },
   {
     q: "¿Cómo pido las GCMS notes para saber por qué me rechazaron?",
-    a: "Puedes solicitarlas a través de la plataforma ATIP Online del gobierno de Canadá (atip.ircc.gc.ca). La tarifa es CAD $5. El plazo oficial es 30 días, aunque en la práctica puede tardar entre 6 y 12 semanas. Si tu rechazo fue después del 29 de julio de 2025, revisa primero la carta de rechazo — IRCC ahora incluye un resumen de las notas del oficial automáticamente.",
+    a: "A través de la plataforma ATIP Online de IRCC (atip.ircc.gc.ca). La tarifa es CAD $5 y el plazo oficial es 30 días, aunque en la práctica puede demorar entre 6 y 12 semanas. Importante: solo pueden presentar la solicitud directamente ciudadanos canadienses, residentes permanentes o personas y empresas dentro de Canadá. Si estás en Perú, necesitas un representante en Canadá (ver la pregunta siguiente). Si tu rechazo fue posterior a julio de 2025, revisa primero la carta de rechazo — en muchos casos recientes IRCC ya incluye las notas del oficial automáticamente.",
+  },
+  {
+    q: "¿Puedo pedir mis notas GCMS desde Perú?",
+    a: "No directamente. El gobierno de Canadá solo acepta solicitudes ATIP de ciudadanos canadienses, residentes permanentes o personas y empresas que estén físicamente en Canadá. Si resides en Perú, necesitas que alguien con presencia en Canadá presente la solicitud en tu nombre, con tu consentimiento mediante el formulario IMM 5744 de IRCC. Las opciones más comunes son un familiar o amigo en Canadá, o un representante autorizado. Antes de ir por esa vía, revisa si tu carta de rechazo ya incluye las notas del oficial — para rechazos recientes, en muchos casos ya vienen adjuntas.",
   },
   {
     q: "¿El rechazo de la visa canadiense afecta una futura solicitud de visa americana?",
@@ -239,6 +243,26 @@ export default function VisaCanadienzeRechazadaQueHacer() {
           <ul className="mt-2 space-y-1 text-slate-600">
             <li>
               <a
+                href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/transparency/officer-decision-notes.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#008F6B] hover:underline"
+              >
+                → Canada.ca: Notas del oficial en cartas de rechazo (official)
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/transparency/access-information-privacy/requests-information-act.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#008F6B] hover:underline"
+              >
+                → Canada.ca: Requisitos para solicitar ATIP / GCMS notes
+              </a>
+            </li>
+            <li>
+              <a
                 href="https://ircc.canada.ca/english/helpcentre/answer.asp?qnum=1485&top=16"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -254,7 +278,7 @@ export default function VisaCanadienzeRechazadaQueHacer() {
                 rel="noopener noreferrer"
                 className="text-[#008F6B] hover:underline"
               >
-                → IRCC: Lista de tarifas vigentes (fees.asp)
+                → IRCC: Tarifas vigentes (fees.asp)
               </a>
             </li>
           </ul>
