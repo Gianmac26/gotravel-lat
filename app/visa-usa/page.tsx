@@ -182,7 +182,7 @@ export default function VisaUSA() {
             title="Adelanto de cita"
             text="Monitoreamos la disponibilidad de citas en el sistema consular y te avisamos cuando aparece una fecha más cercana. No garantizamos una fecha específica."
             items={[
-              "Monitoreo continuo de disponibilidad",
+              "Un asesor revisa la disponibilidad por ti",
               "Búsqueda de fechas cercanas",
               "Proceso supervisado",
               "Sujeto a disponibilidad oficial",

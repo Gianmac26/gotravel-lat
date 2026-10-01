@@ -42,9 +42,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/blog/cuanto-cuesta-demora-visa-americana`,
-      lastModified: new Date("2026-07-30"),
+      lastModified: new Date("2026-10-01"),
       changeFrequency: "monthly",
       priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/solvencia-economica-visa-americana`,
+      lastModified: new Date("2026-10-01"),
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
     {
       url: `${BASE_URL}/blog/tramitar-visa-americana-sola-o-con-asesoria`,
