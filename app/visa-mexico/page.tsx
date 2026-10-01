@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   title: "Visa de Turismo a México desde Perú — Asesoría Profesional | Goviaje",
   description:
     "Desde 2024 México exige visa a los peruanos para turismo. Asesoría profesional para tu visa mexicana: documentación, solvencia económica y preparación de entrevista. Más de 10 años de experiencia, 100% online.",
+  alternates: { canonical: "https://goviaje.uk/visa-mexico" },
 };
 
 type Plan = {

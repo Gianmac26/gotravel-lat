@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   title: "Visa Americana B1/B2 — Asesoría Profesional | Goviaje",
   description:
     "Asesoría especializada para tu visa de turismo a Estados Unidos (B1/B2): primera solicitud, renovación y rechazos previos. Evaluación de perfil y revisión documental por un asesor especializado. Más de 10 años de experiencia, 100% online.",
+  alternates: { canonical: "https://goviaje.uk/visa-usa" },
 };
 
 const USA_FAQS = [
@@ -282,7 +283,7 @@ function ServiceCard({
           Servicio principal
         </span>
       )}
-      <h3 className="mt-4 text-2xl font-black">{title}</h3>
+      <h2 className="mt-4 text-2xl font-black">{title}</h2>
       <p className="mt-3 text-3xl font-black">{price}</p>
       <p className="mt-4 opacity-80">{text}</p>
 
@@ -342,7 +343,7 @@ function InfoBox({
 }) {
   return (
     <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8">
-      <h3 className="text-3xl font-black">{title}</h3>
+      <h2 className="text-3xl font-black">{title}</h2>
       <p className="mt-4 text-slate-600">{text}</p>
 
       <div className="mt-6 grid gap-3 sm:grid-cols-2">

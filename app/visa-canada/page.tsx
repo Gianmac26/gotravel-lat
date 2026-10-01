@@ -178,6 +178,7 @@ export const metadata: Metadata = {
   title: "Visa de Turismo a Canadá — Asesoría Profesional | Goviaje",
   description:
     "Gestiona tu visa de turismo a Canadá con asesoría profesional ante el IRCC. Sin entrevista consular, expediente 100% en línea. Más de 10 años acompañando solicitudes.",
+  alternates: { canonical: "https://goviaje.uk/visa-canada" },
 };
 
 const faqJsonLd = {

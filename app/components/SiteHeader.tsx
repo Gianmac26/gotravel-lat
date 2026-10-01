@@ -29,7 +29,7 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-[#E2E8F0]/80 bg-white/90 backdrop-blur-lg">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="text-xl font-bold tracking-tight text-[#0B1F3A]" aria-label="Goviaje">
-          Go<span className="text-[#00C896]">viaje</span>
+          Go<span className="text-[#008F6B]">viaje</span>
         </Link>
 
         <nav className="flex items-center gap-6 max-lg:hidden">
