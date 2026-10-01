@@ -11,7 +11,7 @@ const WA_URL =
 const CONSULTATION_URL = WA_URL;
 
 export const metadata: Metadata = {
-  title: "Asesoría Visa Americana B1/B2 Lima, Perú | Goviaje",
+  title: "Asesoría Visa Americana B1/B2 Lima, Perú",
   description:
     "Asesoría para tu visa americana B1/B2 desde Lima y Perú. Primera solicitud, renovación y rechazos previos. Evalúa tu caso gratis. +10 años, 100% online.",
   alternates: { canonical: "https://goviaje.uk/visa-usa" },

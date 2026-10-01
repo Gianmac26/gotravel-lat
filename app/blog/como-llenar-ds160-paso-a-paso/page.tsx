@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ArticleLayout from "../../components/ArticleLayout";
 
 export const metadata: Metadata = {
-  title: "Cómo llenar el DS-160 paso a paso (2026) — Guía completa | Goviaje",
+  title: "Cómo llenar el DS-160 paso a paso (2026)",
   description:
     "Guía paso a paso para completar el formulario DS-160 de visa americana sin errores: campos críticos, fotos, preguntas difíciles y errores más comunes a evitar.",
   alternates: { canonical: "https://goviaje.uk/blog/como-llenar-ds160-paso-a-paso" },

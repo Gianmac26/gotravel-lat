@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ArticleLayout from "../../components/ArticleLayout";
 
 export const metadata: Metadata = {
-  title: "Visa Mexicana para Peruanos: Guía Completa 2026 | Goviaje",
+  title: "Visa Mexicana para Peruanos: Guía Completa 2026",
   description:
     "Desde 2024 los peruanos necesitan visa para entrar a México por turismo. Requisitos, costo, excepciones y cómo tramitarla.",
   alternates: { canonical: "https://goviaje.uk/blog/visa-mexico-peruanos-requisitos" },

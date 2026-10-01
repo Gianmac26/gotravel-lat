@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ArticleLayout from "../../components/ArticleLayout";
 
 export const metadata: Metadata = {
-  title: "Preguntas en la entrevista de visa americana B1/B2 (2026) | Goviaje",
+  title: "Preguntas entrevista visa americana B1/B2 (2026)",
   description:
     "Las preguntas más comunes en la entrevista consular de la visa americana, qué evalúa realmente el oficial y cómo prepararte para responder con seguridad.",
   alternates: { canonical: "https://goviaje.uk/blog/preguntas-entrevista-visa-americana" },

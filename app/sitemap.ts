@@ -47,6 +47,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${BASE_URL}/blog/visa-canadiense-rechazada-que-hacer`,
+      lastModified: new Date("2026-10-01"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${BASE_URL}/blog/carta-invitacion-arraigo-visa-canada`,
       lastModified: new Date("2026-07-30"),
       changeFrequency: "monthly",

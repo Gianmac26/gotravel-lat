@@ -5,7 +5,7 @@ import SiteFooter from "../components/SiteFooter";
 import { EMPRESA } from "../lib/empresa";
 
 export const metadata: Metadata = {
-  title: "Política de Privacidad | Goviaje",
+  title: "Política de Privacidad",
   description:
     "Política de privacidad de GoViajes conforme a la Ley N° 29733 (Ley de Protección de Datos Personales del Perú). Conozca cómo recopilamos, usamos y protegemos su información.",
   robots: { index: true, follow: true },

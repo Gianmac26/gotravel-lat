@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ArticleLayout from "../../components/ArticleLayout";
 
 export const metadata: Metadata = {
-  title: "¿Cuánto Cuesta y Cuánto Demora la Visa Americana? (2026) | Goviaje",
+  title: "Visa Americana: costo y tiempo de espera (2026)",
   description:
     "Costos oficiales, tiempos de espera para la cita y plazos recomendados para tramitar tu visa de turismo a Estados Unidos en 2026.",
   alternates: { canonical: "https://goviaje.uk/blog/cuanto-cuesta-demora-visa-americana" },

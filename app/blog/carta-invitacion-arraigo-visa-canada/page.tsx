@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ArticleLayout from "../../components/ArticleLayout";
 
 export const metadata: Metadata = {
-  title: "Carta de Invitación y Arraigo: Qué Evalúa Canadá en tu Visa de Turista | Goviaje",
+  title: "Carta de Invitación y Arraigo para Visa Canadá",
   description:
     "Cómo funciona la carta de invitación y qué es el arraigo para la visa de turista TRV a Canadá desde Perú, Colombia, México y Ecuador.",
   alternates: { canonical: "https://goviaje.uk/blog/carta-invitacion-arraigo-visa-canada" },
@@ -96,7 +96,18 @@ export default function CartaInvitacionArraigoCanada() {
         faqs={FAQS}
         relatedHref="/visa-canada"
         relatedLabel="Ver asesoría Visa Canadá"
-      />
+      >
+        <nav className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-5">
+          <p className="text-sm font-semibold text-[#0B1F3A]">Artículos relacionados</p>
+          <ul className="mt-3 space-y-2">
+            <li>
+              <a href="/blog/visa-canadiense-rechazada-que-hacer" className="text-sm text-[#008F6B] hover:underline">
+                → Visa canadiense rechazada: qué hacer y cómo volver a aplicar
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </ArticleLayout>
     </>
   );
 }

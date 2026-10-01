@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ArticleLayout from "../../components/ArticleLayout";
 
 export const metadata: Metadata = {
-  title: "¿Cuánto cuesta y cuánto demora la visa de Canadá? (2026) | Goviaje",
+  title: "Visa Canadá: costo y tiempo de espera (2026)",
   description:
     "Costos reales de la visa canadiense de turismo (TRV) para peruanos, colombianos, mexicanos y ecuatorianos: tasa IRCC, biométricos, tiempos de procesamiento y qué esperar.",
   alternates: { canonical: "https://goviaje.uk/blog/cuanto-cuesta-demora-visa-canada" },

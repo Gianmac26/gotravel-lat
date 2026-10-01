@@ -3,7 +3,7 @@ import Link from "next/link";
 import ArticleLayout from "../../components/ArticleLayout";
 
 export const metadata: Metadata = {
-  title: "Me negaron la visa americana: qué hacer (2026) | Goviaje",
+  title: "Me negaron la visa americana: qué hacer (2026)",
   description:
     "Si te negaron la visa americana, no es el fin. Qué significa el rechazo bajo el artículo 214(b), cuándo puedes volver a aplicar y cómo preparar mejor tu caso.",
   alternates: { canonical: "https://goviaje.uk/blog/me-negaron-la-visa-americana" },

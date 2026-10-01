@@ -3,7 +3,7 @@ import Link from "next/link";
 import ArticleLayout from "../../components/ArticleLayout";
 
 export const metadata: Metadata = {
-  title: "Renovación visa americana sin entrevista en Perú | Goviaje",
+  title: "Renovación visa americana sin entrevista en Perú",
   description:
     "Requisitos vigentes para renovar tu visa americana sin entrevista desde Perú. La ventana cambió en 2025: ahora son 12 meses, no 48. Verifica si calificas.",
   alternates: { canonical: "https://goviaje.uk/blog/renovacion-visa-americana-sin-entrevista" },

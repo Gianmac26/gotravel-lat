@@ -5,7 +5,7 @@ import SiteFooter from "../components/SiteFooter";
 import { EMPRESA } from "../lib/empresa";
 
 export const metadata: Metadata = {
-  title: "Términos y Condiciones | Goviaje",
+  title: "Términos y Condiciones",
   description:
     "Términos y condiciones del servicio de asesoría para visas de turismo de GoViajes (AMG COMUNICA S.A.C.). Planes, pagos, reembolsos y obligaciones de las partes.",
   robots: { index: true, follow: true },

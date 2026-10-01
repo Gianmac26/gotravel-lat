@@ -4,7 +4,7 @@ import SiteFooter from "../components/SiteFooter";
 import FormReclamacion from "./FormReclamacion";
 
 export const metadata: Metadata = {
-  title: "Libro de Reclamaciones | Goviaje",
+  title: "Libro de Reclamaciones",
   description:
     "Libro de Reclamaciones virtual de GoViajes, conforme al Código de Protección y Defensa del Consumidor (Ley N° 29571). Registra tu reclamo o queja de forma online.",
   robots: { index: true, follow: true },

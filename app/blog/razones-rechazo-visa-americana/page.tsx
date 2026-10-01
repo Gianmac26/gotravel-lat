@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ArticleLayout from "../../components/ArticleLayout";
 
 export const metadata: Metadata = {
-  title: "Por qué Niegan la Visa Americana: 5 Razones Comunes (2026) | Goviaje",
+  title: "Por qué niegan la visa americana: 5 razones (2026)",
   description:
     "Las razones más frecuentes de rechazo de la visa americana B1/B2 y cómo preparar mejor tu solicitud para evitarlas.",
   alternates: { canonical: "https://goviaje.uk/blog/razones-rechazo-visa-americana" },

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ArticleLayout from "../../components/ArticleLayout";
 
 export const metadata: Metadata = {
-  title: "Requisitos para la Visa Americana de Turismo 2026 (Perú, Colombia, México, Ecuador) | Goviaje",
+  title: "Requisitos Visa Americana de Turismo B1/B2 (2026)",
   description:
     "Guía actualizada de requisitos, costos y tiempos para la visa de turismo B1/B2 a Estados Unidos desde Perú, Colombia, México y Ecuador.",
   alternates: { canonical: "https://goviaje.uk/blog/requisitos-visa-americana-turismo" },
