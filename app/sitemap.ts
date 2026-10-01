@@ -47,6 +47,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${BASE_URL}/blog/tramitar-visa-americana-sola-o-con-asesoria`,
+      lastModified: new Date("2026-10-01"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${BASE_URL}/blog/adelantar-cita-visa-americana-peru`,
       lastModified: new Date("2026-10-01"),
       changeFrequency: "monthly",

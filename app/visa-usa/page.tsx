@@ -36,7 +36,7 @@ const USA_FAQS = [
   },
   {
     q: "¿Pueden adelantar mi cita consular?",
-    a: "Sí, monitoreamos oportunidades de adelanto mediante Agenda VisaBot, siempre que exista disponibilidad real en el sistema consular. No garantizamos fechas ni ofrecemos citas al margen del sistema oficial.",
+    a: "Sí, monitoreamos la disponibilidad de citas y te avisamos cuando aparece una fecha más cercana. No garantizamos una fecha específica — la disponibilidad depende exclusivamente del sistema consular.",
   },
 ];
 
@@ -152,7 +152,7 @@ export default function VisaUSA() {
           <ServiceCard
             title="Adelanto de Cita"
             price={`S/${PAYMENTS.izipay.links.adelanto.amount} · USD ${PAYMENTS.paypal.usdAmounts.adelanto}`}
-            text="Monitoreo de oportunidades de adelanto con Agenda VisaBot."
+            text="Monitoreo de disponibilidad para adelantar tu cita."
             href={WA_URL}
             cta="Solicitar adelanto"
             paypalKey="adelanto"
@@ -179,16 +179,17 @@ export default function VisaUSA() {
           />
 
           <InfoBox
-            title="Adelanto con Agenda VisaBot"
-            text="Gracias a nuestra alianza tecnológica, monitoreamos oportunidades de adelanto de cita cuando exista disponibilidad consular."
+            title="Adelanto de cita"
+            text="Monitoreamos la disponibilidad de citas en el sistema consular y te avisamos cuando aparece una fecha más cercana. No garantizamos una fecha específica."
             items={[
-              "Monitoreo automatizado",
+              "Monitoreo continuo de disponibilidad",
               "Búsqueda de fechas cercanas",
               "Proceso supervisado",
               "Sujeto a disponibilidad oficial",
             ]}
             button="Consultar adelanto"
             href={WA_URL}
+            blogHref="/blog/adelantar-cita-visa-americana-peru"
           />
         </div>
       </section>
@@ -331,12 +332,14 @@ function InfoBox({
   items,
   button,
   href,
+  blogHref,
 }: {
   title: string;
   text: string;
   items: string[];
   button: string;
   href: string;
+  blogHref?: string;
 }) {
   return (
     <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8">
@@ -358,6 +361,12 @@ function InfoBox({
       >
         {button}
       </a>
+
+      {blogHref && (
+        <a href={blogHref} className="mt-3 block text-center text-sm text-[#008F6B] hover:underline">
+          → Cómo adelantar tu cita: opciones y qué evitar
+        </a>
+      )}
     </div>
   );
 }
