@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import WALink from "./WALink";
 import { EMPRESA } from "../lib/empresa";
 
 const WHATSAPP_URL =
@@ -78,7 +79,7 @@ export default function SiteFooter() {
                 <Link href="/#faq" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">FAQ</Link>
               </li>
               <li>
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Contacto</a>
+                <WALink href={WHATSAPP_URL} cta_position="bottom" service="auto" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Contacto</WALink>
               </li>
               <li>
                 <Link href="/terminos-y-condiciones" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Términos y condiciones</Link>

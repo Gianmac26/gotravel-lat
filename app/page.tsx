@@ -6,6 +6,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteFooter from "./components/SiteFooter";
+import WALink, { type WAService, type WAPosition } from "./components/WALink";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://goviaje.uk" },
@@ -252,21 +253,25 @@ function BtnWhatsApp({
   href,
   children,
   className = "",
+  cta_position = "middle",
+  service = "general",
 }: {
   href: string;
   children: React.ReactNode;
   className?: string;
+  cta_position?: WAPosition;
+  service?: WAService;
 }) {
   return (
-    <a
+    <WALink
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+      cta_position={cta_position}
+      service={service}
       className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#1fb855] sm:text-base ${className}`}
     >
       <IconWhatsApp className="h-5 w-5" />
       {children}
-    </a>
+    </WALink>
   );
 }
 
@@ -275,17 +280,29 @@ function BtnOutline({
   children,
   external = false,
   className = "",
+  waPosition,
+  waService,
 }: {
   href: string;
   children: React.ReactNode;
   external?: boolean;
   className?: string;
+  waPosition?: WAPosition;
+  waService?: WAService;
 }) {
+  const cls = `inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#0B1F3A]/20 bg-white px-6 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:border-[#0B1F3A]/40 hover:shadow-sm sm:text-base ${className}`;
+  if (waPosition) {
+    return (
+      <WALink href={href} cta_position={waPosition} service={waService ?? "general"} className={cls}>
+        {children}
+      </WALink>
+    );
+  }
   return (
     <a
       href={href}
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#0B1F3A]/20 bg-white px-6 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:border-[#0B1F3A]/40 hover:shadow-sm sm:text-base ${className}`}
+      className={cls}
     >
       {children}
     </a>
@@ -360,20 +377,21 @@ export default function Home() {
           </Link>
 
           <nav className="hidden items-center gap-6 lg:flex">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                {...("external" in link && link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="text-sm font-medium text-slate-600 transition hover:text-[#0B1F3A]"
-              >
-                {link.label}
-              </a>
-            ))}
+            {NAV_LINKS.map((link) =>
+              "external" in link && link.external ? (
+                <WALink key={link.href} href={link.href} cta_position="top" service="auto" className="text-sm font-medium text-slate-600 transition hover:text-[#0B1F3A]">
+                  {link.label}
+                </WALink>
+              ) : (
+                <a key={link.href} href={link.href} className="text-sm font-medium text-slate-600 transition hover:text-[#0B1F3A]">
+                  {link.label}
+                </a>
+              )
+            )}
           </nav>
 
           <div className="flex items-center gap-2">
-            <BtnWhatsApp href={WHATSAPP_URL} className="!hidden !px-4 !py-2 !text-sm sm:!inline-flex">
+            <BtnWhatsApp href={WHATSAPP_URL} cta_position="top" service="general" className="!hidden !px-4 !py-2 !text-sm sm:!inline-flex">
               WhatsApp
             </BtnWhatsApp>
 
@@ -385,17 +403,18 @@ export default function Home() {
                 <span className="sr-only">Abrir menú</span>
               </summary>
               <nav className="absolute right-0 mt-2 w-60 rounded-2xl border border-[#E2E8F0] bg-white p-3 shadow-xl">
-                {NAV_LINKS.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    {...("external" in link && link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-[#F1F5F9]"
-                  >
-                    {link.label}
-                  </a>
-                ))}
-                <BtnWhatsApp href={WHATSAPP_URL} className="mt-2 w-full !text-sm">
+                {NAV_LINKS.map((link) =>
+                  "external" in link && link.external ? (
+                    <WALink key={link.href} href={link.href} cta_position="top" service="auto" className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-[#F1F5F9]">
+                      {link.label}
+                    </WALink>
+                  ) : (
+                    <a key={link.href} href={link.href} className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-[#F1F5F9]">
+                      {link.label}
+                    </a>
+                  )
+                )}
+                <BtnWhatsApp href={WHATSAPP_URL} cta_position="top" service="general" className="mt-2 w-full !text-sm">
                   WhatsApp
                 </BtnWhatsApp>
               </nav>
@@ -431,15 +450,15 @@ export default function Home() {
                 Evalúa tu caso ahora
                 <IconArrow />
               </BtnPrimary>
-              <a
+              <WALink
                 href={WHATSAPP_HERO_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                cta_position="top"
+                service="general"
                 className="inline-flex min-h-12 w-full max-w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10 sm:w-auto sm:text-base"
               >
                 <IconWhatsApp className="h-5 w-5 shrink-0 text-[#25D366]" />
                 <span className="truncate">Hablar por WhatsApp</span>
-              </a>
+              </WALink>
             </div>
 
             <div className="mt-5 grid max-w-[calc(100vw-2rem)] gap-2 min-[375px]:grid-cols-3 sm:mt-8 sm:max-w-3xl sm:gap-3">
@@ -510,7 +529,7 @@ export default function Home() {
                 Agenda tu asesoría gratuita
                 <IconArrow />
               </BtnPrimary>
-              <BtnWhatsApp href={WHATSAPP_URL} className="w-full sm:w-auto">
+              <BtnWhatsApp href={WHATSAPP_URL} cta_position="middle" service="general" className="w-full sm:w-auto">
                 Hablar por WhatsApp
               </BtnWhatsApp>
             </div>
@@ -580,7 +599,7 @@ export default function Home() {
                     Agendar asesoría gratuita
                     <IconArrow />
                   </BtnPrimary>
-                  <BtnWhatsApp href={WHATSAPP_USA_URL} className="w-full sm:w-auto">
+                  <BtnWhatsApp href={WHATSAPP_USA_URL} cta_position="middle" service="visa-usa" className="w-full sm:w-auto">
                     Asesoría por WhatsApp
                   </BtnWhatsApp>
                 </div>
@@ -641,7 +660,7 @@ export default function Home() {
                 </p>
                 <FeatureList items={CANADA_FEATURES} />
                 <div className="mt-8">
-                  <BtnWhatsApp href={WHATSAPP_CANADA_URL} className="w-full sm:w-auto">
+                  <BtnWhatsApp href={WHATSAPP_CANADA_URL} cta_position="middle" service="visa-canada" className="w-full sm:w-auto">
                     Consultar visa Canadá
                   </BtnWhatsApp>
                 </div>
@@ -666,7 +685,7 @@ export default function Home() {
                     Ver planes desde S/180
                     <IconArrow />
                   </BtnPrimary>
-                  <BtnWhatsApp href={WHATSAPP_MEXICO_URL} className="w-full sm:w-auto">
+                  <BtnWhatsApp href={WHATSAPP_MEXICO_URL} cta_position="middle" service="visa-mexico" className="w-full sm:w-auto">
                     Consultar visa México
                   </BtnWhatsApp>
                 </div>
@@ -714,7 +733,7 @@ export default function Home() {
                   Agendar asesoría gratuita
                   <IconArrow />
                 </BtnPrimary>
-                <BtnWhatsApp href={WHATSAPP_URL}>
+                <BtnWhatsApp href={WHATSAPP_URL} cta_position="middle" service="general">
                   Hablar por WhatsApp
                 </BtnWhatsApp>
               </div>
@@ -740,7 +759,7 @@ export default function Home() {
                 <p className="mt-4 rounded-xl border border-amber-200/80 bg-amber-50 px-4 py-3 text-xs leading-relaxed text-amber-900 sm:text-sm">
                   El adelanto depende exclusivamente de la disponibilidad de citas en el sistema oficial.
                 </p>
-                <BtnOutline href={WHATSAPP_CITA_URL} external className="mt-8 w-full sm:w-auto">
+                <BtnOutline href={WHATSAPP_CITA_URL} external waPosition="middle" waService="visa-usa" className="mt-8 w-full sm:w-auto">
                   Consultar disponibilidad
                   <IconArrow />
                 </BtnOutline>
@@ -807,7 +826,7 @@ export default function Home() {
                   Agenda tu asesoría gratuita
                   <IconArrow />
                 </BtnPrimary>
-                <BtnWhatsApp href={WHATSAPP_HERO_URL} className="w-full sm:w-auto">
+                <BtnWhatsApp href={WHATSAPP_HERO_URL} cta_position="middle" service="general" className="w-full sm:w-auto">
                   Hablar por WhatsApp
                 </BtnWhatsApp>
               </div>
@@ -892,7 +911,7 @@ export default function Home() {
                 Nuestro equipo puede orientarte sobre tu situación específica.
               </p>
               <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <BtnWhatsApp href={WHATSAPP_HERO_URL} className="w-full sm:w-auto">
+                <BtnWhatsApp href={WHATSAPP_HERO_URL} cta_position="middle" service="general" className="w-full sm:w-auto">
                   Hablar por WhatsApp
                 </BtnWhatsApp>
                 <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
@@ -918,7 +937,7 @@ export default function Home() {
                 Agendar asesoría gratuita
                 <IconArrow />
               </BtnPrimary>
-              <BtnWhatsApp href={WHATSAPP_URL} className="w-full sm:w-auto">
+              <BtnWhatsApp href={WHATSAPP_URL} cta_position="bottom" service="general" className="w-full sm:w-auto">
                 Hablar por WhatsApp
               </BtnWhatsApp>
             </div>

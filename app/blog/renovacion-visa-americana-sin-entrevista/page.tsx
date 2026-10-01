@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ArticleLayout from "../../components/ArticleLayout";
+import WALink from "../../components/WALink";
 
 export const metadata: Metadata = {
   title: "Renovación visa americana sin entrevista en Perú",
@@ -242,14 +243,14 @@ export default function RenovacionVisaAmericanaSinEntrevista() {
             </li>
           </ul>
         </nav>
-        <a
+        <WALink
           href={WA_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+          cta_position="middle"
+          service="visa-usa"
           className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3.5 text-sm font-bold text-white shadow-sm transition hover:bg-[#1fb855]"
         >
           Escribir a WhatsApp — Evaluar mi renovación
-        </a>
+        </WALink>
       </ArticleLayout>
     </>
   );

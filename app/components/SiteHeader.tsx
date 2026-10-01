@@ -1,4 +1,5 @@
 import Link from "next/link";
+import WALink from "./WALink";
 
 const WHATSAPP_URL =
   "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20asesor%C3%ADa%20para%20mi%20visa";
@@ -46,15 +47,15 @@ export default function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a
+          <WALink
             href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            cta_position="top"
+            service="auto"
             className="inline-flex min-h-10 items-center gap-2 rounded-full bg-[#25D366] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#1fb855] max-sm:hidden"
           >
             <IconWhatsApp className="h-4 w-4" />
             WhatsApp
-          </a>
+          </WALink>
 
           <details className="relative lg:hidden">
             <summary className="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-xl border border-[#E2E8F0] bg-[#F1F5F9] text-[#0B1F3A] [&::-webkit-details-marker]:hidden">
@@ -74,15 +75,15 @@ export default function SiteHeader() {
                   {link.label}
                 </a>
               ))}
-              <a
+              <WALink
                 href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                cta_position="top"
+                service="auto"
                 className="mt-2 flex min-h-10 w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-4 py-2 text-sm font-semibold text-white"
               >
                 <IconWhatsApp className="h-4 w-4" />
                 WhatsApp
-              </a>
+              </WALink>
             </nav>
           </details>
         </div>

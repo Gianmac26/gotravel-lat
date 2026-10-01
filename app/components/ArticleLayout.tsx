@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
+import WALink, { type WAService } from "./WALink";
 
 const WHATSAPP_URL =
   "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20asesor%C3%ADa%20para%20mi%20visa";
@@ -63,6 +64,7 @@ export default function ArticleLayout({
   relatedLabel,
   ctaHeading = "¿Quieres que revisemos tu caso puntual?",
   ctaText = "Un asesor especializado puede orientarte según tu situación específica, antes de que apliques.",
+  service = "auto" as WAService | "auto",
   children,
 }: {
   tag: string;
@@ -75,6 +77,7 @@ export default function ArticleLayout({
   relatedLabel: string;
   ctaHeading?: string;
   ctaText?: string;
+  service?: WAService | "auto";
   children?: ReactNode;
 }) {
   return (
@@ -119,14 +122,14 @@ export default function ArticleLayout({
                   {relatedLabel}
                   <IconArrow />
                 </a>
-                <a
+                <WALink
                   href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  cta_position="bottom"
+                  service={service}
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-[#0B1F3A]/15 bg-white px-6 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:border-[#0B1F3A]/30"
                 >
                   Hablar por WhatsApp
-                </a>
+                </WALink>
               </div>
             </div>
 
