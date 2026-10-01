@@ -56,7 +56,7 @@ function fireContact(label: string) {
   w.gtag?.("event", "contact", { event_category: "whatsapp", event_label: label });
 }
 
-function IzipayMicrocopy() {
+export function IzipayMicrocopy() {
   return (
     <p className="mt-2 text-center text-[11px] leading-4 text-slate-400">
       Pago seguro con tarjeta, Yape, Plin o QR.<br />

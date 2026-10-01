@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
-import PlanesSection, { PayPalSection } from "./PlanesSection";
-import { PAYMENTS } from "../lib/payments";
+import PlanesSection, { PayPalSection, IzipayMicrocopy } from "./PlanesSection";
+import { PAYMENTS, izipayLinksActive } from "../lib/payments";
+import { EMPRESA } from "../lib/empresa";
 
 const WA_URL =
   "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20asesor%C3%ADa%20para%20mi%20visa%20americana";
@@ -135,6 +136,7 @@ export default function VisaUSA() {
             href={WA_URL}
             cta="Solicitar renovación"
             paypalKey="renovacion"
+            izipayKey="renovacion"
           />
           <ServiceCard
             title="Adelanto de Cita"
@@ -143,6 +145,7 @@ export default function VisaUSA() {
             href={WA_URL}
             cta="Solicitar adelanto"
             paypalKey="adelanto"
+            izipayKey="adelanto"
           />
         </div>
       </section>
@@ -246,6 +249,7 @@ function ServiceCard({
   cta,
   featured = false,
   paypalKey,
+  izipayKey,
 }: {
   title: string;
   price: string;
@@ -254,7 +258,17 @@ function ServiceCard({
   cta: string;
   featured?: boolean;
   paypalKey?: "renovacion" | "adelanto";
+  izipayKey?: "renovacion" | "adelanto";
 }) {
+  const active = izipayLinksActive();
+  const izipay = izipayKey ? PAYMENTS.izipay.links[izipayKey] : null;
+
+  const waAfterPay = izipay
+    ? `${EMPRESA.whatsappHref}?text=${encodeURIComponent(
+        `Hola, acabo de pagar ${izipay.label} por Izipay. Adjunto mi comprobante para iniciar mi trámite.`
+      )}`
+    : href;
+
   return (
     <div
       className={`rounded-3xl p-6 shadow-xl ${
@@ -271,12 +285,42 @@ function ServiceCard({
       <h3 className="mt-4 text-2xl font-black">{title}</h3>
       <p className="mt-3 text-3xl font-black">{price}</p>
       <p className="mt-4 opacity-80">{text}</p>
-      <a
-        href={href}
-        className="mt-6 inline-flex w-full justify-center rounded-full bg-slate-950 px-5 py-4 font-bold text-white"
-      >
-        {cta}
-      </a>
+
+      {izipay && active ? (
+        <div className="mt-6 space-y-3">
+          <a
+            href={izipay.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex w-full justify-center rounded-full bg-[#0B1F3A] px-5 py-4 font-bold text-white transition hover:bg-[#162d52]"
+          >
+            Pagar S/ {izipay.amount} con Izipay
+          </a>
+          <IzipayMicrocopy />
+          <p className="text-center text-xs text-slate-500">
+            Después de pagar,{" "}
+            <a
+              href={waAfterPay}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-[#25D366] hover:underline"
+            >
+              envía tu comprobante por WhatsApp
+            </a>{" "}
+            para iniciar tu trámite.
+          </p>
+        </div>
+      ) : (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 inline-flex w-full justify-center rounded-full bg-slate-950 px-5 py-4 font-bold text-white"
+        >
+          {cta}
+        </a>
+      )}
+
       {paypalKey && <PayPalSection planKey={paypalKey} instance="card" />}
     </div>
   );

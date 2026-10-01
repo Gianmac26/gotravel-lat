@@ -37,6 +37,25 @@ export const PAYMENTS = {
         url: "https://checkout.izipay.pe/link/29e9e7nhbmrrfu",
         addon: true,
       },
+      // Visa Canadá — reemplazar TODO_ con los links reales de Izipay
+      canadaBasico: {
+        label: "Plan Básico - Visa Canadá",
+        amount: 350,
+        currency: "PEN",
+        url: "TODO_izipay_canada_basico",
+      },
+      canadaSmart: {
+        label: "Plan Smart - Visa Canadá",
+        amount: 450,
+        currency: "PEN",
+        url: "TODO_izipay_canada_smart",
+      },
+      canadaPremium: {
+        label: "Plan Premium - Visa Canadá",
+        amount: 550,
+        currency: "PEN",
+        url: "TODO_izipay_canada_premium",
+      },
     },
   },
   paypal: {

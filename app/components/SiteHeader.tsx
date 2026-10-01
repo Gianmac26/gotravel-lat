@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { label: "Visa Canadá", href: "/visa-canada" },
   { label: "Visa México", href: "/visa-mexico" },
   { label: "Agendar asesoría", href: WHATSAPP_URL, external: true },
+  { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/#faq" },
 ] as const;
 
@@ -32,7 +33,7 @@ export default function SiteHeader() {
           Go<span className="text-[#00C896]">viaje</span>
         </Link>
 
-        <nav className="hidden items-center gap-6 lg:flex">
+        <nav className="flex items-center gap-6 max-lg:hidden">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
@@ -50,7 +51,7 @@ export default function SiteHeader() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden min-h-10 items-center gap-2 rounded-full bg-[#25D366] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#1fb855] sm:inline-flex"
+            className="inline-flex min-h-10 items-center gap-2 rounded-full bg-[#25D366] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#1fb855] max-sm:hidden"
           >
             <IconWhatsApp className="h-4 w-4" />
             WhatsApp

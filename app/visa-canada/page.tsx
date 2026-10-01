@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
+import { PAYMENTS, izipayLinksActive } from "../lib/payments";
+import { EMPRESA } from "../lib/empresa";
 
 function wa(text: string) {
   return `https://wa.me/51928672932?text=${encodeURIComponent(text)}`;
@@ -23,6 +25,7 @@ type Plan = {
   featured: boolean;
   items: string[];
   wa: string;
+  izipayKey: "canadaBasico" | "canadaSmart" | "canadaPremium";
 };
 
 const PLANES: Plan[] = [
@@ -38,6 +41,7 @@ const PLANES: Plan[] = [
       "Organización de sustentos de arraigo",
     ],
     wa: WA_BASICO,
+    izipayKey: "canadaBasico",
   },
   {
     name: "Smart",
@@ -53,6 +57,7 @@ const PLANES: Plan[] = [
       "Soporte continuo",
     ],
     wa: WA_SMART,
+    izipayKey: "canadaSmart",
   },
   {
     name: "Premium",
@@ -65,6 +70,7 @@ const PLANES: Plan[] = [
       "Seguro de trámite gratuito por rechazo",
     ],
     wa: WA_PREMIUM,
+    izipayKey: "canadaPremium",
   },
 ];
 
@@ -220,7 +226,7 @@ export default function VisaCanada() {
                 Visa de Turismo — Canadá (TRV)
               </p>
               <h1 className="mt-5 text-4xl font-black leading-[1.05] tracking-tight min-[375px]:text-5xl md:text-6xl">
-                Visa de Turismo a Canadá — Asesoría Profesional para tu Solicitud ante el IRCC
+                Visa de Turismo a Canadá
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-7 text-slate-300 min-[375px]:text-lg">
                 En Canadá no hay entrevista consular. Tu expediente es lo único que evalúa el IRCC. Nosotros te ayudamos a construirlo correctamente — con rigor, experiencia y acompañamiento real.
@@ -912,6 +918,14 @@ function BtnWA({ href, children, className = "" }: { href: string; children: Rea
 }
 
 function PlanCard({ plan }: { plan: Plan }) {
+  const active = izipayLinksActive();
+  const izipay = PAYMENTS.izipay.links[plan.izipayKey];
+  const hasRealUrl = !izipay.url.startsWith("TODO_");
+
+  const waAfterPay = `${EMPRESA.whatsappHref}?text=${encodeURIComponent(
+    `Hola, acabo de pagar el ${izipay.label} por Izipay. Adjunto mi comprobante para iniciar mi trámite.`
+  )}`;
+
   return (
     <div
       className={`relative rounded-3xl p-6 shadow-sm ${
@@ -927,7 +941,7 @@ function PlanCard({ plan }: { plan: Plan }) {
       )}
       <h3 className="text-2xl font-black text-[#0B1F3A]">{plan.name}</h3>
       <p className="mt-4 text-4xl font-black text-[#00A87D]">{plan.price}</p>
-      <ul className="mt-6 space-y-3">
+      <ul className="mt-6 grow space-y-3">
         {plan.items.map((item) => (
           <li key={item} className="flex gap-3 text-sm">
             <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#00A87D]" />
@@ -935,15 +949,47 @@ function PlanCard({ plan }: { plan: Plan }) {
           </li>
         ))}
       </ul>
-      <a
-        href={plan.wa}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#0B1F3A] px-5 py-4 text-sm font-bold text-white transition hover:bg-[#0d2548]"
-      >
-        <WAIcon className="h-4 w-4 shrink-0" />
-        Solicitar por WhatsApp
-      </a>
+
+      <div className="mt-8 space-y-3">
+        {active && hasRealUrl ? (
+          <>
+            <a
+              href={izipay.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center rounded-full bg-[#0B1F3A] px-5 py-4 font-bold text-white transition hover:bg-[#162d52]"
+            >
+              Pagar {plan.price} con Izipay
+            </a>
+            <p className="text-center text-[11px] leading-4 text-slate-400">
+              Pago seguro con tarjeta, Yape, Plin o QR.<br />
+              En tu estado de cuenta: <span className="font-semibold">{PAYMENTS.izipay.merchantDescriptor}</span>
+            </p>
+            <p className="text-center text-xs text-slate-500">
+              Después de pagar,{" "}
+              <a
+                href={waAfterPay}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-[#25D366] hover:underline"
+              >
+                envía tu comprobante por WhatsApp
+              </a>{" "}
+              para iniciar tu trámite.
+            </p>
+          </>
+        ) : (
+          <a
+            href={plan.wa}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#0B1F3A] px-5 py-4 text-sm font-bold text-white transition hover:bg-[#0d2548]"
+          >
+            <WAIcon className="h-4 w-4 shrink-0" />
+            Solicitar por WhatsApp
+          </a>
+        )}
+      </div>
     </div>
   );
 }
