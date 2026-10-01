@@ -34,16 +34,17 @@ export default function SiteHeader() {
         </Link>
 
         <nav className="flex items-center gap-6 max-lg:hidden">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              {...("external" in link && link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-              className="text-sm font-medium text-slate-600 transition hover:text-[#0B1F3A]"
-            >
-              {link.label}
-            </a>
-          ))}
+          {NAV_LINKS.map((link) =>
+            "external" in link && link.external ? (
+              <WALink key={link.href} href={link.href} cta_position="top" service="auto" className="text-sm font-medium text-slate-600 transition hover:text-[#0B1F3A]">
+                {link.label}
+              </WALink>
+            ) : (
+              <a key={link.href} href={link.href} className="text-sm font-medium text-slate-600 transition hover:text-[#0B1F3A]">
+                {link.label}
+              </a>
+            )
+          )}
         </nav>
 
         <div className="flex items-center gap-2">
@@ -65,16 +66,17 @@ export default function SiteHeader() {
               <span className="sr-only">Abrir menú</span>
             </summary>
             <nav className="absolute right-0 mt-2 w-60 rounded-2xl border border-[#E2E8F0] bg-white p-3 shadow-xl">
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  {...("external" in link && link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-[#F1F5F9]"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {NAV_LINKS.map((link) =>
+                "external" in link && link.external ? (
+                  <WALink key={link.href} href={link.href} cta_position="top" service="auto" className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-[#F1F5F9]">
+                    {link.label}
+                  </WALink>
+                ) : (
+                  <a key={link.href} href={link.href} className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-[#F1F5F9]">
+                    {link.label}
+                  </a>
+                )
+              )}
               <WALink
                 href={WHATSAPP_URL}
                 cta_position="top"
