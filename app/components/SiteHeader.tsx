@@ -8,7 +8,6 @@ const NAV_LINKS = [
   { label: "Visa Canadá", href: "/visa-canada" },
   { label: "Visa México", href: "/visa-mexico" },
   { label: "Agendar asesoría", href: WHATSAPP_URL, external: true },
-  { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/#faq" },
 ] as const;
 
