@@ -3,11 +3,13 @@ import Link from "next/link";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import { EMPRESA } from "../lib/empresa";
+import WALink from "../components/WALink";
 
 export const metadata: Metadata = {
   title: "Política de Privacidad",
   description:
     "Política de privacidad de GoViajes conforme a la Ley N° 29733 (Ley de Protección de Datos Personales del Perú). Conozca cómo recopilamos, usamos y protegemos su información.",
+  alternates: { canonical: "https://goviaje.uk/politica-de-privacidad" },
   robots: { index: true, follow: true },
 };
 
@@ -41,14 +43,14 @@ export default function PoliticaDePrivacidad() {
             <p className="mt-3">
               Contacto del responsable:{" "}
               {EMPRESA.emailAtencion} ·{" "}
-              <a
+              <WALink
                 href={`${EMPRESA.whatsappHref}?text=Hola%20Goviaje,%20tengo%20una%20consulta%20sobre%20mi%20privacidad`}
-                target="_blank"
-                rel="noopener noreferrer"
+                cta_position="middle"
+                service="general"
                 className="font-medium text-[#00A87D] underline-offset-2 hover:underline"
               >
                 WhatsApp {EMPRESA.whatsapp}
-              </a>
+              </WALink>
             </p>
           </section>
 
@@ -159,14 +161,14 @@ export default function PoliticaDePrivacidad() {
               Para ejercer estos derechos, escríbanos a{" "}
               <a href={`mailto:${EMPRESA.emailAtencion}`} className="font-medium text-[#00A87D] underline-offset-2 hover:underline">{EMPRESA.emailAtencion}</a>{" "}
               o por{" "}
-              <a
+              <WALink
                 href={`${EMPRESA.whatsappHref}?text=Hola%20Goviaje,%20quiero%20ejercer%20mis%20derechos%20ARCO`}
-                target="_blank"
-                rel="noopener noreferrer"
+                cta_position="middle"
+                service="general"
                 className="font-medium text-[#00A87D] underline-offset-2 hover:underline"
               >
                 WhatsApp
-              </a>
+              </WALink>
               . Responderemos en el plazo establecido por la ley.
             </p>
           </section>
@@ -206,14 +208,14 @@ export default function PoliticaDePrivacidad() {
             <p className="font-semibold text-[#0B1F3A]">¿Tienes dudas sobre el manejo de tus datos?</p>
             <p className="mt-2 text-sm text-slate-600">
               Escríbenos por{" "}
-              <a
+              <WALink
                 href={`${EMPRESA.whatsappHref}?text=Hola%20Goviaje,%20tengo%20una%20consulta%20sobre%20mi%20privacidad`}
-                target="_blank"
-                rel="noopener noreferrer"
+                cta_position="middle"
+                service="general"
                 className="font-semibold text-[#0B1F3A] underline underline-offset-2"
               >
                 WhatsApp
-              </a>
+              </WALink>
               . También puedes consultar los{" "}
               <Link href="/terminos-y-condiciones" className="font-medium text-[#00A87D] underline-offset-2 hover:underline">
                 Términos y Condiciones

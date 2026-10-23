@@ -3,11 +3,13 @@ import Link from "next/link";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import { EMPRESA } from "../lib/empresa";
+import WALink from "../components/WALink";
 
 export const metadata: Metadata = {
   title: "Términos y Condiciones",
   description:
     "Términos y condiciones del servicio de asesoría para visas de turismo de GoViajes (AMG COMUNICA S.A.C.). Planes, pagos, reembolsos y obligaciones de las partes.",
+  alternates: { canonical: "https://goviaje.uk/terminos-y-condiciones" },
   robots: { index: true, follow: true },
 };
 
@@ -361,14 +363,14 @@ export default function TerminosYCondiciones() {
               <p className="font-semibold text-[#0B1F3A]">¿Tienes dudas sobre estos términos?</p>
               <p className="mt-2 text-sm text-slate-600">
                 Escríbenos por{" "}
-                <a
+                <WALink
                   href={`${EMPRESA.whatsappHref}?text=Hola%20Goviaje,%20tengo%20una%20consulta%20sobre%20los%20t%C3%A9rminos%20del%20servicio`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  cta_position="middle"
+                  service="general"
                   className="font-semibold text-[#0B1F3A] underline underline-offset-2"
                 >
                   WhatsApp
-                </a>{" "}
+                </WALink>{" "}
                 o al correo de atención al cliente.{" "}
                 <strong>
                   Aviso: un abogado debe revisar este texto antes de su publicación definitiva.

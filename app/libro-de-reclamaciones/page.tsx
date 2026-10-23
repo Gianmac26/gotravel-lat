@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Libro de Reclamaciones",
   description:
     "Libro de Reclamaciones virtual de GoViajes, conforme al Código de Protección y Defensa del Consumidor (Ley N° 29571). Registra tu reclamo o queja de forma online.",
+  alternates: { canonical: "https://goviaje.uk/libro-de-reclamaciones" },
   robots: { index: true, follow: true },
 };
 
