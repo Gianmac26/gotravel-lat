@@ -36,6 +36,7 @@
 - Antes de cambios grandes solicitar confirmación.
 - Después de editar resumir cambios realizados.
 - No eliminar funcionalidades existentes sin autorización.
+- No usar `vercel --prod` desde el árbol local; producción se publica solo con push a main.
 
 ## Definición crítica
 
