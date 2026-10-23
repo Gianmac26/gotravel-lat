@@ -11,12 +11,12 @@ function wa(text: string) {
   return `https://wa.me/51928672932?text=${encodeURIComponent(text)}`;
 }
 
-const WA_GENERAL = wa("Hola Goviaje, quiero información sobre la visa de turismo para Canadá.");
-const WA_BASICO = wa("Hola Goviaje, quiero cotizar el plan Básico para visa de turismo a Canadá.");
-const WA_SMART = wa("Hola Goviaje, quiero cotizar el plan Smart para visa de turismo a Canadá.");
-const WA_PREMIUM = wa("Hola Goviaje, quiero cotizar el plan Premium para visa de turismo a Canadá.");
-const WA_RECHAZO = wa("Hola Goviaje, me rechazaron una visa para Canadá y quiero saber si puedo volver a aplicar.");
-const WA_ARRAIGO = wa("Hola Goviaje, quiero evaluar mi perfil de arraigo para la visa de Canadá.");
+const WA_GENERAL = wa("Hola GoViaje, quiero información sobre la visa de turismo para Canadá.");
+const WA_BASICO = wa("Hola GoViaje, quiero cotizar el plan Básico para visa de turismo a Canadá.");
+const WA_SMART = wa("Hola GoViaje, quiero cotizar el plan Smart para visa de turismo a Canadá.");
+const WA_PREMIUM = wa("Hola GoViaje, quiero cotizar el plan Premium para visa de turismo a Canadá.");
+const WA_RECHAZO = wa("Hola GoViaje, me rechazaron una visa para Canadá y quiero saber si puedo volver a aplicar.");
+const WA_ARRAIGO = wa("Hola GoViaje, quiero evaluar mi perfil de arraigo para la visa de Canadá.");
 
 const CONSULTATION_URL = WA_GENERAL;
 
@@ -197,7 +197,7 @@ const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   serviceType: "Asesoría para visa de turismo a Canadá (TRV)",
-  provider: { "@type": "Organization", name: "Goviaje", url: "https://goviaje.uk" },
+  provider: { "@type": "Organization", name: "GoViaje", url: "https://goviaje.uk" },
   areaServed: ["PE", "CO", "MX", "EC"],
   description:
     "Asesoría profesional para la solicitud de visa de turismo a Canadá (Temporary Resident Visa) ante el IRCC: revisión documental, carta de invitación y evaluación de arraigo.",
@@ -562,7 +562,7 @@ export default function VisaCanada() {
               ))}
             </div>
             <div className="mt-6 rounded-2xl border border-[#E2E8F0] bg-white p-5 text-sm leading-7 text-slate-600 sm:p-6">
-              <strong className="text-[#0B1F3A]">Recomendación:</strong> Inicia el proceso con al menos 3 meses de anticipación a tu fecha planificada de viaje. Los tiempos de respuesta del IRCC no están bajo el control de Goviaje ni del solicitante.
+              <strong className="text-[#0B1F3A]">Recomendación:</strong> Inicia el proceso con al menos 3 meses de anticipación a tu fecha planificada de viaje. Los tiempos de respuesta del IRCC no están bajo el control de GoViaje ni del solicitante.
             </div>
           </div>
         </div>
@@ -577,7 +577,7 @@ export default function VisaCanada() {
               El pago al Gobierno de Canadá es de CAD 185
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
-              Independientemente del plan que elijas con Goviaje, existe un costo oficial establecido por el Gobierno de Canadá que se paga directamente al IRCC al momento de presentar la solicitud. Este monto es obligatorio y no forma parte del servicio de asesoría.
+              Independientemente del plan que elijas con GoViaje, existe un costo oficial establecido por el Gobierno de Canadá que se paga directamente al IRCC al momento de presentar la solicitud. Este monto es obligatorio y no forma parte del servicio de asesoría.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <div className="rounded-2xl border border-[#E2E8F0] bg-[#F1F5F9] p-6">
@@ -590,7 +590,7 @@ export default function VisaCanada() {
               <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6">
                 <p className="text-sm font-black uppercase tracking-wide text-amber-900">Importante</p>
                 <p className="mt-3 text-sm leading-6 text-amber-800">
-                  Este pago va directamente al Gobierno de Canadá y es independiente del costo del servicio de Goviaje. Si la solicitud es denegada, el IRCC no reembolsa esta tasa. El plan Premium de Goviaje incluye un seguro de trámite gratuito ante rechazo.
+                  Este pago va directamente al Gobierno de Canadá y es independiente del costo del servicio de GoViaje. Si la solicitud es denegada, el IRCC no reembolsa esta tasa. El plan Premium de GoViaje incluye un seguro de trámite gratuito ante rechazo.
                 </p>
               </div>
             </div>

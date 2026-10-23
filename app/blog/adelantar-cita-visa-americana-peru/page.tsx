@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 const WA_URL =
-  "https://wa.me/51928672932?text=Hola%20Goviaje%2C%20quiero%20consultar%20sobre%20adelanto%20de%20cita%20para%20mi%20visa%20americana.";
+  "https://wa.me/51928672932?text=Hola%20GoViaje%2C%20quiero%20consultar%20sobre%20adelanto%20de%20cita%20para%20mi%20visa%20americana.";
 
 const SECTIONS = [
   {
@@ -149,7 +149,7 @@ const SECTIONS = [
     blocks: [
       {
         type: "p" as const,
-        text: "En Goviaje ofrecemos monitoreo de disponibilidad de citas consulares. Vigilamos el sistema oficial para detectar cuando aparecen fechas más próximas a las ya agendadas y te informamos en tiempo real para que puedas reprogramar.",
+        text: "En GoViaje ofrecemos monitoreo de disponibilidad de citas consulares. Vigilamos el sistema oficial para detectar cuando aparecen fechas más próximas a las ya agendadas y te informamos en tiempo real para que puedas reprogramar.",
       },
       {
         type: "list" as const,
@@ -161,7 +161,7 @@ const SECTIONS = [
       },
       {
         type: "callout" as const,
-        text: "Goviaje es una asesoría privada, no afiliada a la Embajada de EE.UU. ni al Departamento de Estado. No tenemos influencia sobre la asignación de citas ni sobre la decisión del oficial consular en tu entrevista.",
+        text: "GoViaje es una asesoría privada, no afiliada a la Embajada de EE.UU. ni al Departamento de Estado. No tenemos influencia sobre la asignación de citas ni sobre la decisión del oficial consular en tu entrevista.",
       },
     ],
   },
@@ -215,8 +215,8 @@ export default function AdelantarCitaVisaAmericanaPeruPage() {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: "Cómo adelantar tu cita de visa americana en Perú (2026)",
-    author: { "@type": "Organization", name: "Goviaje" },
-    publisher: { "@type": "Organization", name: "Goviaje" },
+    author: { "@type": "Organization", name: "GoViaje" },
+    publisher: { "@type": "Organization", name: "GoViaje" },
     datePublished: "2026-10-01",
     dateModified: "2026-10-01",
     about: "Adelantar cita visa americana Lima Perú",

@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 const SITE_URL = "https://goviaje.uk";
-const SITE_TITLE = "Goviaje | Asesoría Profesional para Visas de Turismo";
+const SITE_TITLE = "GoViaje | Asesoría Profesional para Visas de Turismo";
 const SITE_DESCRIPTION =
   "Asesoría especializada para visas de turismo a Estados Unidos, Canadá y México. Más de 10 años de experiencia, evaluación previa de tu caso y atención 100% online.";
 
@@ -25,14 +25,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: SITE_TITLE,
-    template: "%s | Goviaje",
+    template: "%s | GoViaje",
   },
   description: SITE_DESCRIPTION,
   openGraph: {
     type: "website",
     locale: "es_PE",
     url: SITE_URL,
-    siteName: "Goviaje",
+    siteName: "GoViaje",
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
   },
@@ -52,8 +52,7 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": `${SITE_URL}/#organization`,
-  name: "Goviaje",
-  alternateName: "GOVIAJES",
+  name: "GoViaje",
   url: SITE_URL,
   description: SITE_DESCRIPTION,
   areaServed: ["PE", "CO", "MX", "EC"],

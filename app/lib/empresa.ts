@@ -1,6 +1,6 @@
 export const EMPRESA = {
   razonSocial: "AMG COMUNICA S.A.C.",
-  nombreComercial: "GoViajes",
+  nombreComercial: "GoViaje",
   ruc: "20606668733",
   domicilio: "Av. Benavides 1944, Miraflores, Lima",
   whatsapp: "+51 928 672 932",

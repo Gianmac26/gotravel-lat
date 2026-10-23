@@ -52,7 +52,7 @@ const SECTIONS = [
 const FAQS = [
   { q: "¿El costo de la visa cambia si me la niegan?", a: "No. La tasa consular de USD 185 no es reembolsable, se te niegue o se te apruebe la visa. Por eso conviene llegar bien preparado a la entrevista." },
   { q: "¿Hay forma de acelerar la cita para la entrevista?", a: "En casos justificados (emergencia médica, viaje de negocios urgente) algunos consulados permiten solicitar una cita expedita, pero no es automático ni garantizado." },
-  { q: "¿El pago de la asesoría de Goviaje incluye las tasas del consulado?", a: "No. Nuestro servicio es la preparación de tu expediente y acompañamiento; las tasas oficiales (MRV y Visa Integrity Fee) las pagas tú directamente al gobierno de EE.UU." },
+  { q: "¿El pago de la asesoría de GoViaje incluye las tasas del consulado?", a: "No. Nuestro servicio es la preparación de tu expediente y acompañamiento; las tasas oficiales (MRV y Visa Integrity Fee) las pagas tú directamente al gobierno de EE.UU." },
 ];
 
 export default function CuantoCuestaDemoraVisa() {
@@ -70,8 +70,8 @@ export default function CuantoCuestaDemoraVisa() {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: "¿Cuánto Cuesta y Cuánto Demora la Visa Americana?",
-    author: { "@type": "Organization", name: "Goviaje" },
-    publisher: { "@type": "Organization", name: "Goviaje" },
+    author: { "@type": "Organization", name: "GoViaje" },
+    publisher: { "@type": "Organization", name: "GoViaje" },
     datePublished: "2026-07-30",
     dateModified: "2026-10-01",
     about: "Costos y tiempos de la visa de turismo B1/B2 para Estados Unidos",

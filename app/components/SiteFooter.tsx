@@ -4,7 +4,7 @@ import WALink from "./WALink";
 import { EMPRESA } from "../lib/empresa";
 
 const WHATSAPP_URL =
-  "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20asesor%C3%ADa%20para%20mi%20visa";
+  "https://wa.me/51928672932?text=Hola%20GoViaje,%20quiero%20asesor%C3%ADa%20para%20mi%20visa";
 
 function IconLibro({ className = "h-4 w-4" }: { className?: string }) {
   return (
@@ -22,7 +22,7 @@ export default function SiteFooter({ waEvent = "whatsapp_click" }: { waEvent?: s
 
           {/* Marca */}
           <div className="sm:col-span-2">
-            <Link href="/" className="text-xl font-bold tracking-tight text-[#0B1F3A]" aria-label="Goviaje">
+            <Link href="/" className="text-xl font-bold tracking-tight text-[#0B1F3A]" aria-label="GoViaje">
               Go<span className="text-[#00C896]">viaje</span>
             </Link>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-slate-600">

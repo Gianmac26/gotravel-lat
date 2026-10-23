@@ -8,11 +8,11 @@ function wa(text: string) {
   return `https://wa.me/51928672932?text=${encodeURIComponent(text)}`;
 }
 
-const WA_GENERAL = wa("Hola Goviaje, quiero información sobre la visa de turismo para México.");
-const WA_BASICO = wa("Hola Goviaje, quiero cotizar el plan Básico para visa de turismo a México.");
-const WA_SMART = wa("Hola Goviaje, quiero cotizar el plan Smart para visa de turismo a México.");
-const WA_PREMIUM = wa("Hola Goviaje, quiero cotizar el plan Premium para visa de turismo a México.");
-const WA_EXCEPCION = wa("Hola Goviaje, tengo visa vigente de EE.UU./Canadá/Schengen y quiero saber si necesito visa mexicana.");
+const WA_GENERAL = wa("Hola GoViaje, quiero información sobre la visa de turismo para México.");
+const WA_BASICO = wa("Hola GoViaje, quiero cotizar el plan Básico para visa de turismo a México.");
+const WA_SMART = wa("Hola GoViaje, quiero cotizar el plan Smart para visa de turismo a México.");
+const WA_PREMIUM = wa("Hola GoViaje, quiero cotizar el plan Premium para visa de turismo a México.");
+const WA_EXCEPCION = wa("Hola GoViaje, tengo visa vigente de EE.UU./Canadá/Schengen y quiero saber si necesito visa mexicana.");
 
 const CONSULTATION_URL = WA_GENERAL;
 
@@ -122,7 +122,7 @@ const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   serviceType: "Asesoría para visa de turismo a México",
-  provider: { "@type": "Organization", name: "Goviaje", url: "https://goviaje.uk" },
+  provider: { "@type": "Organization", name: "GoViaje", url: "https://goviaje.uk" },
   areaServed: ["PE"],
   description:
     "Asesoría profesional para la solicitud de visa de turismo a México desde Perú: revisión documental, solvencia económica, carta de motivos y preparación de entrevista en la Embajada de México en Lima.",

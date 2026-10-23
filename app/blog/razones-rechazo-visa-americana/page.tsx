@@ -55,7 +55,7 @@ const FAQS = [
   { q: "¿Qué significa que me nieguen la visa por el artículo 214(b)?", a: "Significa que el oficial no encontró evidencia suficiente de que planeas regresar a tu país después del viaje. No es un rechazo definitivo: puedes volver a aplicar con mejor documentación." },
   { q: "¿Un rechazo previo afecta futuras solicitudes?", a: "Queda registrado, pero no te descalifica de por vida. Lo importante es que la nueva solicitud muestre un cambio real en tu situación o una mejor preparación del expediente, no una repetición idéntica." },
   { q: "¿Puedo apelar una decisión del consulado?", a: "No existe un proceso formal de apelación para el artículo 214(b). La vía es volver a aplicar, pagando la tasa nuevamente, con un expediente más sólido." },
-  { q: "¿Goviaje puede garantizar que no me la nieguen?", a: "No. Ninguna empresa puede garantizar la aprobación de una visa; la decisión es exclusiva del oficial consular. Lo que sí podemos hacer es ayudarte a preparar tu expediente y tu entrevista con el mayor rigor posible." },
+  { q: "¿GoViaje puede garantizar que no me la nieguen?", a: "No. Ninguna empresa puede garantizar la aprobación de una visa; la decisión es exclusiva del oficial consular. Lo que sí podemos hacer es ayudarte a preparar tu expediente y tu entrevista con el mayor rigor posible." },
 ];
 
 export default function RazonesRechazoVisa() {
@@ -73,8 +73,8 @@ export default function RazonesRechazoVisa() {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: "Por qué Niegan la Visa Americana: 5 Razones Comunes",
-    author: { "@type": "Organization", name: "Goviaje" },
-    publisher: { "@type": "Organization", name: "Goviaje" },
+    author: { "@type": "Organization", name: "GoViaje" },
+    publisher: { "@type": "Organization", name: "GoViaje" },
     datePublished: "2026-07-30",
     dateModified: "2026-07-30",
     about: "Rechazo de visa de turismo B1/B2 para Estados Unidos",

@@ -7,7 +7,7 @@ import GraciasTracker from "./GraciasTracker";
 import WALink from "../components/WALink";
 
 export const metadata: Metadata = {
-  title: "Pago recibido | GoViajes",
+  title: "Pago recibido | GoViaje",
   robots: { index: false, follow: false },
 };
 
@@ -33,7 +33,7 @@ export default function GraciasPage() {
             ¡Pago recibido!
           </h1>
           <p className="mt-4 text-lg text-slate-600">
-            Gracias por confiar en GoViajes. Para iniciar tu trámite,{" "}
+            Gracias por confiar en GoViaje. Para iniciar tu trámite,{" "}
             <strong>envíanos tu comprobante de pago por WhatsApp</strong> y un asesor te contactará en
             breve.
           </p>

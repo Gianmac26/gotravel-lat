@@ -7,6 +7,6 @@ import { redirect } from "next/navigation";
  */
 export default function AnalisisPerfilIA() {
   redirect(
-    "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20agendar%20una%20asesor%C3%ADa%20gratuita%20para%20mi%20visa"
+    "https://wa.me/51928672932?text=Hola%20GoViaje,%20quiero%20agendar%20una%20asesor%C3%ADa%20gratuita%20para%20mi%20visa"
   );
 }

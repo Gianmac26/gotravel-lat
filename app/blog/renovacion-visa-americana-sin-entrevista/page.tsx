@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 const WA_URL =
-  "https://wa.me/51928672932?text=Hola%20Goviaje%2C%20quiero%20renovar%20mi%20visa%20americana%20y%20saber%20si%20califico%20para%20la%20exenci%C3%B3n%20de%20entrevista.";
+  "https://wa.me/51928672932?text=Hola%20GoViaje%2C%20quiero%20renovar%20mi%20visa%20americana%20y%20saber%20si%20califico%20para%20la%20exenci%C3%B3n%20de%20entrevista.";
 
 const SECTIONS = [
   {
@@ -70,7 +70,7 @@ const SECTIONS = [
       },
       {
         type: "callout" as const,
-        text: "Actualizado: octubre 2026. Fuente oficial: U.S. Department of State, anuncio del 25 de julio de 2025 (travel.state.gov). Las reglas del Interview Waiver pueden cambiar sin previo aviso. Verifica siempre las condiciones actuales en ais.usvisa-info.com (portal oficial de citas para Perú) antes de iniciar tu proceso. Goviaje es una asesoría privada, no afiliada a ninguna embajada ni gobierno.",
+        text: "Actualizado: octubre 2026. Fuente oficial: U.S. Department of State, anuncio del 25 de julio de 2025 (travel.state.gov). Las reglas del Interview Waiver pueden cambiar sin previo aviso. Verifica siempre las condiciones actuales en ais.usvisa-info.com (portal oficial de citas para Perú) antes de iniciar tu proceso. GoViaje es una asesoría privada, no afiliada a ninguna embajada ni gobierno.",
       },
     ],
   },
@@ -191,8 +191,8 @@ export default function RenovacionVisaAmericanaSinEntrevista() {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: "Renovación de visa americana sin entrevista en Perú: requisitos vigentes (2026)",
-    author: { "@type": "Organization", name: "Goviaje" },
-    publisher: { "@type": "Organization", name: "Goviaje" },
+    author: { "@type": "Organization", name: "GoViaje" },
+    publisher: { "@type": "Organization", name: "GoViaje" },
     datePublished: "2026-10-01",
     dateModified: "2026-10-01",
     about: "Renovación visa americana B1/B2 sin entrevista Interview Waiver Perú",

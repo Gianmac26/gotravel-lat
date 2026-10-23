@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 const WA_URL =
-  "https://wa.me/51928672932?text=Hola%20Goviaje%2C%20me%20negaron%20la%20visa%20americana%20y%20quiero%20evaluar%20mi%20caso%20para%20volver%20a%20aplicar.";
+  "https://wa.me/51928672932?text=Hola%20GoViaje%2C%20me%20negaron%20la%20visa%20americana%20y%20quiero%20evaluar%20mi%20caso%20para%20volver%20a%20aplicar.";
 
 const SECTIONS = [
   {
@@ -100,7 +100,7 @@ const SECTIONS = [
       },
       {
         type: "callout" as const,
-        text: "Goviaje es una asesoría privada, no afiliada a ninguna embajada ni gobierno. No tenemos influencia sobre las decisiones consulares ni garantizamos la aprobación de visas. Nuestra función es ayudarte a presentar el mejor expediente posible según tu situación real.",
+        text: "GoViaje es una asesoría privada, no afiliada a ninguna embajada ni gobierno. No tenemos influencia sobre las decisiones consulares ni garantizamos la aprobación de visas. Nuestra función es ayudarte a presentar el mejor expediente posible según tu situación real.",
       },
     ],
   },
@@ -126,7 +126,7 @@ const SECTIONS = [
       },
       {
         type: "p" as const,
-        text: "En Goviaje evaluamos tu caso antes de recomendar que vuelvas a aplicar. Si encontramos que el perfil aún no está listo, te lo decimos con honestidad. La tasa consular no es reembolsable (USD 185 desde 2026) y no tiene sentido gastarla en una solicitud que no está lista.",
+        text: "En GoViaje evaluamos tu caso antes de recomendar que vuelvas a aplicar. Si encontramos que el perfil aún no está listo, te lo decimos con honestidad. La tasa consular no es reembolsable (USD 185 desde 2026) y no tiene sentido gastarla en una solicitud que no está lista.",
       },
     ],
   },
@@ -180,8 +180,8 @@ export default function MeNegaronLaVisaAmericana() {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: "Me negaron la visa americana: qué hacer y cómo volver a aplicar (2026)",
-    author: { "@type": "Organization", name: "Goviaje" },
-    publisher: { "@type": "Organization", name: "Goviaje" },
+    author: { "@type": "Organization", name: "GoViaje" },
+    publisher: { "@type": "Organization", name: "GoViaje" },
     datePublished: "2026-10-01",
     dateModified: "2026-10-01",
     about: "Rechazo de visa americana B1/B2 y segunda solicitud",

@@ -8,7 +8,7 @@ import WALink from "../components/WALink";
 import GuideCards from "../components/GuideCards";
 
 const WA_URL =
-  "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20asesor%C3%ADa%20para%20mi%20visa%20americana";
+  "https://wa.me/51928672932?text=Hola%20GoViaje,%20quiero%20asesor%C3%ADa%20para%20mi%20visa%20americana";
 
 const CONSULTATION_URL = WA_URL;
 
@@ -56,7 +56,7 @@ const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   serviceType: "Asesoría para visa americana de turismo B1/B2",
-  provider: { "@type": "Organization", name: "Goviaje", url: "https://goviaje.uk" },
+  provider: { "@type": "Organization", name: "GoViaje", url: "https://goviaje.uk" },
   areaServed: ["PE", "CO", "MX", "EC"],
   serviceArea: { "@type": "City", name: "Lima", containedIn: { "@type": "Country", name: "Perú" } },
   description:

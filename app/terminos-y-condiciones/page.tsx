@@ -8,7 +8,7 @@ import WALink from "../components/WALink";
 export const metadata: Metadata = {
   title: "Términos y Condiciones",
   description:
-    "Términos y condiciones del servicio de asesoría para visas de turismo de GoViajes (AMG COMUNICA S.A.C.). Planes, pagos, reembolsos y obligaciones de las partes.",
+    "Términos y condiciones del servicio de asesoría para visas de turismo de GoViaje (AMG COMUNICA S.A.C.). Planes, pagos, reembolsos y obligaciones de las partes.",
   alternates: { canonical: "https://goviaje.uk/terminos-y-condiciones" },
   robots: { index: true, follow: true },
 };
@@ -51,7 +51,7 @@ export default function TerminosYCondiciones() {
               <strong>IMPORTANTE:</strong>{" "}
               <strong>
                 La decisión de aprobación o rechazo de una visa corresponde exclusivamente a la autoridad
-                consular (Estados Unidos) o al IRCC (Canadá). GoViajes no garantiza la aprobación de ninguna solicitud.
+                consular (Estados Unidos) o al IRCC (Canadá). GoViaje no garantiza la aprobación de ninguna solicitud.
               </strong>{" "}
               Nuestro servicio consiste en asesoría y preparación de la solicitud, no en la obtención de resultados.
             </p>
@@ -83,7 +83,7 @@ export default function TerminosYCondiciones() {
                 preparación de solicitudes de visa de turismo para Estados Unidos, Canadá y México.
               </p>
               <p className="mt-3">
-                <strong>GoViajes NO es una embajada, consulado ni entidad de gobierno.</strong> No vendemos
+                <strong>GoViaje NO es una embajada, consulado ni entidad de gobierno.</strong> No vendemos
                 vuelos, hoteles, tours, paquetes turísticos ni seguros de viaje.
               </p>
               <p className="mt-3">
@@ -92,7 +92,7 @@ export default function TerminosYCondiciones() {
                 100 % online.
               </p>
               <p className="mt-3 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900">
-                <strong>GoViajes actúa exclusivamente como empresa gestora y asesora.</strong> En ningún
+                <strong>GoViaje actúa exclusivamente como empresa gestora y asesora.</strong> En ningún
                 caso garantizamos la aprobación de una visa ni el resultado de ninguna solicitud. La
                 decisión de conceder o denegar una visa corresponde de forma exclusiva al oficial consular
                 del país de destino, conforme a su propia normativa y criterios de evaluación. Contratar
@@ -158,7 +158,7 @@ export default function TerminosYCondiciones() {
                 responsabilidad exclusiva del solicitante.
               </p>
               <p className="mt-3">
-                El servicio inicia una vez confirmado el pago y recibida la información del cliente. GoViajes no
+                El servicio inicia una vez confirmado el pago y recibida la información del cliente. GoViaje no
                 garantiza aprobación. Una visa negada no da derecho a reembolso del servicio de asesoría ya prestado.
               </p>
             </section>
@@ -174,7 +174,7 @@ export default function TerminosYCondiciones() {
               <p className="mt-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
                 <strong>Este servicio NO garantiza conseguir una fecha más próxima.</strong> El adelanto
                 depende exclusivamente de la disponibilidad en el sistema consular, que está fuera del
-                control de GoViajes.
+                control de GoViaje.
               </p>
               <ul className="mt-3 list-disc space-y-1.5 pl-5">
                 <li>
@@ -186,10 +186,10 @@ export default function TerminosYCondiciones() {
                 <li>
                   Si no se consigue una fecha más próxima dentro de los 90 días: el cliente recibe un
                   <strong> crédito del 100 %</strong> del importe abonado, aplicable a cualquier otro
-                  servicio de GoViajes.
+                  servicio de GoViaje.
                 </li>
                 <li>
-                  <strong>Si GoViajes no realiza el monitoreo activo durante el plazo acordado</strong>{" "}
+                  <strong>Si GoViaje no realiza el monitoreo activo durante el plazo acordado</strong>{" "}
                   (incumplimiento de nuestra parte): reembolso del <strong>100 %</strong> del importe
                   abonado, sin condiciones.
                 </li>
@@ -199,7 +199,7 @@ export default function TerminosYCondiciones() {
             {/* 4 */}
             <section id="pagos" aria-labelledby="h-pagos">
               <h2 id="h-pagos" className="mb-4 text-xl font-bold text-[#0B1F3A]">4. Pagos</h2>
-              <p>GoViajes procesa pagos a través de las siguientes pasarelas:</p>
+              <p>GoViaje procesa pagos a través de las siguientes pasarelas:</p>
               <ul className="mt-3 list-disc space-y-1.5 pl-5">
                 <li>
                   <strong>Izipay (soles peruanos — PEN):</strong> disponible para clientes en Perú. Acepta
@@ -212,7 +212,7 @@ export default function TerminosYCondiciones() {
                 </li>
               </ul>
               <p className="mt-3">
-                GoViajes <strong>no almacena datos de tarjeta</strong>. El procesamiento es realizado
+                GoViaje <strong>no almacena datos de tarjeta</strong>. El procesamiento es realizado
                 íntegramente por las pasarelas de pago mencionadas, conforme a sus propios estándares de seguridad (PCI-DSS).
               </p>
               <p className="mt-3">
@@ -224,7 +224,7 @@ export default function TerminosYCondiciones() {
             <section id="obligaciones" aria-labelledby="h-obligaciones">
               <h2 id="h-obligaciones" className="mb-4 text-xl font-bold text-[#0B1F3A]">5. Obligaciones del cliente</h2>
               <ul className="list-disc space-y-2 pl-5">
-                <li>Proporcionar información veraz, completa y actualizada. GoViajes no se responsabiliza por negativas o consecuencias derivadas de información falsa u omitida.</li>
+                <li>Proporcionar información veraz, completa y actualizada. GoViaje no se responsabiliza por negativas o consecuencias derivadas de información falsa u omitida.</li>
                 <li>Enviar la documentación requerida dentro de los plazos acordados.</li>
                 <li>Asistir puntualmente a las citas consulares programadas.</li>
                 <li>Notificar cualquier cambio en su situación migratoria, laboral o personal que sea relevante para el trámite.</li>
@@ -240,14 +240,14 @@ export default function TerminosYCondiciones() {
                   del <strong>100 %</strong> del monto pagado.
                 </li>
                 <li>
-                  <strong>Si GoViajes no entrega los entregables acordados</strong> (revisión documental,
-                  formularios trabajados u orientación de entrevista) por causas imputables a GoViajes:
+                  <strong>Si GoViaje no entrega los entregables acordados</strong> (revisión documental,
+                  formularios trabajados u orientación de entrevista) por causas imputables a GoViaje:
                   reembolso del <strong>100 %</strong> del monto pagado.
                 </li>
                 <li>
                   <strong>Si el servicio fue prestado íntegramente</strong> conforme a lo contratado, la
                   denegación de la visa por parte del oficial consular <strong>no da derecho a reembolso</strong>.
-                  La decisión consular es ajena al control de GoViajes.
+                  La decisión consular es ajena al control de GoViaje.
                 </li>
                 <li>
                   Plazo de devolución desde la resolución del reclamo:{" "}
@@ -258,7 +258,7 @@ export default function TerminosYCondiciones() {
                 </li>
                 <li>
                   Antes de solicitar un contracargo bancario, el cliente debe presentar su reclamo a través
-                  de los canales de atención de GoViajes o del Libro de Reclamaciones.
+                  de los canales de atención de GoViaje o del Libro de Reclamaciones.
                 </li>
               </ul>
             </section>
@@ -301,7 +301,7 @@ export default function TerminosYCondiciones() {
             <section id="libro" aria-labelledby="h-libro">
               <h2 id="h-libro" className="mb-4 text-xl font-bold text-[#0B1F3A]">9. Libro de Reclamaciones</h2>
               <p>
-                Conforme al Código de Protección y Defensa del Consumidor (Ley N° 29571), GoViajes cuenta
+                Conforme al Código de Protección y Defensa del Consumidor (Ley N° 29571), GoViaje cuenta
                 con un Libro de Reclamaciones virtual disponible en:
               </p>
               <p className="mt-3">
@@ -329,7 +329,7 @@ export default function TerminosYCondiciones() {
                 {EMPRESA.razonSocial} o sus licenciantes. Queda prohibida su reproducción sin autorización expresa.
               </p>
               <p className="mt-3">
-                GoViajes no es responsable por: decisiones consulares, cambios en la normativa migratoria,
+                GoViaje no es responsable por: decisiones consulares, cambios en la normativa migratoria,
                 cierres o restricciones de consulados, caídas de sistemas oficiales (USCIS, IRCC, MRE) ni
                 cualquier otra causa de fuerza mayor ajena a su control.
               </p>
@@ -350,7 +350,7 @@ export default function TerminosYCondiciones() {
             <section id="aceptacion" aria-labelledby="h-aceptacion">
               <h2 id="h-aceptacion" className="mb-4 text-xl font-bold text-[#0B1F3A]">12. Aceptación</h2>
               <p>
-                Realizar un pago a través de Izipay, PayPal o cualquier link de pago de GoViajes implica la
+                Realizar un pago a través de Izipay, PayPal o cualquier link de pago de GoViaje implica la
                 aceptación plena de estos Términos y Condiciones, así como de la{" "}
                 <Link href="/politica-de-privacidad" className="font-medium text-[#00A87D] underline-offset-2 hover:underline">
                   Política de Privacidad
@@ -364,7 +364,7 @@ export default function TerminosYCondiciones() {
               <p className="mt-2 text-sm text-slate-600">
                 Escríbenos por{" "}
                 <WALink
-                  href={`${EMPRESA.whatsappHref}?text=Hola%20Goviaje,%20tengo%20una%20consulta%20sobre%20los%20t%C3%A9rminos%20del%20servicio`}
+                  href={`${EMPRESA.whatsappHref}?text=Hola%20GoViaje,%20tengo%20una%20consulta%20sobre%20los%20t%C3%A9rminos%20del%20servicio`}
                   cta_position="middle"
                   service="general"
                   className="font-semibold text-[#0B1F3A] underline underline-offset-2"

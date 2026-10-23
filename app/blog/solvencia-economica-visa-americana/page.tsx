@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 const WA_URL =
-  "https://wa.me/51928672932?text=Hola%20Goviaje%2C%20quiero%20saber%20si%20mi%20perfil%20econ%C3%B3mico%20es%20suficiente%20para%20la%20visa%20americana.";
+  "https://wa.me/51928672932?text=Hola%20GoViaje%2C%20quiero%20saber%20si%20mi%20perfil%20econ%C3%B3mico%20es%20suficiente%20para%20la%20visa%20americana.";
 
 const SECTIONS = [
   {
@@ -132,7 +132,7 @@ const SECTIONS = [
       },
       {
         type: "callout" as const,
-        text: "Goviaje es una asesoría privada, no afiliada a la Embajada de EE.UU. ni al Departamento de Estado. No garantizamos aprobaciones ni tenemos influencia sobre las decisiones consulares. Nuestra función es ayudarte a llegar mejor preparado.",
+        text: "GoViaje es una asesoría privada, no afiliada a la Embajada de EE.UU. ni al Departamento de Estado. No garantizamos aprobaciones ni tenemos influencia sobre las decisiones consulares. Nuestra función es ayudarte a llegar mejor preparado.",
       },
     ],
   },
@@ -186,8 +186,8 @@ export default function SolvenciaEconomicaVisaAmericana() {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: "Solvencia económica para la visa americana: qué evalúa realmente el oficial (2026)",
-    author: { "@type": "Organization", name: "Goviaje" },
-    publisher: { "@type": "Organization", name: "Goviaje" },
+    author: { "@type": "Organization", name: "GoViaje" },
+    publisher: { "@type": "Organization", name: "GoViaje" },
     datePublished: "2026-10-01",
     dateModified: "2026-10-01",
     about: "Solvencia económica visa americana requisitos banco Peru",

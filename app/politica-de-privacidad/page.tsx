@@ -8,7 +8,7 @@ import WALink from "../components/WALink";
 export const metadata: Metadata = {
   title: "Política de Privacidad",
   description:
-    "Política de privacidad de GoViajes conforme a la Ley N° 29733 (Ley de Protección de Datos Personales del Perú). Conozca cómo recopilamos, usamos y protegemos su información.",
+    "Política de privacidad de GoViaje conforme a la Ley N° 29733 (Ley de Protección de Datos Personales del Perú). Conozca cómo recopilamos, usamos y protegemos su información.",
   alternates: { canonical: "https://goviaje.uk/politica-de-privacidad" },
   robots: { index: true, follow: true },
 };
@@ -44,7 +44,7 @@ export default function PoliticaDePrivacidad() {
               Contacto del responsable:{" "}
               {EMPRESA.emailAtencion} ·{" "}
               <WALink
-                href={`${EMPRESA.whatsappHref}?text=Hola%20Goviaje,%20tengo%20una%20consulta%20sobre%20mi%20privacidad`}
+                href={`${EMPRESA.whatsappHref}?text=Hola%20GoViaje,%20tengo%20una%20consulta%20sobre%20mi%20privacidad`}
                 cta_position="middle"
                 service="general"
                 className="font-medium text-[#00A87D] underline-offset-2 hover:underline"
@@ -162,7 +162,7 @@ export default function PoliticaDePrivacidad() {
               <a href={`mailto:${EMPRESA.emailAtencion}`} className="font-medium text-[#00A87D] underline-offset-2 hover:underline">{EMPRESA.emailAtencion}</a>{" "}
               o por{" "}
               <WALink
-                href={`${EMPRESA.whatsappHref}?text=Hola%20Goviaje,%20quiero%20ejercer%20mis%20derechos%20ARCO`}
+                href={`${EMPRESA.whatsappHref}?text=Hola%20GoViaje,%20quiero%20ejercer%20mis%20derechos%20ARCO`}
                 cta_position="middle"
                 service="general"
                 className="font-medium text-[#00A87D] underline-offset-2 hover:underline"
@@ -189,7 +189,7 @@ export default function PoliticaDePrivacidad() {
             <p>
               Aplicamos medidas técnicas y organizativas razonables para proteger sus datos personales
               frente a accesos no autorizados, pérdida o divulgación. Los pagos se procesan a través de
-              pasarelas certificadas PCI-DSS; GoViajes no almacena datos de tarjetas de crédito o débito.
+              pasarelas certificadas PCI-DSS; GoViaje no almacena datos de tarjetas de crédito o débito.
             </p>
           </section>
 
@@ -209,7 +209,7 @@ export default function PoliticaDePrivacidad() {
             <p className="mt-2 text-sm text-slate-600">
               Escríbenos por{" "}
               <WALink
-                href={`${EMPRESA.whatsappHref}?text=Hola%20Goviaje,%20tengo%20una%20consulta%20sobre%20mi%20privacidad`}
+                href={`${EMPRESA.whatsappHref}?text=Hola%20GoViaje,%20tengo%20una%20consulta%20sobre%20mi%20privacidad`}
                 cta_position="middle"
                 service="general"
                 className="font-semibold text-[#0B1F3A] underline underline-offset-2"

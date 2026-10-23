@@ -6,7 +6,7 @@ import WALink, { type WAService } from "./WALink";
 import { BLOG_POSTS, ARTICLE_TAG_MAP } from "../lib/blog-posts";
 
 const WHATSAPP_URL =
-  "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20asesor%C3%ADa%20para%20mi%20visa";
+  "https://wa.me/51928672932?text=Hola%20GoViaje,%20quiero%20asesor%C3%ADa%20para%20mi%20visa";
 
 export type ArticleBlock =
   | { type: "p"; text: string }
@@ -52,7 +52,7 @@ function Block({ block }: { block: ArticleBlock }) {
 }
 
 const MID_CTA_WHATSAPP =
-  "https://wa.me/51928672932?text=Hola%20Goviaje%2C%20quisiera%20que%20revisen%20mi%20caso%20antes%20de%20mi%20cita.";
+  "https://wa.me/51928672932?text=Hola%20GoViaje%2C%20quisiera%20que%20revisen%20mi%20caso%20antes%20de%20mi%20cita.";
 
 export default function ArticleLayout({
   tag,

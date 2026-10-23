@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────
-   Goviaje — Landing Page (mobile-first)
+   GoViaje — Landing Page (mobile-first)
    Colores: navy #0B1F3A · green #00C896 · gray #F1F5F9
 ───────────────────────────────────────────── */
 
@@ -15,17 +15,17 @@ export const metadata: Metadata = {
 };
 
 const WHATSAPP_URL =
-  "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20asesoría%20para%20mi%20visa";
+  "https://wa.me/51928672932?text=Hola%20GoViaje,%20quiero%20asesoría%20para%20mi%20visa";
 const WHATSAPP_HERO_URL =
-  "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20evaluar%20mi%20caso%20para%20una%20visa%20de%20turismo.";
+  "https://wa.me/51928672932?text=Hola%20GoViaje,%20quiero%20evaluar%20mi%20caso%20para%20una%20visa%20de%20turismo.";
 const WHATSAPP_USA_URL =
-  "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20información%20sobre%20la%20visa%20de%20turismo%20para%20Estados%20Unidos.";
+  "https://wa.me/51928672932?text=Hola%20GoViaje,%20quiero%20información%20sobre%20la%20visa%20de%20turismo%20para%20Estados%20Unidos.";
 const WHATSAPP_CANADA_URL =
-  "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20información%20sobre%20la%20visa%20de%20turismo%20para%20Canadá.";
+  "https://wa.me/51928672932?text=Hola%20GoViaje,%20quiero%20información%20sobre%20la%20visa%20de%20turismo%20para%20Canadá.";
 const WHATSAPP_MEXICO_URL =
-  "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20información%20sobre%20la%20visa%20de%20turismo%20para%20México.";
+  "https://wa.me/51928672932?text=Hola%20GoViaje,%20quiero%20información%20sobre%20la%20visa%20de%20turismo%20para%20México.";
 const WHATSAPP_CITA_URL =
-  "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20consultar%20disponibilidad%20para%20adelantar%20mi%20cita.";
+  "https://wa.me/51928672932?text=Hola%20GoViaje,%20quiero%20consultar%20disponibilidad%20para%20adelantar%20mi%20cita.";
 const CONSULTATION_URL = WHATSAPP_HERO_URL;
 
 
@@ -160,7 +160,7 @@ const BLOG_POSTS = [
 
 const FAQS = [
   {
-    q: "¿Goviaje garantiza la aprobación de la visa?",
+    q: "¿GoViaje garantiza la aprobación de la visa?",
     a: "No. Ninguna empresa puede garantizar la aprobación. Nuestro trabajo es asesorarte con un proceso riguroso, transparente y basado en más de 10 años de experiencia para maximizar la calidad de tu solicitud.",
   },
   {
@@ -441,11 +441,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ═══════════ ¿POR QUÉ ELEGIR GOTRAVEL? ═══════════ */}
+        {/* ═══════════ ¿POR QUÉ ELEGIR GOVIAJE? ═══════════ */}
         <section className="px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
           <div className="mx-auto max-w-6xl">
             <div className="text-center">
-              <SectionTitle>¿Por qué elegir Goviaje?</SectionTitle>
+              <SectionTitle>¿Por qué elegir GoViaje?</SectionTitle>
               <p className="mx-auto mt-3 max-w-2xl text-base text-slate-600">
                 Gestionamos tu solicitud de visa con rigor, transparencia y acompañamiento real en cada etapa.
               </p>

@@ -173,7 +173,7 @@ export default function PlanesSection() {
         {PLANES.map(({ key, badge, featured, items }) => {
           const plan = PAYMENTS.izipay.links[key];
           const waLink = `${EMPRESA.whatsappHref}?text=${encodeURIComponent(
-            `Hola Goviaje, quiero información sobre el ${plan.label} para visa americana.`
+            `Hola GoViaje, quiero información sobre el ${plan.label} para visa americana.`
           )}`;
 
           return (
@@ -315,7 +315,7 @@ export default function PlanesSection() {
             </>
           ) : (
             <WALink
-              href={`${EMPRESA.whatsappHref}?text=${encodeURIComponent("Hola Goviaje, quiero contratar el Adelanto de Cita.")}`}
+              href={`${EMPRESA.whatsappHref}?text=${encodeURIComponent("Hola GoViaje, quiero contratar el Adelanto de Cita.")}`}
               cta_position="middle"
               service="visa-usa"
               className="inline-flex w-full justify-center rounded-full bg-[#0B1F3A] px-5 py-3 font-bold text-white transition hover:bg-[#162d52]"

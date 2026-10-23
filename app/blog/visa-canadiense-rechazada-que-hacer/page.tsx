@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 const WA_URL =
-  "https://wa.me/51928672932?text=Hola%20Goviaje%2C%20me%20rechazaron%20la%20visa%20canadiense%20y%20quiero%20evaluar%20mi%20caso%20para%20volver%20a%20aplicar.";
+  "https://wa.me/51928672932?text=Hola%20GoViaje%2C%20me%20rechazaron%20la%20visa%20canadiense%20y%20quiero%20evaluar%20mi%20caso%20para%20volver%20a%20aplicar.";
 
 const SECTIONS = [
   {
@@ -144,7 +144,7 @@ const SECTIONS = [
       },
       {
         type: "callout" as const,
-        text: "Goviaje es una asesoría privada, no afiliada al gobierno de Canadá, IRCC ni ninguna embajada. No tenemos influencia sobre las decisiones de los oficiales de IRCC ni garantizamos aprobaciones. Nuestra función es ayudarte a preparar la solicitud más sólida posible según tu situación real.",
+        text: "GoViaje es una asesoría privada, no afiliada al gobierno de Canadá, IRCC ni ninguna embajada. No tenemos influencia sobre las decisiones de los oficiales de IRCC ni garantizamos aprobaciones. Nuestra función es ayudarte a preparar la solicitud más sólida posible según tu situación real.",
       },
     ],
   },
@@ -157,7 +157,7 @@ const SECTIONS = [
       },
       {
         type: "p" as const,
-        text: "En Goviaje evaluamos tu caso antes de recomendar que vuelvas a aplicar. Si el perfil aún no está listo para una nueva solicitud, te lo decimos directamente para no gastar CAD $100 en una solicitud que no tiene condiciones para prosperar.",
+        text: "En GoViaje evaluamos tu caso antes de recomendar que vuelvas a aplicar. Si el perfil aún no está listo para una nueva solicitud, te lo decimos directamente para no gastar CAD $100 en una solicitud que no tiene condiciones para prosperar.",
       },
     ],
   },
@@ -215,8 +215,8 @@ export default function VisaCanadienzeRechazadaQueHacer() {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: "Visa canadiense rechazada: qué hacer y cómo volver a aplicar (2026)",
-    author: { "@type": "Organization", name: "Goviaje" },
-    publisher: { "@type": "Organization", name: "Goviaje" },
+    author: { "@type": "Organization", name: "GoViaje" },
+    publisher: { "@type": "Organization", name: "GoViaje" },
     datePublished: "2026-10-01",
     dateModified: "2026-10-01",
     about: "Rechazo visa de turismo Canadá TRV y segunda solicitud",

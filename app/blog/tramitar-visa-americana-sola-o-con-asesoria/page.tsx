@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 const WA_URL =
-  "https://wa.me/51928672932?text=Hola%20Goviaje%2C%20quiero%20evaluar%20si%20necesito%20asesor%C3%ADa%20para%20mi%20visa%20americana.";
+  "https://wa.me/51928672932?text=Hola%20GoViaje%2C%20quiero%20evaluar%20si%20necesito%20asesor%C3%ADa%20para%20mi%20visa%20americana.";
 
 const SECTIONS = [
   {
@@ -154,7 +154,7 @@ const SECTIONS = [
       },
       {
         type: "callout" as const,
-        text: "Goviaje es una asesoría privada, no afiliada a la Embajada de EE.UU. ni al Departamento de Estado. No garantizamos aprobaciones ni tenemos influencia sobre las decisiones consulares. Nuestra función es ayudarte a llegar mejor preparado.",
+        text: "GoViaje es una asesoría privada, no afiliada a la Embajada de EE.UU. ni al Departamento de Estado. No garantizamos aprobaciones ni tenemos influencia sobre las decisiones consulares. Nuestra función es ayudarte a llegar mejor preparado.",
       },
     ],
   },
@@ -171,7 +171,7 @@ const FAQS = [
   },
   {
     q: "¿Cuánto cuesta contratar una asesoría visa americana?",
-    a: "Varía según el tipo de solicitud y el nivel de servicio. En Goviaje los planes empiezan desde S/250. El costo de la asesoría se suma a la tarifa MRV de USD $185 que paga cualquier solicitante. La evaluación inicial de tu caso es gratuita.",
+    a: "Varía según el tipo de solicitud y el nivel de servicio. En GoViaje los planes empiezan desde S/250. El costo de la asesoría se suma a la tarifa MRV de USD $185 que paga cualquier solicitante. La evaluación inicial de tu caso es gratuita.",
   },
   {
     q: "¿Puedo tramitar la visa solo si tuve un rechazo previo?",
@@ -208,8 +208,8 @@ export default function TramitarVisaAmericanaSolaOConAsesoriaPage() {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: "Tramitar la visa americana solo o con asesoría en Lima, Perú (2026)",
-    author: { "@type": "Organization", name: "Goviaje" },
-    publisher: { "@type": "Organization", name: "Goviaje" },
+    author: { "@type": "Organization", name: "GoViaje" },
+    publisher: { "@type": "Organization", name: "GoViaje" },
     datePublished: "2026-10-01",
     dateModified: "2026-10-01",
     about: "Asesoría visa americana Lima Perú comparativa tramitar solo",
