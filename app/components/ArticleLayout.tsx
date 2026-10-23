@@ -1,7 +1,9 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
 import WALink, { type WAService } from "./WALink";
+import { BLOG_POSTS, ARTICLE_TAG_MAP } from "../lib/blog-posts";
 
 const WHATSAPP_URL =
   "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20asesor%C3%ADa%20para%20mi%20visa";
@@ -49,10 +51,9 @@ function Block({ block }: { block: ArticleBlock }) {
   );
 }
 
-/**
- * Layout compartido por los artículos del blog de Goviaje. Contenido educativo
- * (SEO + GEO) que enlaza internamente a la landing de venta correspondiente.
- */
+const MID_CTA_WHATSAPP =
+  "https://wa.me/51928672932?text=Hola%20Goviaje%2C%20quisiera%20que%20revisen%20mi%20caso%20antes%20de%20mi%20cita.";
+
 export default function ArticleLayout({
   tag,
   title,
@@ -80,6 +81,13 @@ export default function ArticleLayout({
   service?: WAService | "auto";
   children?: ReactNode;
 }) {
+  const blogTag = ARTICLE_TAG_MAP[tag];
+  const relatedPosts = blogTag
+    ? BLOG_POSTS.filter((p) => p.tag === blogTag && p.title !== title).slice(0, 3)
+    : [];
+
+  const MID_CTA_INDEX = 2;
+
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <SiteHeader />
@@ -87,6 +95,21 @@ export default function ArticleLayout({
       <main>
         <section className="bg-[#0B1F3A] px-4 py-14 text-white sm:px-6 sm:py-20 lg:px-8">
           <div className="mx-auto max-w-3xl">
+            {/* Breadcrumb */}
+            <nav aria-label="Breadcrumb" className="mb-5">
+              <ol className="flex flex-wrap items-center gap-1.5 text-xs text-slate-400">
+                <li>
+                  <Link href="/" className="hover:text-[#00C896] transition">Inicio</Link>
+                </li>
+                <li aria-hidden>/</li>
+                <li>
+                  <Link href="/blog" className="hover:text-[#00C896] transition">Blog</Link>
+                </li>
+                <li aria-hidden>/</li>
+                <li className="text-slate-300 line-clamp-1">{title}</li>
+              </ol>
+            </nav>
+
             <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#00C896]">
               {tag}
             </span>
@@ -98,7 +121,7 @@ export default function ArticleLayout({
 
         <section className="px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
           <div className="mx-auto max-w-3xl space-y-10">
-            {sections.map((section) => (
+            {sections.map((section, idx) => (
               <div key={section.heading}>
                 <h2 className="text-xl font-bold text-[#0B1F3A] sm:text-2xl">{section.heading}</h2>
                 <div className="mt-4 space-y-4">
@@ -106,11 +129,32 @@ export default function ArticleLayout({
                     <Block key={i} block={block} />
                   ))}
                 </div>
+
+                {/* CTA a mitad del artículo */}
+                {idx === MID_CTA_INDEX && (
+                  <div className="mt-6 rounded-2xl border border-[#25D366]/30 bg-[#25D366]/5 p-5">
+                    <p className="text-sm font-semibold text-[#0B1F3A]">
+                      ¿Quieres que revisemos tu caso antes de tu cita?
+                    </p>
+                    <p className="mt-1 text-sm text-slate-600">
+                      Escríbenos por WhatsApp y un asesor especializado evalúa tu perfil sin compromiso.
+                    </p>
+                    <WALink
+                      href={MID_CTA_WHATSAPP}
+                      cta_position="middle"
+                      service={service}
+                      className="mt-3 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#1fb855]"
+                    >
+                      Consultar mi caso por WhatsApp
+                    </WALink>
+                  </div>
+                )}
               </div>
             ))}
 
             {children}
 
+            {/* CTA al final */}
             <div className="rounded-2xl border border-[#E2E8F0] bg-[#F1F5F9] p-6 sm:p-8">
               <h3 className="text-lg font-bold text-[#0B1F3A] sm:text-xl">{ctaHeading}</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-600 sm:text-base">{ctaText}</p>
@@ -152,6 +196,28 @@ export default function ArticleLayout({
                   ))}
                 </div>
               </div>
+            )}
+
+            {/* Artículos relacionados */}
+            {relatedPosts.length > 0 && (
+              <nav aria-label="Artículos relacionados">
+                <h2 className="text-xl font-bold text-[#0B1F3A] sm:text-2xl">Artículos relacionados</h2>
+                <ul className="mt-4 space-y-3">
+                  {relatedPosts.map((post) => (
+                    <li key={post.slug}>
+                      <Link
+                        href={`/blog/${post.slug}`}
+                        className="flex flex-col rounded-2xl border border-[#E2E8F0] bg-white p-4 shadow-sm transition hover:border-[#00C896]/40 hover:shadow-md"
+                      >
+                        <span className="text-sm font-semibold text-[#0B1F3A] hover:text-[#008F6B]">
+                          {post.title}
+                        </span>
+                        <span className="mt-1 text-xs leading-relaxed text-slate-500">{post.excerpt}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
             )}
           </div>
         </section>

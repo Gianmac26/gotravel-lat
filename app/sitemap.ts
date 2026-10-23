@@ -29,6 +29,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${BASE_URL}/blog`,
+      lastModified: new Date("2026-10-07"),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
       url: `${BASE_URL}/blog/requisitos-visa-americana-turismo`,
       lastModified: new Date("2026-07-30"),
       changeFrequency: "monthly",

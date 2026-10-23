@@ -188,8 +188,19 @@ export default function PreguntasEntrevistaVisaAmericana() {
     about: "Entrevista consular visa americana B1/B2",
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://goviaje.uk" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://goviaje.uk/blog" },
+      { "@type": "ListItem", position: 3, name: "Preguntas en la entrevista de visa americana B1/B2", item: "https://goviaje.uk/blog/preguntas-entrevista-visa-americana" },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <ArticleLayout
