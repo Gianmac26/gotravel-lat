@@ -104,7 +104,7 @@ export default function TerminosYCondiciones() {
             {/* 2 */}
             <section id="planes" aria-labelledby="h-planes">
               <h2 id="h-planes" className="mb-4 text-xl font-bold text-[#0B1F3A]">2. Planes y alcance del servicio</h2>
-              <p>Los planes de asesoría disponibles y su precio por solicitante son:</p>
+              <p>Los planes de asesoría disponibles y su precio por solicitante son (el Adelanto de Cita, opcional, se describe en la sección 3):</p>
 
               <div className="mt-4 overflow-x-auto rounded-xl border border-[#E2E8F0]">
                 <table className="w-full text-sm">
@@ -120,22 +120,52 @@ export default function TerminosYCondiciones() {
                       {
                         plan: "Visa USA — Estándar",
                         precio: "S/ 250",
-                        incluye: "Evaluación de perfil, DS-160, checklist documental, orientación para entrevista.",
+                        incluye: "Perfilado del cliente, asesoría en el llenado del DS-160, asesoría documental y acompañamiento en la creación del usuario IVR.",
                       },
                       {
                         plan: "Visa USA — Preferente",
                         precio: "S/ 350",
-                        incluye: "Todo lo del plan Estándar + revisión documental prioritaria y simulación de entrevista.",
+                        incluye: "Todo lo del plan Estándar + evaluación de tu caso por un asesor y acompañamiento en la programación de tu cita consular.",
                       },
                       {
                         plan: "Visa USA — Premium",
                         precio: "S/ 450",
-                        incluye: "Todo lo del plan Preferente + acompañamiento extendido y revisión ilimitada de documentos.",
+                        incluye: "Todo lo del plan Preferente + preparación para la entrevista, preguntas frecuentes reales y descuento en adelanto de cita.",
                       },
                       {
                         plan: "Renovación Visa USA",
                         precio: "S/ 350",
-                        incluye: "Evaluación de caso, DS-160, revisión de historial migratorio y checklist.",
+                        incluye: "Evaluación de caso, asesoría en el llenado del DS-160, revisión de historial migratorio y checklist.",
+                      },
+                      {
+                        plan: "Visa Canadá — Básico",
+                        precio: "S/ 350",
+                        incluye: "Evaluación del perfil del cliente, elaboración del itinerario, asesoría en el llenado del formulario, acompañamiento en la subida de documentos al portal y organización de sustentos de arraigo.",
+                      },
+                      {
+                        plan: "Visa Canadá — Smart",
+                        precio: "S/ 450",
+                        incluye: "Todo lo del plan Básico + carta de intención en inglés, asesoría sobre la mejor estrategia para aplicar, acompañamiento en la creación del usuario IRCC, orientación para programar la toma de biométricos y soporte continuo.",
+                      },
+                      {
+                        plan: "Visa Canadá — Premium",
+                        precio: "S/ 550",
+                        incluye: "Todo lo del plan Smart + acompañamiento en el seguimiento del envío y recojo del pasaporte, modelo optimizado de carta de invitación en inglés y soporte adicional del plan Premium (condiciones por WhatsApp).",
+                      },
+                      {
+                        plan: "Visa México — Básico",
+                        precio: "S/ 180",
+                        incluye: "Evaluación de tu perfil y elegibilidad, checklist de documentos requeridos, armado de carta de motivos de viaje y orientación para agendar tu cita.",
+                      },
+                      {
+                        plan: "Visa México — Smart",
+                        precio: "S/ 250",
+                        incluye: "Todo lo del plan Básico + revisión de solvencia económica y sustento financiero, armado de carta laboral y comprobantes de arraigo, y asesoría en el agendamiento de cita consular.",
+                      },
+                      {
+                        plan: "Visa México — Premium",
+                        precio: "S/ 320",
+                        incluye: "Todo lo del plan Smart + simulacro personalizado de entrevista consular, revisión final completa del expediente y soporte prioritario durante todo el proceso.",
                       },
                     ].map((row) => (
                       <tr key={row.plan} className="bg-white">
@@ -274,9 +304,10 @@ export default function TerminosYCondiciones() {
             {/* 7 */}
             <section id="plazos" aria-labelledby="h-plazos">
               <h2 id="h-plazos" className="mb-4 text-xl font-bold text-[#0B1F3A]">7. Plazos de atención</h2>
-              <p>Los plazos de atención por etapa del servicio son los siguientes:</p>
-              <p className="mt-3 font-medium text-amber-800">
-                TODO: definir plazos por etapa (evaluación inicial, entrega de DS-160, revisión documental, etc.).
+              <p>
+                Los plazos de atención se informan al cliente al iniciar el servicio y dependen de que el
+                cliente envíe su información y documentación completas y de la disponibilidad de los sistemas
+                oficiales.
               </p>
             </section>
 
@@ -338,7 +369,7 @@ export default function TerminosYCondiciones() {
               </p>
               <p className="mt-3">
                 GoViaje no es responsable por: decisiones consulares, cambios en la normativa migratoria,
-                cierres o restricciones de consulados, caídas de sistemas oficiales (USCIS, IRCC, MRE) ni
+                cierres o restricciones de consulados, caídas de sistemas oficiales (el sistema consular del Departamento de Estado —CEAC/AIS—, IRCC, MRE) ni
                 cualquier otra causa de fuerza mayor ajena a su control.
               </p>
             </section>
