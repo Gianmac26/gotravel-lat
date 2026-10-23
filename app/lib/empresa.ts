@@ -24,7 +24,7 @@ export const ADELANTO = {
 
 /** Tasas oficiales de la visa USA: no se publica un total fijo. */
 export const TASA_USA = {
-  nota: "Tasa consular MRV: USD 185, se paga directamente al gobierno de EE. UU. Además, puede aplicarse la Visa Integrity Fee de USD 250, que se cobra solo si la visa es emitida. Confirma el monto vigente en el sitio oficial de la Embajada de EE. UU. en el Perú antes de pagar.",
+  nota: "Tasa consular MRV: USD 185, se paga directamente al gobierno de EE. UU. Además, puede aplicarse la Visa Integrity Fee de USD 250, que se cobra solo si la visa es emitida. Confirma el monto vigente en el sitio oficial del Departamento de Estado de EE. UU. antes de pagar.",
   url: "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/fees/fees-visa-services.html",
 } as const;
 

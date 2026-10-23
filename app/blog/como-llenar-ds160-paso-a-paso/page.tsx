@@ -180,7 +180,7 @@ const FAQS = [
   },
   {
     q: "¿El DS-160 tiene costo?",
-    a: "El formulario DS-160 en sí es gratuito. El costo es la tasa consular MRV (USD 185), que se paga por separado antes de la entrevista a través del banco designado en tu país. Además, puede aplicarse la Visa Integrity Fee de USD 250, que se cobra solo si la visa es emitida; confirma el monto vigente en el sitio oficial antes de pagar.",
+    a: "El formulario DS-160 en sí es gratuito. El costo es la tasa consular MRV (USD 185), que se paga por separado antes de la entrevista a través del banco designado en tu país. Además, puede aplicarse la Visa Integrity Fee de USD 250, que se cobra solo si la visa es emitida; confirma el monto vigente en el sitio oficial del Departamento de Estado de EE. UU. antes de pagar.",
   },
 ];
 
