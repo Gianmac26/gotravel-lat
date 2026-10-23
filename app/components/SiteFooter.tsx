@@ -14,7 +14,7 @@ function IconLibro({ className = "h-4 w-4" }: { className?: string }) {
   );
 }
 
-export default function SiteFooter() {
+export default function SiteFooter({ waEvent = "whatsapp_click" }: { waEvent?: string }) {
   return (
     <footer className="border-t border-[#E2E8F0] bg-[#F1F5F9] px-4 py-12 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
@@ -68,18 +68,18 @@ export default function SiteFooter() {
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Recursos */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-[#0B1F3A]">Legal</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-[#0B1F3A]">Recursos</h3>
             <ul className="mt-4 space-y-2.5">
               <li>
-                <Link href="/#blog" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Blog</Link>
+                <Link href="/blog" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Blog / Guías</Link>
               </li>
               <li>
                 <Link href="/#faq" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">FAQ</Link>
               </li>
               <li>
-                <WALink href={WHATSAPP_URL} cta_position="bottom" service="auto" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Contacto</WALink>
+                <WALink href={WHATSAPP_URL} cta_position="bottom" service="auto" event={waEvent} className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Contacto</WALink>
               </li>
               <li>
                 <Link href="/terminos-y-condiciones" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Términos y condiciones</Link>

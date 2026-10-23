@@ -7,6 +7,7 @@ export type WAPosition = "top" | "middle" | "bottom" | "floating";
 declare global {
   interface Window {
     dataLayer: Record<string, unknown>[];
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -27,12 +28,14 @@ export default function WALink({
   href,
   service = "auto",
   cta_position,
+  event = "whatsapp_click",
   className,
   children,
 }: {
   href: string;
   service?: WAService | "auto";
   cta_position: WAPosition;
+  event?: string;
   className?: string;
   children: ReactNode;
 }) {
@@ -41,12 +44,17 @@ export default function WALink({
       window.dataLayer = window.dataLayer || [];
       const resolvedService: WAService =
         service === "auto" ? detectService(window.location.pathname) : service;
-      window.dataLayer.push({
-        event: "whatsapp_click",
-        page_path: window.location.pathname,
-        cta_position,
-        service: resolvedService,
-      });
+      const page_path = window.location.pathname;
+
+      window.dataLayer.push({ event, page_path, cta_position, service: resolvedService });
+
+      if (typeof window.gtag === "function") {
+        if (event === "whatsapp_click") {
+          window.gtag("event", "generate_lead", { page_path, cta_position, service: resolvedService });
+        } else if (event === "payment_proof_click") {
+          window.gtag("event", "payment_proof_click", { page_path, service: resolvedService });
+        }
+      }
     } catch {}
   }
 

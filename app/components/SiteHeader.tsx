@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { label: "Visa USA", href: "/visa-usa" },
   { label: "Visa Canadá", href: "/visa-canada" },
   { label: "Visa México", href: "/visa-mexico" },
-  { label: "Agendar asesoría", href: WHATSAPP_URL, external: true },
+  { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/#faq" },
 ] as const;
 
@@ -25,7 +25,7 @@ function IconWhatsApp({ className = "h-5 w-5" }: { className?: string }) {
  * (Visa USA, Visa Canadá) para que un visitante que llega por SEO/Ads a una
  * de estas páginas pueda navegar al resto del sitio.
  */
-export default function SiteHeader() {
+export default function SiteHeader({ waEvent = "whatsapp_click" }: { waEvent?: string }) {
   return (
     <header className="sticky top-0 z-50 border-b border-[#E2E8F0]/80 bg-white/90 backdrop-blur-lg">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
@@ -34,17 +34,11 @@ export default function SiteHeader() {
         </Link>
 
         <nav className="flex items-center gap-6 max-lg:hidden">
-          {NAV_LINKS.map((link) =>
-            "external" in link && link.external ? (
-              <WALink key={link.href} href={link.href} cta_position="top" service="auto" className="text-sm font-medium text-slate-600 transition hover:text-[#0B1F3A]">
-                {link.label}
-              </WALink>
-            ) : (
-              <a key={link.href} href={link.href} className="text-sm font-medium text-slate-600 transition hover:text-[#0B1F3A]">
-                {link.label}
-              </a>
-            )
-          )}
+          {NAV_LINKS.map((link) => (
+            <a key={link.href} href={link.href} className="text-sm font-medium text-slate-600 transition hover:text-[#0B1F3A]">
+              {link.label}
+            </a>
+          ))}
         </nav>
 
         <div className="flex items-center gap-2">
@@ -52,6 +46,7 @@ export default function SiteHeader() {
             href={WHATSAPP_URL}
             cta_position="top"
             service="auto"
+            event={waEvent}
             className="inline-flex min-h-10 items-center gap-2 rounded-full bg-[#25D366] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#1fb855] max-sm:hidden"
           >
             <IconWhatsApp className="h-4 w-4" />
@@ -66,21 +61,16 @@ export default function SiteHeader() {
               <span className="sr-only">Abrir menú</span>
             </summary>
             <nav className="absolute right-0 mt-2 w-60 rounded-2xl border border-[#E2E8F0] bg-white p-3 shadow-xl">
-              {NAV_LINKS.map((link) =>
-                "external" in link && link.external ? (
-                  <WALink key={link.href} href={link.href} cta_position="top" service="auto" className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-[#F1F5F9]">
-                    {link.label}
-                  </WALink>
-                ) : (
-                  <a key={link.href} href={link.href} className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-[#F1F5F9]">
-                    {link.label}
-                  </a>
-                )
-              )}
+              {NAV_LINKS.map((link) => (
+                <a key={link.href} href={link.href} className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-[#F1F5F9]">
+                  {link.label}
+                </a>
+              ))}
               <WALink
                 href={WHATSAPP_URL}
                 cta_position="top"
                 service="auto"
+                event={waEvent}
                 className="mt-2 flex min-h-10 w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-4 py-2 text-sm font-semibold text-white"
               >
                 <IconWhatsApp className="h-4 w-4" />

@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 
 const GTM_ID = "GTM-NQJPCLZW";
+const GA4_ID = "G-TGH47QLJXD";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -86,6 +87,15 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
       <head>
+        {/* GA4 — carga después de interactiva para no bloquear el render */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA4_ID}');`}
+        </Script>
+        {/* GTM — solo Google Ads, carga diferida */}
         <Script id="gtm-init" strategy="lazyOnload">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

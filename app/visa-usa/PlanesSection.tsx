@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { PAYMENTS, izipayLinksActive } from "../lib/payments";
 import { EMPRESA } from "../lib/empresa";
+import WALink from "../components/WALink";
 
 // Alias local — fuente de verdad en PAYMENTS.paypal.usdAmounts
 const USD_PRICES = PAYMENTS.paypal.usdAmounts;
@@ -49,11 +50,6 @@ function fireCheckout(planLabel: string, amount: number, currency: "PEN" | "USD"
     value: amount,
     items: [{ item_name: planLabel, price: amount, quantity: 1 }],
   });
-}
-
-function fireContact(label: string) {
-  const w = window as unknown as WinWithAnalytics;
-  w.gtag?.("event", "contact", { event_category: "whatsapp", event_label: label });
 }
 
 export function IzipayMicrocopy() {
@@ -222,41 +218,39 @@ export default function PlanesSection() {
                     {/* Nota post-pago */}
                     <p className="text-center text-xs text-slate-500">
                       Después de pagar,{" "}
-                      <a
+                      <WALink
                         href={waAfterPay(plan.label)}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        cta_position="middle"
+                        service="visa-usa"
+                        event="payment_proof_click"
                         className="font-medium text-[#25D366] hover:underline"
-                        onClick={() => fireContact(`post-pago ${plan.label}`)}
                       >
                         envía tu comprobante por WhatsApp
-                      </a>{" "}
+                      </WALink>{" "}
                       para iniciar tu trámite.
                     </p>
                   </>
                 ) : (
-                  <a
+                  <WALink
                     href={waLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => fireContact(plan.label)}
+                    cta_position="middle"
+                    service="visa-usa"
                     className="inline-flex w-full justify-center rounded-full bg-[#0B1F3A] px-5 py-4 font-bold text-white transition hover:bg-[#162d52]"
                   >
                     Solicitar por WhatsApp
-                  </a>
+                  </WALink>
                 )}
 
                 {/* CTA secundario: WhatsApp si aún tiene dudas */}
                 {active && (
-                  <a
+                  <WALink
                     href={waLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => fireContact(`consulta ${plan.label}`)}
+                    cta_position="middle"
+                    service="visa-usa"
                     className="inline-flex w-full justify-center rounded-full border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
                   >
                     ¿Tienes dudas? Evalúa tu caso gratis
-                  </a>
+                  </WALink>
                 )}
 
                 {/* PayPal para clientes internacionales */}
@@ -266,14 +260,14 @@ export default function PlanesSection() {
               {/* Nota precio por persona */}
               <p className="mt-4 text-center text-[11px] leading-4 text-slate-400">
                 Precio por persona. ¿Viajan varios? Paga un link por cada solicitante o{" "}
-                <a
+                <WALink
                   href={waLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  cta_position="middle"
+                  service="visa-usa"
                   className="underline"
                 >
                   escríbenos por WhatsApp
-                </a>.
+                </WALink>.
               </p>
             </div>
           );
@@ -308,26 +302,26 @@ export default function PlanesSection() {
               <IzipayMicrocopy />
               <p className="text-center text-xs text-slate-500">
                 Después de pagar,{" "}
-                <a
+                <WALink
                   href={waAfterPay(adelanto.label)}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  cta_position="middle"
+                  service="visa-usa"
+                  event="payment_proof_click"
                   className="font-medium text-[#25D366] hover:underline"
-                  onClick={() => fireContact("post-pago adelanto")}
                 >
                   envía tu comprobante por WhatsApp
-                </a>.
+                </WALink>.
               </p>
             </>
           ) : (
-            <a
+            <WALink
               href={`${EMPRESA.whatsappHref}?text=${encodeURIComponent("Hola Goviaje, quiero contratar el Adelanto de Cita.")}`}
-              target="_blank"
-              rel="noopener noreferrer"
+              cta_position="middle"
+              service="visa-usa"
               className="inline-flex w-full justify-center rounded-full bg-[#0B1F3A] px-5 py-3 font-bold text-white transition hover:bg-[#162d52]"
             >
               Consultar por WhatsApp
-            </a>
+            </WALink>
           )}
           <PayPalSection planKey="adelanto" instance="addon" />
         </div>
