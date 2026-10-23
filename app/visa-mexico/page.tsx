@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import AvisoNoAfiliacion from "../components/AvisoNoAfiliacion";
+import LineaHonorarios from "../components/LineaHonorarios";
 import WALink, { type WAPosition } from "../components/WALink";
 import GuideCards from "../components/GuideCards";
 
@@ -250,7 +251,7 @@ export default function VisaMexico() {
             ))}
           </div>
           <div className="mt-8 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-900 sm:p-6">
-            <strong className="font-black">Costo oficial:</strong> la visa mexicana tiene un costo aproximado de USD 52 a 56, pagado directamente a la Embajada de México. Este monto es independiente del costo de nuestra asesoría y no es reembolsable en caso de rechazo.
+            <strong className="font-black">Costo oficial:</strong> la visa mexicana tiene un costo aproximado de USD 52 a 56, pagado directamente a la Embajada de México. Este monto es independiente del costo de nuestra asesoría y no es reembolsable en caso de rechazo. El formulario de solicitud puede presentarse gratis, por tu cuenta, en el sitio oficial del gobierno de México.
           </div>
         </div>
       </section>
@@ -472,6 +473,7 @@ function PlanCard({ plan }: { plan: Plan }) {
       )}
       <h3 className="text-2xl font-black text-[#0B1F3A]">{plan.name}</h3>
       <p className="mt-4 text-4xl font-black text-[#00A87D]">{plan.price}</p>
+      <LineaHonorarios />
       <ul className="mt-6 space-y-3">
         {plan.items.map((item) => (
           <li key={item} className="flex gap-3 text-sm">

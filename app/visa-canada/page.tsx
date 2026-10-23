@@ -3,6 +3,7 @@ import Link from "next/link";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import AvisoNoAfiliacion from "../components/AvisoNoAfiliacion";
+import LineaHonorarios from "../components/LineaHonorarios";
 import { PAYMENTS, izipayLinksActive } from "../lib/payments";
 import { EMPRESA } from "../lib/empresa";
 import WALink, { type WAPosition } from "../components/WALink";
@@ -586,7 +587,7 @@ export default function VisaCanada() {
                 <p className="text-4xl font-black text-[#0B1F3A]">CAD 185</p>
                 <p className="mt-2 text-sm font-bold text-[#00A87D]">Tasa oficial del IRCC por persona</p>
                 <p className="mt-3 text-sm leading-6 text-slate-600">
-                  Este monto incluye CAD 100 por la solicitud de visa de turismo y CAD 85 por el registro biométrico. Se paga en línea al momento de cargar el expediente.
+                  Este monto incluye CAD 100 por la solicitud de visa de turismo y CAD 85 por el registro biométrico. Se paga en línea al momento de cargar el expediente. El formulario de solicitud puede presentarse gratis, por tu cuenta, en el sitio oficial del IRCC; nuestros honorarios corresponden solo a la asesoría.
                 </p>
               </div>
               <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6">
@@ -965,6 +966,7 @@ function PlanCard({ plan }: { plan: Plan }) {
       )}
       <h3 className="text-2xl font-black text-[#0B1F3A]">{plan.name}</h3>
       <p className="mt-4 text-4xl font-black text-[#00A87D]">{plan.price}</p>
+      <LineaHonorarios />
       <ul className="mt-6 grow space-y-3">
         {plan.items.map((item) => (
           <li key={item} className="flex gap-3 text-sm">

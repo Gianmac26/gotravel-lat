@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import AvisoNoAfiliacion from "../components/AvisoNoAfiliacion";
+import LineaHonorarios from "../components/LineaHonorarios";
 import PlanesSection, { PayPalSection, IzipayMicrocopy } from "./PlanesSection";
 import { PAYMENTS, izipayLinksActive } from "../lib/payments";
 import { EMPRESA } from "../lib/empresa";
@@ -316,6 +317,7 @@ function ServiceCard({
       )}
       <h2 className="mt-4 text-2xl font-black">{title}</h2>
       <p className="mt-3 text-3xl font-black">{price}</p>
+      <LineaHonorarios />
       <p className="mt-4 opacity-80">{text}</p>
 
       {izipay && active ? (

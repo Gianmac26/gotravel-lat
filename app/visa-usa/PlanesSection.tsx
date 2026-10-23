@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { PAYMENTS, izipayLinksActive } from "../lib/payments";
 import { EMPRESA } from "../lib/empresa";
 import WALink from "../components/WALink";
+import LineaHonorarios from "../components/LineaHonorarios";
 
 // Alias local — fuente de verdad en PAYMENTS.paypal.usdAmounts
 const USD_PRICES = PAYMENTS.paypal.usdAmounts;
@@ -167,6 +168,11 @@ export default function PlanesSection() {
         <p className="mt-4 text-slate-600">
           Elige el nivel de acompañamiento según tu necesidad.
         </p>
+        <p className="mx-auto mt-4 max-w-3xl rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm leading-6 text-amber-900">
+          <strong>Costos oficiales aparte:</strong> la tasa consular (MRV) de la visa B1/B2 (USD 185) se paga
+          directamente al gobierno de EE.UU. y no está incluida en nuestros honorarios. El formulario DS-160 es
+          gratuito en el sitio oficial (ceac.state.gov) y puedes presentarlo por tu cuenta.
+        </p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">
@@ -192,6 +198,7 @@ export default function PlanesSection() {
               )}
               <h3 className="text-2xl font-black">{plan.label}</h3>
               <p className="mt-4 text-4xl font-black text-[#00A87D]">S/ {plan.amount}</p>
+              <LineaHonorarios />
               <ul className="mt-6 grow space-y-3">
                 {items.map((item) => (
                   <li key={item} className="flex gap-3">
@@ -288,6 +295,7 @@ export default function PlanesSection() {
         </div>
         <div className="mt-6 min-w-[220px] space-y-3 md:mt-0">
           <p className="text-center text-3xl font-black text-[#00A87D]">S/ {adelanto.amount}</p>
+          <div className="text-center"><LineaHonorarios /></div>
           {active ? (
             <>
               <a
