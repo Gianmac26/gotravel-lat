@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/check-wa-links.mjs && node scripts/check-site-header.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
