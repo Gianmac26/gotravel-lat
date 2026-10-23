@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
+import AvisoNoAfiliacion from "../components/AvisoNoAfiliacion";
 import WALink, { type WAPosition } from "../components/WALink";
 import GuideCards from "../components/GuideCards";
 
@@ -171,6 +172,7 @@ export default function VisaMexico() {
               <p className="mt-3 text-center text-xs text-slate-400 sm:text-left">
                 Sin compromiso · Respuesta en menos de 24 horas
               </p>
+              <AvisoNoAfiliacion />
               <div className="mt-8 grid gap-3 text-sm text-slate-300 min-[375px]:grid-cols-3">
                 {["+10 años", "Entrevista obligatoria", "100% online"].map((item) => (
                   <div key={item} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">

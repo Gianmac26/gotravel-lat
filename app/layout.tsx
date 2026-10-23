@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import { EMPRESA } from "./lib/empresa";
 
 const GTM_ID = "GTM-NQJPCLZW";
 const GA4_ID = "G-TGH47QLJXD";
@@ -52,8 +53,19 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": `${SITE_URL}/#organization`,
-  name: "GoViaje",
+  name: EMPRESA.nombreComercial,
+  legalName: EMPRESA.razonSocial,
+  taxID: EMPRESA.ruc,
   url: SITE_URL,
+  email: EMPRESA.emailAtencion,
+  telephone: "+51928672932",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Av. Benavides 1944",
+    addressLocality: "Miraflores",
+    addressRegion: "Lima",
+    addressCountry: "PE",
+  },
   description: SITE_DESCRIPTION,
   areaServed: ["PE", "CO", "MX", "EC"],
   knowsAbout: [
@@ -69,7 +81,8 @@ const organizationJsonLd = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer service",
-    telephone: "+51-928-672-932",
+    telephone: "+51928672932",
+    email: EMPRESA.emailAtencion,
     areaServed: ["PE", "CO", "MX", "EC"],
     availableLanguage: "Spanish",
   },

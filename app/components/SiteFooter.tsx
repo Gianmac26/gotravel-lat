@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import WALink from "./WALink";
-import { EMPRESA } from "../lib/empresa";
+import { AVISO_NO_AFILIACION, EMPRESA } from "../lib/empresa";
 
 const WHATSAPP_URL =
   "https://wa.me/51928672932?text=Hola%20GoViaje,%20quiero%20asesor%C3%ADa%20para%20mi%20visa";
@@ -28,9 +28,18 @@ export default function SiteFooter({ waEvent = "whatsapp_click" }: { waEvent?: s
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-slate-600">
               Especialistas en gestión de visas de turismo. Asesoría profesional, honesta y 100% online para viajeros de Latinoamérica.
             </p>
-            <p className="mt-2 text-xs text-slate-400">
-              {EMPRESA.razonSocial} · RUC {EMPRESA.ruc}
-            </p>
+            <address className="mt-2 space-y-0.5 text-xs not-italic leading-relaxed text-slate-500">
+              <p>
+                {EMPRESA.nombreComercial} · {EMPRESA.razonSocial} · RUC {EMPRESA.ruc}
+              </p>
+              <p>{EMPRESA.domicilio}</p>
+              <p>
+                <a href={`mailto:${EMPRESA.emailAtencion}`} className="transition hover:text-[#0B1F3A]">
+                  {EMPRESA.emailAtencion}
+                </a>{" "}
+                · WhatsApp {EMPRESA.whatsapp}
+              </p>
+            </address>
             <div className="mt-5 flex gap-3">
               <a
                 href="https://www.facebook.com/profile.php?id=61580668796322"
@@ -96,6 +105,11 @@ export default function SiteFooter({ waEvent = "whatsapp_click" }: { waEvent?: s
             </ul>
           </div>
         </div>
+
+        {/* Aviso de no afiliación */}
+        <p id="aviso-no-afiliacion" className="mt-8 max-w-4xl scroll-mt-24 text-xs leading-relaxed text-slate-500">
+          {AVISO_NO_AFILIACION}
+        </p>
 
         {/* Aviso Indecopi */}
         <div className="mt-8 flex items-center gap-4">

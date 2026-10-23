@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
+import AvisoNoAfiliacion from "../components/AvisoNoAfiliacion";
 import PlanesSection, { PayPalSection, IzipayMicrocopy } from "./PlanesSection";
 import { PAYMENTS, izipayLinksActive } from "../lib/payments";
 import { EMPRESA } from "../lib/empresa";
@@ -116,6 +117,8 @@ export default function VisaUSA() {
                 Hablar por WhatsApp
               </WALink>
             </div>
+
+            <AvisoNoAfiliacion />
 
             <div className="mt-8 grid grid-cols-3 gap-3 text-center text-sm">
               <div className="rounded-2xl bg-white/10 p-3 backdrop-blur">
