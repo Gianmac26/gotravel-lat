@@ -16,9 +16,9 @@ const PLANES = [
     featured: false,
     items: [
       "Perfilado del cliente",
-      "Llenado DS-160",
+      "Asesoría en el llenado del DS-160",
       "Asesoría documental",
-      "Creación de usuario IVR",
+      "Acompañamiento en la creación del usuario IVR",
     ],
   },
   {
@@ -28,7 +28,7 @@ const PLANES = [
     items: [
       "Todo lo del plan Estándar",
       "Evaluación de tu caso por un asesor",
-      "Programación de cita consular",
+      "Acompañamiento en la programación de tu cita consular",
     ],
   },
   {

@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 const SITE_URL = "https://goviaje.uk";
 const SITE_TITLE = "GoViaje | Asesoría Profesional para Visas de Turismo";
 const SITE_DESCRIPTION =
-  "Asesoría especializada para visas de turismo a Estados Unidos, Canadá y México. Más de 10 años de experiencia, evaluación previa de tu caso y atención 100% online.";
+  "Asesoría especializada para visas de turismo a Estados Unidos, Canadá y México. Fundador con +10 años en asesoría de visas, evaluación previa de tu caso y atención 100% online.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

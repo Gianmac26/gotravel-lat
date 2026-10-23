@@ -40,8 +40,8 @@ const PLANES: Plan[] = [
     items: [
       "Evaluación del perfil del cliente",
       "Elaboración del itinerario",
-      "Llenado del formulario",
-      "Subida de documentos",
+      "Asesoría en el llenado del formulario",
+      "Acompañamiento en la subida de documentos al portal",
       "Organización de sustentos de arraigo",
     ],
     wa: WA_BASICO,
@@ -56,8 +56,8 @@ const PLANES: Plan[] = [
       "Todo lo del Plan Básico",
       "Carta de intención en inglés",
       "Asesoría sobre la mejor estrategia para aplicar",
-      "Creación del usuario IRCC",
-      "Programación para la toma de biométricos",
+      "Acompañamiento en la creación del usuario IRCC",
+      "Orientación para programar la toma de biométricos",
       "Soporte continuo",
     ],
     wa: WA_SMART,
@@ -69,9 +69,9 @@ const PLANES: Plan[] = [
     featured: false,
     items: [
       "Todo lo del Plan Smart",
-      "Seguimiento del envío y recojo del pasaporte",
+      "Acompañamiento en el seguimiento del envío y recojo del pasaporte",
       "Modelo optimizado de carta de invitación en inglés",
-      "Seguro de trámite gratuito por rechazo",
+      "Soporte adicional del plan Premium (consulta condiciones por WhatsApp)",
     ],
     wa: WA_PREMIUM,
     izipayKey: "canadaPremium",
@@ -86,17 +86,17 @@ const COMPARATIVA_FEATURES: {
 }[] = [
   { feature: "Evaluación del perfil del cliente", basico: true, smart: true, premium: true },
   { feature: "Elaboración del itinerario", basico: true, smart: true, premium: true },
-  { feature: "Llenado del formulario", basico: true, smart: true, premium: true },
-  { feature: "Subida de documentos", basico: true, smart: true, premium: true },
+  { feature: "Asesoría en el llenado del formulario", basico: true, smart: true, premium: true },
+  { feature: "Acompañamiento en la subida de documentos al portal", basico: true, smart: true, premium: true },
   { feature: "Organización de sustentos de arraigo", basico: true, smart: true, premium: true },
   { feature: "Carta de intención en inglés", basico: false, smart: true, premium: true },
   { feature: "Asesoría sobre estrategia de aplicación", basico: false, smart: true, premium: true },
-  { feature: "Creación del usuario IRCC", basico: false, smart: true, premium: true },
-  { feature: "Programación para toma de biométricos", basico: false, smart: true, premium: true },
+  { feature: "Acompañamiento en la creación del usuario IRCC", basico: false, smart: true, premium: true },
+  { feature: "Orientación para programar la toma de biométricos", basico: false, smart: true, premium: true },
   { feature: "Soporte continuo", basico: false, smart: true, premium: true },
-  { feature: "Seguimiento del envío y recojo del pasaporte", basico: false, smart: false, premium: true },
+  { feature: "Acompañamiento en el seguimiento del envío y recojo del pasaporte", basico: false, smart: false, premium: true },
   { feature: "Carta de invitación optimizada en inglés", basico: false, smart: false, premium: true },
-  { feature: "Seguro de trámite gratuito por rechazo", basico: false, smart: false, premium: true },
+  { feature: "Soporte adicional del plan Premium (consulta condiciones por WhatsApp)", basico: false, smart: false, premium: true },
 ];
 
 const PROCESO_STEPS = [
@@ -118,7 +118,7 @@ const PROCESO_STEPS = [
   {
     number: "04",
     title: "Carga en línea ante el IRCC",
-    text: "Te acompañamos en la carga oficial de tu expediente en el sistema del IRCC (Gobierno de Canadá).",
+    text: "Te acompañamos a subir tu expediente al portal del IRCC (Gobierno de Canadá).",
   },
   {
     number: "05",
@@ -181,7 +181,7 @@ const FAQS = [
 export const metadata: Metadata = {
   title: "Visa de Turismo a Canadá — Asesoría Profesional",
   description:
-    "Gestiona tu visa de turismo a Canadá con asesoría profesional ante el IRCC. Sin entrevista consular, expediente 100% en línea. Más de 10 años acompañando solicitudes.",
+    "Gestiona tu visa de turismo a Canadá con asesoría profesional ante el IRCC. Sin entrevista consular, expediente 100% en línea. Fundador con +10 años en asesoría de visas.",
   alternates: { canonical: "https://goviaje.uk/visa-canada" },
 };
 
@@ -250,7 +250,7 @@ export default function VisaCanada() {
               </p>
               <AvisoNoAfiliacion />
               <div className="mt-8 grid gap-3 text-sm text-slate-300 min-[375px]:grid-cols-3">
-                {["+10 años", "Sin entrevista", "100% online"].map((item) => (
+                {["Fundador con +10 años en asesoría de visas", "Sin entrevista", "100% online"].map((item) => (
                   <div key={item} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
                     <CheckIcon className="mb-2 h-4 w-4 text-[#00C896]" />
                     <span className="font-semibold text-white">{item}</span>
@@ -299,7 +299,7 @@ export default function VisaCanada() {
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {[
-              { label: "Organismo oficial", value: "Gobierno de Canadá" },
+              { label: "Quien decide", value: "IRCC (Gobierno de Canadá)" },
               { label: "Tipo de visa", value: "Temporary Resident Visa (TRV)" },
               { label: "Proceso", value: "100% en línea" },
               { label: "Decisión", value: "Revisión por oficial del IRCC" },
@@ -593,7 +593,7 @@ export default function VisaCanada() {
               <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6">
                 <p className="text-sm font-black uppercase tracking-wide text-amber-900">Importante</p>
                 <p className="mt-3 text-sm leading-6 text-amber-800">
-                  Este pago va directamente al Gobierno de Canadá y es independiente del costo del servicio de GoViaje. Si la solicitud es denegada, el IRCC no reembolsa esta tasa. El plan Premium de GoViaje incluye un seguro de trámite gratuito ante rechazo.
+                  Este pago va directamente al Gobierno de Canadá y es independiente del costo del servicio de GoViaje. Si la solicitud es denegada, el IRCC no reembolsa esta tasa.
                 </p>
               </div>
             </div>

@@ -17,14 +17,14 @@ const CONSULTATION_URL = WA_URL;
 export const metadata: Metadata = {
   title: "Asesoría Visa Americana B1/B2 Lima, Perú",
   description:
-    "Asesoría para tu visa americana B1/B2 desde Lima y Perú. Primera solicitud, renovación y rechazos previos. Evalúa tu caso gratis. +10 años, 100% online.",
+    "Asesoría para tu visa americana B1/B2 desde Lima y Perú. Primera solicitud, renovación y rechazos previos. Evalúa tu caso gratis. Fundador con +10 años en asesoría de visas, 100% online.",
   alternates: { canonical: "https://goviaje.uk/visa-usa" },
 };
 
 const USA_FAQS = [
   {
     q: "¿Desde dónde atienden y qué experiencia tienen con Lima, Perú?",
-    a: "Atendemos 100% online a clientes de Perú, Colombia, México y Ecuador. Tenemos más de 10 años acompañando solicitudes ante la Embajada de EE.UU. en Lima: primera solicitud, renovación y casos con rechazo previo.",
+    a: "Atendemos 100% online a clientes de Perú, Colombia, México y Ecuador. Nuestro fundador tiene más de 10 años de experiencia en asesoría de visas, incluidas solicitudes ante la Embajada de EE.UU. en Lima: primera solicitud, renovación y casos con rechazo previo.",
   },
   {
     q: "¿Qué diferencia hace contratar una asesoría vs. tramitar la visa solo?",
@@ -94,8 +94,8 @@ export default function VisaUSA() {
             </h1>
 
             <p className="mt-6 text-lg leading-8 text-slate-300">
-              Más de 10 años acompañando solicitudes de visa B1/B2 ante la Embajada de EE.UU.
-              en Lima: primera solicitud, renovación y casos con rechazo previo. Evaluación
+              Más de 10 años de experiencia de nuestro fundador en asesoría de visas B1/B2
+              para la Embajada de EE.UU. en Lima: primera solicitud, renovación y casos con rechazo previo. Evaluación
               previa de tu caso incluida, 100% online.
             </p>
 
@@ -123,7 +123,7 @@ export default function VisaUSA() {
 
             <div className="mt-8 grid grid-cols-3 gap-3 text-center text-sm">
               <div className="rounded-2xl bg-white/10 p-3 backdrop-blur">
-                +10 años
+                Fundador con +10 años en asesoría de visas
               </div>
               <div className="rounded-2xl bg-white/10 p-3 backdrop-blur">
                 Revisión documental experta

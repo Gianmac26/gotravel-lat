@@ -21,7 +21,7 @@ const CONSULTATION_URL = WA_GENERAL;
 export const metadata: Metadata = {
   title: "Asesoría Visa de Turismo a México desde Perú",
   description:
-    "Desde 2024 México exige visa a los peruanos para turismo. Asesoría profesional para tu visa mexicana: documentación, solvencia económica y preparación de entrevista. Más de 10 años de experiencia, 100% online.",
+    "Desde 2024 México exige visa a los peruanos para turismo. Asesoría profesional para tu visa mexicana: documentación, solvencia económica y preparación de entrevista. Fundador con +10 años en asesoría de visas, 100% online.",
   alternates: { canonical: "https://goviaje.uk/visa-mexico" },
 };
 
@@ -175,7 +175,7 @@ export default function VisaMexico() {
               </p>
               <AvisoNoAfiliacion />
               <div className="mt-8 grid gap-3 text-sm text-slate-300 min-[375px]:grid-cols-3">
-                {["+10 años", "Entrevista obligatoria", "100% online"].map((item) => (
+                {["Fundador con +10 años en asesoría de visas", "Entrevista obligatoria", "100% online"].map((item) => (
                   <div key={item} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
                     <CheckIcon className="mb-2 h-4 w-4 text-[#00C896]" />
                     <span className="font-semibold text-white">{item}</span>

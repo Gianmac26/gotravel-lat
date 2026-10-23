@@ -31,7 +31,7 @@ const CONSULTATION_URL = WHATSAPP_HERO_URL;
 
 
 const TRUST_ITEMS = [
-  "Más de 10 años de experiencia",
+  "Más de 10 años de experiencia de nuestro fundador en asesoría de visas",
   "Revisión documental especializada",
   "Atención 100% online",
 ] as const;
@@ -45,8 +45,8 @@ const QUICK_LINKS = [
 
 const WHY_CHOOSE = [
   {
-    title: "Más de 10 años de experiencia",
-    desc: "Llevamos más de una década asesorando solicitudes de visa para Estados Unidos, Canadá y México. Conocemos qué revisa el consulado y cómo preparar un caso sólido.",
+    title: "Más de 10 años de experiencia de nuestro fundador en asesoría de visas",
+    desc: "Nuestro fundador lleva más de una década asesorando solicitudes de visa para Estados Unidos, Canadá y México. Conocemos qué revisa el consulado y cómo preparar un caso sólido.",
   },
   {
     title: "Especialistas en visas, no en viajes",
@@ -106,7 +106,7 @@ const SERVICES = [
 const USA_FEATURES = [
   "Visa de turismo B1/B2 — primera solicitud",
   "Renovación de visa americana",
-  "Preparación de formulario DS-160",
+  "Asesoría para el formulario DS-160",
   "Perfilado previo del caso",
   "Orientación para entrevista consular",
   "Adelanto de cita con Agenda VisaBot",
@@ -162,7 +162,7 @@ const BLOG_POSTS = [
 const FAQS = [
   {
     q: "¿GoViaje garantiza la aprobación de la visa?",
-    a: "No. Ninguna empresa puede garantizar la aprobación. Nuestro trabajo es asesorarte con un proceso riguroso, transparente y basado en más de 10 años de experiencia para maximizar la calidad de tu solicitud.",
+    a: "No. Ninguna empresa puede garantizar la aprobación. Nuestro trabajo es asesorarte con un proceso riguroso, transparente y basado en más de 10 años de experiencia de nuestro fundador en asesoría de visas para maximizar la calidad de tu solicitud.",
   },
   {
     q: "¿Atienden 100% online?",
@@ -381,11 +381,11 @@ export default function Home() {
             </div>
 
             <h1 className="mt-4 line-clamp-2 max-w-[calc(100vw-2rem)] text-[1.35rem] font-bold leading-[1.14] tracking-tight text-white min-[375px]:text-[1.5rem] sm:mt-6 sm:max-w-3xl sm:text-4xl lg:text-5xl lg:leading-[1.15]">
-              Aumenta tus posibilidades de aprobación
+              Presenta una solicitud mejor preparada
             </h1>
 
             <p className="mt-3 max-w-[calc(100vw-2rem)] text-[0.8rem] leading-snug text-slate-300 min-[375px]:text-sm sm:mt-4 sm:max-w-3xl sm:text-lg sm:leading-relaxed">
-              Más de 10 años de experiencia ayudando a viajeros a preparar solicitudes de visa para Estados Unidos y Canadá.
+              Más de 10 años de experiencia de nuestro fundador en asesoría de visas, ayudando a viajeros a preparar solicitudes de visa para Estados Unidos y Canadá.
             </p>
 
             <div className="mt-5 flex max-w-[calc(100vw-2rem)] flex-col gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:items-start">
