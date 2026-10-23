@@ -8,6 +8,7 @@ declare global {
   interface Window {
     dataLayer: Record<string, unknown>[];
     gtag?: (...args: unknown[]) => void;
+    fbq?: (...args: unknown[]) => void;
   }
 }
 
@@ -54,6 +55,11 @@ export default function WALink({
         } else if (event === "payment_proof_click") {
           window.gtag("event", "payment_proof_click", { page_path, service: resolvedService });
         }
+      }
+
+      // Meta Pixel: Lead solo para prospectos (no customer_whatsapp_click ni payment_proof_click)
+      if (event === "whatsapp_click" && typeof window.fbq === "function") {
+        window.fbq("track", "Lead", { content_name: resolvedService, content_category: cta_position });
       }
     } catch {}
   }

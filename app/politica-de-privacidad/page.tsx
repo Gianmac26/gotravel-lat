@@ -181,6 +181,13 @@ export default function PoliticaDePrivacidad() {
               rendimiento de nuestras campañas publicitarias (Google Analytics, Google Ads, Meta Ads). Puede
               gestionar o desactivar las cookies desde la configuración de su navegador.
             </p>
+            <p className="mt-3">
+              <strong>Píxel de Meta (Facebook e Instagram):</strong> usamos el Píxel de Meta, que instala cookies
+              (por ejemplo, _fbp) y envía a Meta eventos de su navegación y de su interacción con el sitio (visita
+              de páginas, clics en WhatsApp y compras) para medir y optimizar nuestras campañas. Meta trata esos
+              datos conforme a su propia política de privacidad. Puede desactivar estas cookies desde su navegador
+              o desde la configuración de anuncios de su cuenta de Meta.
+            </p>
           </section>
 
           {/* 8 */}

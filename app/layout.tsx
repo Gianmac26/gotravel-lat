@@ -6,6 +6,7 @@ import { EMPRESA } from "./lib/empresa";
 
 const GTM_ID = "GTM-NQJPCLZW";
 const GA4_ID = "G-TGH47QLJXD";
+const META_PIXEL_ID = "1892065927978129";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -107,6 +108,10 @@ export default function RootLayout({
         <Script id="ga4-init" strategy="afterInteractive">
           {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA4_ID}');`}
         </Script>
+        {/* Meta Pixel — carga después de interactiva; PageView al iniciar */}
+        <Script id="meta-pixel" strategy="afterInteractive">
+          {`!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${META_PIXEL_ID}');fbq('track','PageView');`}
+        </Script>
         {/* GTM — solo Google Ads, carga diferida */}
         <Script id="gtm-init" strategy="lazyOnload">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -124,6 +129,16 @@ export default function RootLayout({
             width="0"
             style={{ display: "none", visibility: "hidden" }}
             title="Google Tag Manager"
+          />
+        </noscript>
+        <noscript>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            alt=""
+            src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
           />
         </noscript>
         <script
