@@ -11,6 +11,16 @@ export const EMPRESA = {
   ciudadJurisdiccion: "Lima (jueces y tribunales del Distrito Judicial de Lima)",
 } as const;
 
+/** Adelanto de cita: textos únicos para web y Términos. */
+export const ADELANTO = {
+  proveedor:
+    "VisaBot es un servicio de un proveedor tecnológico privado, sin vínculo con el consulado ni con la embajada.",
+  disponibilidad:
+    "La disponibilidad de fechas depende exclusivamente del consulado; no garantizamos conseguir una fecha más próxima.",
+  devolucion:
+    "Si no conseguimos adelantar tu cita dentro del plazo del servicio, te devolvemos el 100 % de lo pagado por este servicio.",
+} as const;
+
 /** Aviso de no afiliación (footer de todas las páginas). */
 export const AVISO_NO_AFILIACION =
   "GoViaje es una asesoría privada e independiente. No somos entidad gubernamental ni estamos afiliados a ningún consulado, embajada ni autoridad migratoria. Los formularios oficiales pueden presentarse gratuitamente en los sitios oficiales del gobierno. Nuestros honorarios corresponden únicamente a la asesoría y no incluyen las tasas consulares, que se pagan directamente a la autoridad correspondiente. La decisión sobre la visa es exclusiva de la autoridad consular.";

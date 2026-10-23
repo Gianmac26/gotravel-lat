@@ -5,7 +5,7 @@ import AvisoNoAfiliacion from "../components/AvisoNoAfiliacion";
 import LineaHonorarios from "../components/LineaHonorarios";
 import PlanesSection, { PayPalSection, IzipayMicrocopy } from "./PlanesSection";
 import { PAYMENTS, izipayLinksActive } from "../lib/payments";
-import { EMPRESA } from "../lib/empresa";
+import { ADELANTO, EMPRESA } from "../lib/empresa";
 import WALink from "../components/WALink";
 import GuideCards from "../components/GuideCards";
 
@@ -40,7 +40,7 @@ const USA_FAQS = [
   },
   {
     q: "¿Pueden adelantar mi cita consular?",
-    a: "Sí, monitoreamos la disponibilidad de citas y te avisamos cuando aparece una fecha más cercana. No garantizamos una fecha específica — la disponibilidad depende exclusivamente del sistema consular.",
+    a: `Sí, ofrecemos un servicio de monitoreo automatizado de fechas con VisaBot y te avisamos cuando aparece una fecha más cercana. ${ADELANTO.proveedor} ${ADELANTO.disponibilidad} ${ADELANTO.devolucion}`,
   },
 ];
 
@@ -158,7 +158,7 @@ export default function VisaUSA() {
           <ServiceCard
             title="Adelanto de Cita"
             price={`S/${PAYMENTS.izipay.links.adelanto.amount} · USD ${PAYMENTS.paypal.usdAmounts.adelanto}`}
-            text="Monitoreo de disponibilidad para adelantar tu cita."
+            text={`Monitoreo automatizado de disponibilidad para adelantar tu cita. ${ADELANTO.disponibilidad}`}
             href={WA_URL}
             cta="Solicitar adelanto"
             paypalKey="adelanto"
@@ -186,7 +186,7 @@ export default function VisaUSA() {
 
           <InfoBox
             title="Adelanto de cita"
-            text="Monitoreamos la disponibilidad de citas en el sistema consular y te avisamos cuando aparece una fecha más cercana. No garantizamos una fecha específica."
+            text={`Monitoreo automatizado de fechas con VisaBot: te avisamos cuando aparece una fecha más cercana. ${ADELANTO.proveedor} ${ADELANTO.disponibilidad} ${ADELANTO.devolucion}`}
             items={[
               "Un asesor revisa la disponibilidad por ti",
               "Búsqueda de fechas cercanas",

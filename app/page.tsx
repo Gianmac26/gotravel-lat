@@ -9,6 +9,7 @@ import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
 import WALink, { type WAService, type WAPosition } from "./components/WALink";
 import GuideCards from "./components/GuideCards";
+import { ADELANTO } from "./lib/empresa";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://goviaje.uk" },
@@ -84,7 +85,7 @@ const SERVICES = [
   },
   {
     title: "Adelanto de Cita",
-    description: "Monitoreo con Agenda VisaBot ante disponibilidad consular.",
+    description: "Monitoreo automatizado con Agenda VisaBot ante disponibilidad consular.",
     href: "#adelanto-citas",
     featured: false,
   },
@@ -173,7 +174,7 @@ const FAQS = [
   },
   {
     q: "¿Pueden adelantar mi cita?",
-    a: "Monitoreamos disponibilidad consular mediante Agenda VisaBot. El adelanto depende exclusivamente de la disponibilidad en el sistema del consulado.",
+    a: `Monitoreamos disponibilidad consular mediante Agenda VisaBot. ${ADELANTO.proveedor} ${ADELANTO.disponibilidad} ${ADELANTO.devolucion}`,
   },
   {
     q: "¿También trabajan visas para Canadá y México?",
@@ -561,7 +562,7 @@ export default function Home() {
                     { label: "Formulario DS-160", value: "Revisión experta" },
                     { label: "Documentación", value: "Checklist personalizado" },
                     { label: "Entrevista consular", value: "Simulación y tips" },
-                    { label: "Adelanto de cita", value: "VisaBot 24/7" },
+                    { label: "Adelanto de cita", value: "Monitoreo automatizado 24/7" },
                   ].map((row) => (
                     <div key={row.label} className="flex items-center justify-between rounded-xl bg-[#F1F5F9] px-4 py-3">
                       <span className="text-sm font-medium text-slate-700">{row.label}</span>
@@ -702,10 +703,10 @@ export default function Home() {
                   Monitoreo inteligente de citas consulares
                 </SectionTitle>
                 <p className="mt-4 text-base leading-relaxed text-slate-600">
-                  Gracias a nuestra alianza tecnológica con <strong className="font-semibold text-[#0B1F3A]">Agenda VisaBot</strong>, podemos monitorear oportunidades de adelanto de cita cuando exista disponibilidad en el sistema consular.
+                  Gracias a nuestra alianza tecnológica con <strong className="font-semibold text-[#0B1F3A]">Agenda VisaBot</strong>, podemos monitorear oportunidades de adelanto de cita cuando exista disponibilidad en el sistema consular. {ADELANTO.proveedor}
                 </p>
                 <p className="mt-4 rounded-xl border border-amber-200/80 bg-amber-50 px-4 py-3 text-xs leading-relaxed text-amber-900 sm:text-sm">
-                  El adelanto depende exclusivamente de la disponibilidad de citas en el sistema oficial.
+                  {ADELANTO.disponibilidad} {ADELANTO.devolucion}
                 </p>
                 <BtnOutline href={WHATSAPP_CITA_URL} external waPosition="middle" waService="visa-usa" className="mt-8 w-full sm:w-auto">
                   Consultar disponibilidad
@@ -716,7 +717,7 @@ export default function Home() {
               <div className="rounded-2xl border border-[#E2E8F0] bg-white p-6 shadow-sm sm:p-8">
                 <div className="space-y-3">
                   {[
-                    { label: "Monitoreo 24/7 del sistema consular", status: "Activo" },
+                    { label: "Monitoreo automatizado 24/7 del sistema consular", status: "Activo" },
                     { label: "Alerta ante nueva disponibilidad", status: "Automático" },
                     { label: "Gestión de adelanto de cita", status: "Bajo demanda" },
                     { label: "Solo visa americana", status: "USA" },

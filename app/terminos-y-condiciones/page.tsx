@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
-import { EMPRESA } from "../lib/empresa";
+import { ADELANTO, EMPRESA } from "../lib/empresa";
 import WALink from "../components/WALink";
 
 export const metadata: Metadata = {
@@ -169,7 +169,8 @@ export default function TerminosYCondiciones() {
               <p>
                 El servicio de Adelanto de Cita (S/ 500 / USD 150) es un servicio adicional y opcional que
                 no reemplaza ningún plan de asesoría. Consiste en el monitoreo de disponibilidad en el
-                sistema oficial del consulado para encontrar una fecha anterior a la ya asignada.
+                sistema oficial del consulado para encontrar una fecha anterior a la ya asignada. El
+                monitoreo es automatizado y se realiza mediante VisaBot. {ADELANTO.proveedor}
               </p>
               <p className="mt-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
                 <strong>Este servicio NO garantiza conseguir una fecha más próxima.</strong> El adelanto
@@ -184,14 +185,21 @@ export default function TerminosYCondiciones() {
                   la confirmación al cliente.
                 </li>
                 <li>
-                  Si no se consigue una fecha más próxima dentro de los 90 días: el cliente recibe un
-                  <strong> crédito del 100 %</strong> del importe abonado, aplicable a cualquier otro
-                  servicio de GoViaje.
+                  <strong>{ADELANTO.devolucion}</strong> El plazo del servicio es de 90 días calendario
+                  desde la contratación.
+                </li>
+                <li>
+                  Cómo se solicita la devolución: una vez vencido el plazo, el cliente escribe a{" "}
+                  {EMPRESA.emailAtencion} o por WhatsApp al {EMPRESA.whatsapp} indicando su nombre y el
+                  comprobante de pago del Adelanto de Cita. La devolución es por el mismo medio de pago
+                  utilizado y se procesa en los plazos de la sección 6: máximo 30 días calendario si el pago
+                  fue con tarjeta de crédito o débito, y máximo 3 días hábiles si fue por transferencia
+                  bancaria o billetera electrónica (Yape, Plin u otras).
                 </li>
                 <li>
                   <strong>Si GoViaje no realiza el monitoreo activo durante el plazo acordado</strong>{" "}
-                  (incumplimiento de nuestra parte): reembolso del <strong>100 %</strong> del importe
-                  abonado, sin condiciones.
+                  (incumplimiento de nuestra parte): también corresponde el reembolso del{" "}
+                  <strong>100 %</strong> del importe abonado, sin condiciones.
                 </li>
               </ul>
             </section>

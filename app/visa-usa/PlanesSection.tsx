@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { PAYMENTS, izipayLinksActive } from "../lib/payments";
-import { EMPRESA } from "../lib/empresa";
+import { ADELANTO, EMPRESA } from "../lib/empresa";
 import WALink from "../components/WALink";
 import LineaHonorarios from "../components/LineaHonorarios";
 
@@ -287,11 +287,12 @@ export default function PlanesSection() {
           <p className="text-xs font-bold uppercase tracking-widest text-[#00A87D]">Complemento opcional</p>
           <h3 className="mt-1 text-xl font-black text-[#0B1F3A]">{adelanto.label}</h3>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
-            Monitoreamos el sistema consular hasta <strong>90 días calendario</strong> para encontrar
-            una fecha anterior a la que ya tienes. Si no lo logramos, recibes un{" "}
-            <strong>crédito del 100 %</strong> para cualquier otro servicio.{" "}
+            Monitoreo automatizado de fechas con VisaBot hasta <strong>90 días calendario</strong> para
+            encontrar una fecha anterior a la que ya tienes. {ADELANTO.proveedor}{" "}
+            <strong>{ADELANTO.devolucion}</strong>{" "}
             <strong>No reemplaza el pago del plan.</strong>
           </p>
+          <p className="mt-2 text-xs leading-relaxed text-slate-500">{ADELANTO.disponibilidad}</p>
         </div>
         <div className="mt-6 min-w-[220px] space-y-3 md:mt-0">
           <p className="text-center text-3xl font-black text-[#00A87D]">S/ {adelanto.amount}</p>
