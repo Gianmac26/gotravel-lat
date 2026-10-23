@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
+import WALink, { type WAPosition } from "../components/WALink";
+import GuideCards from "../components/GuideCards";
 
 function wa(text: string) {
   return `https://wa.me/51928672932?text=${encodeURIComponent(text)}`;
@@ -158,7 +160,7 @@ export default function VisaMexico() {
                 Desde 2024, México exige visa de visitante a los peruanos para ingresar como turistas. Te ayudamos a preparar un expediente sólido para tu entrevista en la Embajada de México en Lima.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
+                <BtnPrimary href={CONSULTATION_URL} external waPosition="top" className="w-full sm:w-auto">
                   Evalúa tu caso ahora
                   <ArrowIcon />
                 </BtnPrimary>
@@ -283,7 +285,7 @@ export default function VisaMexico() {
             Evaluamos tu perfil, identificamos fortalezas y alertas, y te orientamos antes de que inviertas tiempo y dinero en el proceso.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
+            <BtnPrimary href={CONSULTATION_URL} external waPosition="middle" className="w-full sm:w-auto">
               Evalúa tu caso ahora
               <ArrowIcon />
             </BtnPrimary>
@@ -326,7 +328,7 @@ export default function VisaMexico() {
               <BtnWA href={WA_GENERAL} className="w-full sm:w-auto">
                 Hablar por WhatsApp
               </BtnWA>
-              <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
+              <BtnPrimary href={CONSULTATION_URL} external waPosition="middle" className="w-full sm:w-auto">
                 Evaluar mi caso
                 <ArrowIcon />
               </BtnPrimary>
@@ -345,7 +347,7 @@ export default function VisaMexico() {
             Evaluamos tu perfil, identificamos los puntos que reforzar y te acompañamos en cada etapa del proceso — para que llegues a tu entrevista con la mejor solicitud posible.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
+            <BtnPrimary href={CONSULTATION_URL} external waPosition="bottom" className="w-full sm:w-auto">
               Evalúa tu caso ahora
               <ArrowIcon />
             </BtnPrimary>
@@ -357,27 +359,36 @@ export default function VisaMexico() {
         </div>
       </section>
 
+      <GuideCards
+        heading="Guías útiles para tu visa mexicana"
+        posts={[
+          { href: "/blog/visa-mexico-peruanos-requisitos", title: "Visa mexicana para peruanos: guía completa 2026", excerpt: "Requisitos, costo, excepciones y cómo tramitarla desde Perú." },
+          { href: "/blog/solvencia-economica-visa-americana", title: "Solvencia económica para visas de turismo (2026)", excerpt: "Qué evalúa realmente el oficial consular y qué documentos ayudan." },
+          { href: "/blog/tramitar-visa-americana-sola-o-con-asesoria", title: "¿Tramitar tu visa solo o con asesoría? (2026)", excerpt: "Comparativa honesta: qué puedes hacer tú mismo y cuándo conviene una asesoría." },
+        ]}
+      />
+
       <SiteFooter />
 
       {/* ═══ STICKY MOBILE BAR ═══ */}
       <div className="fixed bottom-0 left-0 right-0 z-50 flex gap-2 border-t border-slate-200 bg-white/95 px-4 py-3 backdrop-blur sm:hidden">
-        <a
+        <WALink
           href={CONSULTATION_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+          cta_position="floating"
+          service="visa-mexico"
           className="flex flex-1 items-center justify-center rounded-full bg-[#0B1F3A] px-4 py-3 text-sm font-bold text-white"
         >
           Evaluar caso
-        </a>
-        <a
+        </WALink>
+        <WALink
           href={WA_GENERAL}
-          target="_blank"
-          rel="noopener noreferrer"
+          cta_position="floating"
+          service="visa-mexico"
           className="flex flex-1 items-center justify-center gap-1.5 rounded-full bg-[#25D366] px-4 py-3 text-sm font-bold text-white"
         >
           <WAIcon className="h-4 w-4 shrink-0" />
           WhatsApp
-        </a>
+        </WALink>
       </div>
     </main>
   );
@@ -402,34 +413,44 @@ function BtnPrimary({
   children,
   external = false,
   className = "",
+  waPosition,
 }: {
   href: string;
   children: React.ReactNode;
   external?: boolean;
   className?: string;
+  waPosition?: WAPosition;
 }) {
+  const cls = `inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#00C896] px-6 py-3 text-sm font-black text-[#0B1F3A] shadow-lg shadow-[#00C896]/20 transition hover:bg-[#00b386] min-[375px]:text-base ${className}`;
+  if (waPosition) {
+    return (
+      <WALink href={href} cta_position={waPosition} service="visa-mexico" className={cls}>
+        {children}
+      </WALink>
+    );
+  }
   return (
     <a
       href={href}
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#00C896] px-6 py-3 text-sm font-black text-[#0B1F3A] shadow-lg shadow-[#00C896]/20 transition hover:bg-[#00b386] min-[375px]:text-base ${className}`}
+      className={cls}
     >
       {children}
     </a>
   );
 }
 
-function BtnWA({ href, children, className = "" }: { href: string; children: React.ReactNode; className?: string }) {
+function BtnWA({ href, children, className = "", waPosition = "middle" }: { href: string; children: React.ReactNode; className?: string; waPosition?: WAPosition }) {
   return (
-    <a
+    <WALink
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+      cta_position={waPosition}
+      service="visa-mexico"
       className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-black text-white shadow-lg shadow-[#25D366]/20 transition hover:bg-[#1fb855] min-[375px]:text-base ${className}`}
     >
       <WAIcon className="h-5 w-5 shrink-0" />
       <span>{children}</span>
-    </a>
+    </WALink>
   );
 }
 
@@ -457,15 +478,15 @@ function PlanCard({ plan }: { plan: Plan }) {
           </li>
         ))}
       </ul>
-      <a
+      <WALink
         href={plan.wa}
-        target="_blank"
-        rel="noopener noreferrer"
+        cta_position="middle"
+        service="visa-mexico"
         className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#0B1F3A] px-5 py-4 text-sm font-bold text-white transition hover:bg-[#0d2548]"
       >
         <WAIcon className="h-4 w-4 shrink-0" />
         Solicitar por WhatsApp
-      </a>
+      </WALink>
     </div>
   );
 }

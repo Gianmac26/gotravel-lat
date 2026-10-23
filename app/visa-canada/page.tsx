@@ -4,6 +4,8 @@ import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import { PAYMENTS, izipayLinksActive } from "../lib/payments";
 import { EMPRESA } from "../lib/empresa";
+import WALink, { type WAPosition } from "../components/WALink";
+import GuideCards from "../components/GuideCards";
 
 function wa(text: string) {
   return `https://wa.me/51928672932?text=${encodeURIComponent(text)}`;
@@ -233,7 +235,7 @@ export default function VisaCanada() {
                 En Canadá no hay entrevista consular. Tu expediente es lo único que evalúa el IRCC. Nosotros te ayudamos a construirlo correctamente — con rigor, experiencia y acompañamiento real.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
+                <BtnPrimary href={CONSULTATION_URL} external waPosition="top" className="w-full sm:w-auto">
                   Evalúa tu caso ahora
                   <ArrowIcon />
                 </BtnPrimary>
@@ -453,7 +455,7 @@ export default function VisaCanada() {
               <p className="text-base font-semibold text-[#0B1F3A]">¿No estás seguro si tu perfil está listo?</p>
               <p className="mt-2 text-sm text-slate-600">Evalúa tu caso antes de iniciar. Es el primer paso que recomendamos.</p>
               <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
+                <BtnPrimary href={CONSULTATION_URL} external waPosition="middle" className="w-full sm:w-auto">
                   Evalúa tu caso ahora
                   <ArrowIcon />
                 </BtnPrimary>
@@ -492,7 +494,7 @@ export default function VisaCanada() {
               Recibe una evaluación profesional de tu caso y conoce los pasos a seguir.
             </p>
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
+              <BtnPrimary href={CONSULTATION_URL} external waPosition="middle" className="w-full sm:w-auto">
                 Evalúa tu caso ahora
                 <ArrowIcon />
               </BtnPrimary>
@@ -768,7 +770,7 @@ export default function VisaCanada() {
             Nuestro análisis de perfil identifica fortalezas, alertas y oportunidades de mejora antes de que inviertas tiempo y dinero en el proceso.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
+            <BtnPrimary href={CONSULTATION_URL} external waPosition="middle" className="w-full sm:w-auto">
               Evalúa tu caso ahora
               <ArrowIcon />
             </BtnPrimary>
@@ -811,7 +813,7 @@ export default function VisaCanada() {
               <BtnWA href={WA_GENERAL} className="w-full sm:w-auto">
                 Hablar por WhatsApp
               </BtnWA>
-              <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
+              <BtnPrimary href={CONSULTATION_URL} external waPosition="middle" className="w-full sm:w-auto">
                 Evaluar mi caso
                 <ArrowIcon />
               </BtnPrimary>
@@ -830,7 +832,7 @@ export default function VisaCanada() {
             Evaluamos tu perfil, identificamos los puntos que reforzar y te acompañamos en cada etapa del proceso — para que llegues al IRCC con la mejor solicitud posible.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
+            <BtnPrimary href={CONSULTATION_URL} external waPosition="bottom" className="w-full sm:w-auto">
               Evalúa tu caso ahora
               <ArrowIcon />
             </BtnPrimary>
@@ -842,27 +844,36 @@ export default function VisaCanada() {
         </div>
       </section>
 
+      <GuideCards
+        heading="Guías útiles para tu visa canadiense"
+        posts={[
+          { href: "/blog/carta-invitacion-arraigo-visa-canada", title: "Carta de invitación y arraigo: qué evalúa Canadá en tu visa", excerpt: "Cómo funciona la carta de invitación y qué solvencia pide el IRCC." },
+          { href: "/blog/cuanto-cuesta-demora-visa-canada", title: "Visa Canadá: costo y tiempo de espera (2026)", excerpt: "Tasa IRCC, biométricos y tiempos de procesamiento actualizados." },
+          { href: "/blog/visa-canadiense-rechazada-que-hacer", title: "Visa canadiense rechazada: qué hacer y cómo volver a aplicar (2026)", excerpt: "Cómo leer las notas del oficial y qué documentación mejora tu caso." },
+        ]}
+      />
+
       <SiteFooter />
 
       {/* ═══ STICKY MOBILE BAR ═══ */}
       <div className="fixed bottom-0 left-0 right-0 z-50 flex gap-2 border-t border-slate-200 bg-white/95 px-4 py-3 backdrop-blur sm:hidden">
-        <a
+        <WALink
           href={CONSULTATION_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+          cta_position="floating"
+          service="visa-canada"
           className="flex flex-1 items-center justify-center rounded-full bg-[#0B1F3A] px-4 py-3 text-sm font-bold text-white"
         >
           Asesoría gratis
-        </a>
-        <a
+        </WALink>
+        <WALink
           href={WA_GENERAL}
-          target="_blank"
-          rel="noopener noreferrer"
+          cta_position="floating"
+          service="visa-canada"
           className="flex flex-1 items-center justify-center gap-1.5 rounded-full bg-[#25D366] px-4 py-3 text-sm font-bold text-white"
         >
           <WAIcon className="h-4 w-4 shrink-0" />
           WhatsApp
-        </a>
+        </WALink>
       </div>
     </main>
   );
@@ -887,34 +898,44 @@ function BtnPrimary({
   children,
   external = false,
   className = "",
+  waPosition,
 }: {
   href: string;
   children: React.ReactNode;
   external?: boolean;
   className?: string;
+  waPosition?: WAPosition;
 }) {
+  const cls = `inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#00C896] px-6 py-3 text-sm font-black text-[#0B1F3A] shadow-lg shadow-[#00C896]/20 transition hover:bg-[#00b386] min-[375px]:text-base ${className}`;
+  if (waPosition) {
+    return (
+      <WALink href={href} cta_position={waPosition} service="visa-canada" className={cls}>
+        {children}
+      </WALink>
+    );
+  }
   return (
     <a
       href={href}
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#00C896] px-6 py-3 text-sm font-black text-[#0B1F3A] shadow-lg shadow-[#00C896]/20 transition hover:bg-[#00b386] min-[375px]:text-base ${className}`}
+      className={cls}
     >
       {children}
     </a>
   );
 }
 
-function BtnWA({ href, children, className = "" }: { href: string; children: React.ReactNode; className?: string }) {
+function BtnWA({ href, children, className = "", waPosition = "middle" }: { href: string; children: React.ReactNode; className?: string; waPosition?: WAPosition }) {
   return (
-    <a
+    <WALink
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+      cta_position={waPosition}
+      service="visa-canada"
       className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-black text-white shadow-lg shadow-[#25D366]/20 transition hover:bg-[#1fb855] min-[375px]:text-base ${className}`}
     >
       <WAIcon className="h-5 w-5 shrink-0" />
       <span>{children}</span>
-    </a>
+    </WALink>
   );
 }
 
@@ -968,27 +989,28 @@ function PlanCard({ plan }: { plan: Plan }) {
             </p>
             <p className="text-center text-xs text-slate-500">
               Después de pagar,{" "}
-              <a
+              <WALink
                 href={waAfterPay}
-                target="_blank"
-                rel="noopener noreferrer"
+                cta_position="middle"
+                service="visa-canada"
+                event="payment_proof_click"
                 className="font-medium text-[#25D366] hover:underline"
               >
                 envía tu comprobante por WhatsApp
-              </a>{" "}
+              </WALink>{" "}
               para iniciar tu trámite.
             </p>
           </>
         ) : (
-          <a
+          <WALink
             href={plan.wa}
-            target="_blank"
-            rel="noopener noreferrer"
+            cta_position="middle"
+            service="visa-canada"
             className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#0B1F3A] px-5 py-4 text-sm font-bold text-white transition hover:bg-[#0d2548]"
           >
             <WAIcon className="h-4 w-4 shrink-0" />
             Solicitar por WhatsApp
-          </a>
+          </WALink>
         )}
       </div>
     </div>

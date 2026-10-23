@@ -5,8 +5,10 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
+import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
 import WALink, { type WAService, type WAPosition } from "./components/WALink";
+import GuideCards from "./components/GuideCards";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://goviaje.uk" },
@@ -26,14 +28,6 @@ const WHATSAPP_CITA_URL =
   "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20consultar%20disponibilidad%20para%20adelantar%20mi%20cita.";
 const CONSULTATION_URL = WHATSAPP_HERO_URL;
 
-const NAV_LINKS = [
-  { label: "Visa USA", href: "/visa-usa" },
-  { label: "Visa Canadá", href: "/visa-canada" },
-  { label: "Visa México", href: "/visa-mexico" },
-  { label: "Agendar asesoría", href: WHATSAPP_HERO_URL, external: true },
-  { label: "Blog", href: "#blog" },
-  { label: "FAQ", href: "#faq" },
-] as const;
 
 const TRUST_ITEMS = [
   "Más de 10 años de experiencia",
@@ -145,34 +139,22 @@ const PROCESS_STEPS = [
 
 const BLOG_POSTS = [
   {
-    title: "Requisitos para la visa americana de turismo (2026)",
-    excerpt: "Documentos, costos y tiempos de espera para la visa B1/B2 desde Perú, Colombia, México y Ecuador.",
+    title: "Solvencia económica para la visa americana (2026)",
+    excerpt: "No hay un monto mínimo oficial. Qué evalúa realmente el oficial consular y qué documentos ayudan.",
     tag: "Estados Unidos",
-    href: "/blog/requisitos-visa-americana-turismo",
+    href: "/blog/solvencia-economica-visa-americana",
   },
   {
-    title: "Por qué niegan la visa americana: 5 razones comunes",
-    excerpt: "Las causas más frecuentes de rechazo y cómo preparar mejor tu solicitud para evitarlas.",
-    tag: "Consejos",
-    href: "/blog/razones-rechazo-visa-americana",
-  },
-  {
-    title: "¿Cuánto cuesta y cuánto demora la visa americana?",
-    excerpt: "Tasas oficiales vigentes en 2026 y plazos recomendados para tramitar tu visa a tiempo.",
+    title: "Preguntas en la entrevista de visa americana B1/B2 (2026)",
+    excerpt: "Las preguntas más comunes en la entrevista consular y cómo prepararte para responder con naturalidad.",
     tag: "Estados Unidos",
-    href: "/blog/cuanto-cuesta-demora-visa-americana",
+    href: "/blog/preguntas-entrevista-visa-americana",
   },
   {
-    title: "Carta de invitación y arraigo: qué evalúa Canadá",
-    excerpt: "Cómo funciona la carta de invitación y qué solvencia económica pide el IRCC.",
+    title: "Visa canadiense rechazada: qué hacer y cómo volver a aplicar (2026)",
+    excerpt: "Cómo leer las notas del oficial, cuándo conviene volver a aplicar y qué documentación mejora tu caso.",
     tag: "Canadá",
-    href: "/blog/carta-invitacion-arraigo-visa-canada",
-  },
-  {
-    title: "Visa mexicana para peruanos: guía completa",
-    excerpt: "Desde 2024 los peruanos necesitan visa para México. Requisitos, costo y excepciones.",
-    tag: "México",
-    href: "/blog/visa-mexico-peruanos-requisitos",
+    href: "/blog/visa-canadiense-rechazada-que-hacer",
   },
 ] as const;
 
@@ -232,17 +214,29 @@ function BtnPrimary({
   children,
   external = false,
   className = "",
+  waPosition,
+  waService,
 }: {
   href: string;
   children: React.ReactNode;
   external?: boolean;
   className?: string;
+  waPosition?: WAPosition;
+  waService?: WAService;
 }) {
+  const cls = `inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#00C896] px-6 py-3 text-sm font-semibold text-[#0B1F3A] shadow-lg shadow-[#00C896]/20 transition hover:bg-[#00A87D] sm:text-base ${className}`;
+  if (waPosition) {
+    return (
+      <WALink href={href} cta_position={waPosition} service={waService ?? "general"} className={cls}>
+        {children}
+      </WALink>
+    );
+  }
   return (
     <a
       href={href}
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#00C896] px-6 py-3 text-sm font-semibold text-[#0B1F3A] shadow-lg shadow-[#00C896]/20 transition hover:bg-[#00A87D] sm:text-base ${className}`}
+      className={cls}
     >
       {children}
     </a>
@@ -369,59 +363,7 @@ export default function Home() {
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      {/* ═══════════ HEADER ═══════════ */}
-      <header className="sticky top-0 z-50 border-b border-[#E2E8F0]/80 bg-white/90 backdrop-blur-lg">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-          <Link href="/" className="text-xl font-bold tracking-tight text-[#0B1F3A]">
-            Go<span className="text-[#008F6B]">viaje</span>
-          </Link>
-
-          <nav className="hidden items-center gap-6 lg:flex">
-            {NAV_LINKS.map((link) =>
-              "external" in link && link.external ? (
-                <WALink key={link.href} href={link.href} cta_position="top" service="auto" className="text-sm font-medium text-slate-600 transition hover:text-[#0B1F3A]">
-                  {link.label}
-                </WALink>
-              ) : (
-                <a key={link.href} href={link.href} className="text-sm font-medium text-slate-600 transition hover:text-[#0B1F3A]">
-                  {link.label}
-                </a>
-              )
-            )}
-          </nav>
-
-          <div className="flex items-center gap-2">
-            <BtnWhatsApp href={WHATSAPP_URL} cta_position="top" service="general" className="!hidden !px-4 !py-2 !text-sm sm:!inline-flex">
-              WhatsApp
-            </BtnWhatsApp>
-
-            <details className="relative lg:hidden">
-              <summary className="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-xl border border-[#E2E8F0] bg-[#F1F5F9] text-[#0B1F3A] [&::-webkit-details-marker]:hidden">
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-                <span className="sr-only">Abrir menú</span>
-              </summary>
-              <nav className="absolute right-0 mt-2 w-60 rounded-2xl border border-[#E2E8F0] bg-white p-3 shadow-xl">
-                {NAV_LINKS.map((link) =>
-                  "external" in link && link.external ? (
-                    <WALink key={link.href} href={link.href} cta_position="top" service="auto" className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-[#F1F5F9]">
-                      {link.label}
-                    </WALink>
-                  ) : (
-                    <a key={link.href} href={link.href} className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-[#F1F5F9]">
-                      {link.label}
-                    </a>
-                  )
-                )}
-                <BtnWhatsApp href={WHATSAPP_URL} cta_position="top" service="general" className="mt-2 w-full !text-sm">
-                  WhatsApp
-                </BtnWhatsApp>
-              </nav>
-            </details>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main className="pb-20 sm:pb-0">
         {/* ═══════════ HERO ═══════════ */}
@@ -446,7 +388,7 @@ export default function Home() {
             </p>
 
             <div className="mt-5 flex max-w-[calc(100vw-2rem)] flex-col gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:items-start">
-              <BtnPrimary href={CONSULTATION_URL} external className="w-full max-w-full sm:w-auto">
+              <BtnPrimary href={CONSULTATION_URL} external waPosition="top" waService="general" className="w-full max-w-full sm:w-auto">
                 Evalúa tu caso ahora
                 <IconArrow />
               </BtnPrimary>
@@ -525,7 +467,7 @@ export default function Home() {
             </div>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
+              <BtnPrimary href={CONSULTATION_URL} external waPosition="middle" waService="general" className="w-full sm:w-auto">
                 Agenda tu asesoría gratuita
                 <IconArrow />
               </BtnPrimary>
@@ -594,8 +536,14 @@ export default function Home() {
                   Somos especialistas en visa americana B1/B2. Desde la primera solicitud hasta la renovación, te acompañamos con un proceso riguroso de perfilado previo y preparación consular.
                 </p>
                 <FeatureList items={USA_FEATURES} />
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
+                <p className="mt-5 rounded-xl border border-[#00C896]/20 bg-[#00C896]/5 px-4 py-3 text-sm leading-relaxed text-slate-700">
+                  ¿No sabes cuánto dinero debes tener ni qué documentos llevar?{" "}
+                  <a href="/blog/solvencia-economica-visa-americana" className="font-semibold text-[#008F6B] underline hover:text-[#006B52]">
+                    Lee nuestra guía sobre cómo demostrar solvencia económica para la visa americana
+                  </a>.
+                </p>
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                  <BtnPrimary href={CONSULTATION_URL} external waPosition="middle" waService="visa-usa" className="w-full sm:w-auto">
                     Agendar asesoría gratuita
                     <IconArrow />
                   </BtnPrimary>
@@ -729,7 +677,7 @@ export default function Home() {
                 Conversamos sobre tu caso, identificamos fortalezas y posibles riesgos, y te orientamos sobre el mejor camino antes de que inicies tu solicitud.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <BtnPrimary href={CONSULTATION_URL} external>
+                <BtnPrimary href={CONSULTATION_URL} external waPosition="middle" waService="general">
                   Agendar asesoría gratuita
                   <IconArrow />
                 </BtnPrimary>
@@ -822,7 +770,7 @@ export default function Home() {
                 Recibe una evaluación profesional de tu caso y conoce los pasos a seguir.
               </p>
               <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
+                <BtnPrimary href={CONSULTATION_URL} external waPosition="middle" waService="general" className="w-full sm:w-auto">
                   Agenda tu asesoría gratuita
                   <IconArrow />
                 </BtnPrimary>
@@ -834,39 +782,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ═══════════ BLOG / SEO ═══════════ */}
-        <section id="blog" className="bg-[#F1F5F9] px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-          <div className="mx-auto max-w-6xl">
-            <div className="max-w-2xl">
-              <SectionLabel>Recursos</SectionLabel>
-              <SectionTitle className="mt-3">Aprende antes de aplicar</SectionTitle>
-              <p className="mt-3 text-base text-slate-600">
-                Guías, requisitos, consejos y respuestas frecuentes sobre visas de turismo para que tomes mejores decisiones.
-              </p>
-            </div>
-
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {BLOG_POSTS.map((post) => (
-                <a
-                  key={post.title}
-                  href={post.href}
-                  className="group flex flex-col overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white shadow-sm transition hover:shadow-md"
-                >
-                  <div className="h-36 bg-gradient-to-br from-[#0B1F3A] to-[#132D52] sm:h-40" />
-                  <div className="flex flex-1 flex-col p-5 sm:p-6">
-                    <span className="text-xs font-semibold uppercase tracking-wide text-[#00A87D]">{post.tag}</span>
-                    <h3 className="mt-2 text-base font-semibold text-[#0B1F3A] sm:text-lg">{post.title}</h3>
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{post.excerpt}</p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[#00A87D]">
-                      Leer artículo
-                      <IconArrow className="h-3.5 w-3.5" />
-                    </span>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
+        <GuideCards
+          heading="Últimas guías"
+          posts={BLOG_POSTS.map((p) => ({ href: p.href, title: p.title, excerpt: p.excerpt }))}
+        />
 
         {/* ═══════════ FAQ ═══════════ */}
         <section id="faq" className="px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
@@ -914,7 +833,7 @@ export default function Home() {
                 <BtnWhatsApp href={WHATSAPP_HERO_URL} cta_position="middle" service="general" className="w-full sm:w-auto">
                   Hablar por WhatsApp
                 </BtnWhatsApp>
-                <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
+                <BtnPrimary href={CONSULTATION_URL} external waPosition="middle" waService="general" className="w-full sm:w-auto">
                   Agendar asesoría
                   <IconArrow />
                 </BtnPrimary>
@@ -933,7 +852,7 @@ export default function Home() {
               Recibe orientación especializada para tu visa de turismo y conoce tus posibilidades antes de aplicar.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <BtnPrimary href={CONSULTATION_URL} external className="w-full sm:w-auto">
+              <BtnPrimary href={CONSULTATION_URL} external waPosition="bottom" waService="general" className="w-full sm:w-auto">
                 Agendar asesoría gratuita
                 <IconArrow />
               </BtnPrimary>
@@ -989,24 +908,24 @@ export default function Home() {
       {/* ═══════════ STICKY WHATSAPP — MOBILE ═══════════ */}
       <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-[#E2E8F0] bg-white/95 p-3 backdrop-blur-lg sm:hidden">
         <div className="flex gap-2">
-          <a
+          <WALink
             href={CONSULTATION_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            cta_position="floating"
+            service="general"
             className="flex min-h-12 min-w-0 flex-1 items-center justify-center gap-1.5 rounded-full bg-[#00C896] px-3 py-3 text-xs font-semibold leading-tight text-[#0B1F3A] min-[375px]:text-sm"
           >
             Asesoría gratis
             <IconArrow className="h-3.5 w-3.5 shrink-0" />
-          </a>
-          <a
+          </WALink>
+          <WALink
             href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            cta_position="floating"
+            service="general"
             className="flex min-h-12 min-w-0 flex-1 items-center justify-center gap-1.5 rounded-full bg-[#25D366] px-3 py-3 text-sm font-semibold text-white"
           >
             <IconWhatsApp className="h-4 w-4" />
             <span className="truncate">WhatsApp</span>
-          </a>
+          </WALink>
         </div>
       </div>
     </div>

@@ -4,6 +4,8 @@ import SiteFooter from "../components/SiteFooter";
 import PlanesSection, { PayPalSection, IzipayMicrocopy } from "./PlanesSection";
 import { PAYMENTS, izipayLinksActive } from "../lib/payments";
 import { EMPRESA } from "../lib/empresa";
+import WALink from "../components/WALink";
+import GuideCards from "../components/GuideCards";
 
 const WA_URL =
   "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20asesor%C3%ADa%20para%20mi%20visa%20americana";
@@ -96,23 +98,23 @@ export default function VisaUSA() {
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <a
+              <WALink
                 href={CONSULTATION_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                cta_position="top"
+                service="visa-usa"
                 className="rounded-full bg-[#00C896] px-6 py-4 text-center font-bold text-slate-950 shadow-lg shadow-[#00C896]/20"
               >
                 Agendar asesoría gratuita
-              </a>
+              </WALink>
 
-              <a
+              <WALink
                 href={WA_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                cta_position="top"
+                service="visa-usa"
                 className="rounded-full border border-white/20 bg-white/10 px-6 py-4 text-center font-bold text-white backdrop-blur"
               >
                 Hablar por WhatsApp
-              </a>
+              </WALink>
             </div>
 
             <div className="mt-8 grid grid-cols-3 gap-3 text-center text-sm">
@@ -194,6 +196,24 @@ export default function VisaUSA() {
         </div>
       </section>
 
+      {/* Callout solvencia económica */}
+      <section className="mx-auto max-w-4xl px-6 pb-0 pt-2">
+        <div className="rounded-2xl border border-[#00C896]/25 bg-[#00C896]/5 px-6 py-5">
+          <p className="text-sm font-semibold text-[#0B1F3A]">
+            ¿No sabes cómo demostrar tu solvencia económica ante el consulado?
+          </p>
+          <p className="mt-1 text-sm leading-relaxed text-slate-600">
+            El monto mínimo que circula en redes no existe en ningún documento oficial. Entiende qué evalúa realmente el oficial y qué errores evitar.
+          </p>
+          <a
+            href="/blog/solvencia-economica-visa-americana"
+            className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#008F6B] hover:text-[#006B52] hover:underline"
+          >
+            Leer guía: cómo demostrar solvencia económica para la visa americana →
+          </a>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-4xl px-6 py-20">
         <h2 className="text-center text-3xl font-black">
           Preguntas frecuentes
@@ -216,24 +236,34 @@ export default function VisaUSA() {
         </p>
 
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-          <a
+          <WALink
             href={CONSULTATION_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            cta_position="bottom"
+            service="visa-usa"
             className="rounded-full bg-[#00C896] px-6 py-4 font-bold text-slate-950"
           >
             Agendar asesoría gratuita
-          </a>
-          <a
+          </WALink>
+          <WALink
             href={WA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            cta_position="bottom"
+            service="visa-usa"
             className="rounded-full border border-white/20 px-6 py-4 font-bold"
           >
             Hablar por WhatsApp
-          </a>
+          </WALink>
         </div>
       </section>
+
+      <GuideCards
+        heading="Guías útiles para tu visa americana"
+        posts={[
+          { href: "/blog/me-negaron-la-visa-americana", title: "Me negaron la visa americana: qué hacer (2026)", excerpt: "Qué significa el rechazo 214(b) y cuándo puedes volver a aplicar." },
+          { href: "/blog/renovacion-visa-americana-sin-entrevista", title: "Renovación de visa americana sin entrevista (2026)", excerpt: "Quiénes califican para renovar por correo y qué documentos necesitas." },
+          { href: "/blog/adelantar-cita-visa-americana-peru", title: "Cómo adelantar tu cita de visa americana en Perú (2026)", excerpt: "Estrategias legales para conseguir una fecha más cercana en la embajada." },
+          { href: "/blog/solvencia-economica-visa-americana", title: "Solvencia económica para visa americana (2026)", excerpt: "Qué evalúa realmente el oficial consular y qué documentos ayudan." },
+        ]}
+      />
 
       <SiteFooter />
     </main>
@@ -298,26 +328,27 @@ function ServiceCard({
           <IzipayMicrocopy />
           <p className="text-center text-xs text-slate-500">
             Después de pagar,{" "}
-            <a
+            <WALink
               href={waAfterPay}
-              target="_blank"
-              rel="noopener noreferrer"
+              cta_position="middle"
+              service="visa-usa"
+              event="payment_proof_click"
               className="font-medium text-[#25D366] hover:underline"
             >
               envía tu comprobante por WhatsApp
-            </a>{" "}
+            </WALink>{" "}
             para iniciar tu trámite.
           </p>
         </div>
       ) : (
-        <a
+        <WALink
           href={href}
-          target="_blank"
-          rel="noopener noreferrer"
+          cta_position="middle"
+          service="visa-usa"
           className="mt-6 inline-flex w-full justify-center rounded-full bg-slate-950 px-5 py-4 font-bold text-white"
         >
           {cta}
-        </a>
+        </WALink>
       )}
 
       {paypalKey && <PayPalSection planKey={paypalKey} instance="card" />}
@@ -354,13 +385,14 @@ function InfoBox({
         ))}
       </div>
 
-      <a
+      <WALink
         href={href}
-        {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        cta_position="middle"
+        service="visa-usa"
         className="mt-8 inline-flex w-full justify-center rounded-full bg-[#00C896] px-5 py-4 font-bold text-slate-950"
       >
         {button}
-      </a>
+      </WALink>
 
       {blogHref && (
         <a href={blogHref} className="mt-3 block text-center text-sm text-[#008F6B] hover:underline">
