@@ -150,7 +150,7 @@ export default function TerminosYCondiciones() {
                       {
                         plan: "Visa Canadá — Premium",
                         precio: "S/ 550",
-                        incluye: "Todo lo del plan Smart + acompañamiento en el seguimiento del envío y recojo del pasaporte, modelo optimizado de carta de invitación en inglés y re-solicitud sin nuevos honorarios si tu visa es negada (ver cláusula 2.1).",
+                        incluye: "Todo lo del plan Smart + acompañamiento en el seguimiento del envío y recojo del pasaporte, modelo optimizado de carta de invitación en inglés y re-solicitud sin nuevos honorarios si tu visa es negada (una vez; ver cláusula 2.1).",
                       },
                       {
                         plan: "Visa México — Básico",
@@ -192,13 +192,14 @@ export default function TerminosYCondiciones() {
                 garantiza aprobación. Una visa negada no da derecho a reembolso del servicio de asesoría ya prestado.
               </p>
 
-              {/* TODO (definir por el negocio): número máximo de re-solicitudes y plazo para usar el beneficio de la cláusula 2.1. No inventar límites. */}
               <p className="mt-3 rounded-xl border border-[#E2E8F0] bg-[#F1F5F9] px-4 py-3 text-sm">
                 <strong>2.1 Re-solicitud sin nuevos honorarios (Plan Premium Canadá).</strong> Si la solicitud de
                 visa del cliente del plan Premium Canadá es negada y el cliente decide volver a presentarla,
                 GoViaje no cobra nuevos honorarios de asesoría por esa nueva presentación. Las tasas oficiales del
                 Gobierno de Canadá (solicitud y biométricos, si corresponden) deben pagarse nuevamente por el
-                cliente. Este beneficio no constituye garantía de aprobación.
+                cliente. Este beneficio no constituye garantía de aprobación. Este beneficio aplica una sola vez
+                por cliente y por contrato. Debe utilizarse dentro de los 12 meses siguientes a la fecha de la
+                negativa.
               </p>
             </section>
 

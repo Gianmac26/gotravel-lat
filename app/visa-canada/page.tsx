@@ -71,7 +71,7 @@ const PLANES: Plan[] = [
       "Todo lo del Plan Smart",
       "Acompañamiento en el seguimiento del envío y recojo del pasaporte",
       "Modelo optimizado de carta de invitación en inglés",
-      "Re-solicitud sin nuevos honorarios si tu visa es negada",
+      "Re-solicitud sin nuevos honorarios si tu visa es negada (una vez)",
     ],
     wa: WA_PREMIUM,
     izipayKey: "canadaPremium",
@@ -96,7 +96,7 @@ const COMPARATIVA_FEATURES: {
   { feature: "Soporte continuo", basico: false, smart: true, premium: true },
   { feature: "Acompañamiento en el seguimiento del envío y recojo del pasaporte", basico: false, smart: false, premium: true },
   { feature: "Carta de invitación optimizada en inglés", basico: false, smart: false, premium: true },
-  { feature: "Re-solicitud sin nuevos honorarios si tu visa es negada", basico: false, smart: false, premium: true },
+  { feature: "Re-solicitud sin nuevos honorarios si tu visa es negada (una vez)", basico: false, smart: false, premium: true },
 ];
 
 const PROCESO_STEPS = [
