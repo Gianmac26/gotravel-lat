@@ -149,7 +149,7 @@ export default function VisaUSA() {
           <ServiceCard
             title="Renovación de Visa"
             price={`S/${PAYMENTS.izipay.links.renovacion.amount} · USD ${PAYMENTS.paypal.usdAmounts.renovacion}`}
-            text="Acompañamiento para renovar tu visa americana de forma ordenada."
+            text="Acompañamiento para renovar tu visa americana de forma ordenada. Incluye evaluación de caso, asesoría en el llenado del DS-160, revisión de historial migratorio y checklist."
             href={WA_URL}
             cta="Solicitar renovación"
             paypalKey="renovacion"

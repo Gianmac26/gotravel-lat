@@ -19,6 +19,13 @@ export const ADELANTO = {
     "La disponibilidad de fechas depende exclusivamente del consulado; no garantizamos conseguir una fecha más próxima.",
   devolucion:
     "Si no conseguimos adelantar tu cita dentro del plazo del servicio, te devolvemos el 100 % de lo pagado por este servicio.",
+  solicitud: `Tras los 90 días sin conseguir un adelanto, solicita la devolución por WhatsApp o a ${EMPRESA.emailAtencion} con tu nombre y comprobante de pago. La procesamos en un máximo de 7 días hábiles desde tu solicitud. Si pagaste con tarjeta, el abono puede tardar hasta 30 días adicionales según tu banco.`,
+} as const;
+
+/** Tasas oficiales de la visa USA: no se publica un total fijo. */
+export const TASA_USA = {
+  nota: "Tasa consular MRV: USD 185, se paga directamente al gobierno de EE. UU. Además, puede aplicarse la Visa Integrity Fee de USD 250, que se cobra solo si la visa es emitida. Confirma el monto vigente en el sitio oficial de la Embajada de EE. UU. en el Perú antes de pagar.",
+  url: "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/fees/fees-visa-services.html",
 } as const;
 
 /** Aviso de no afiliación (footer de todas las páginas). */

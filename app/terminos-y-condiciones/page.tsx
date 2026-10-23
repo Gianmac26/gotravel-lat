@@ -150,7 +150,7 @@ export default function TerminosYCondiciones() {
                       {
                         plan: "Visa Canadá — Premium",
                         precio: "S/ 550",
-                        incluye: "Todo lo del plan Smart + acompañamiento en el seguimiento del envío y recojo del pasaporte, modelo optimizado de carta de invitación en inglés y soporte adicional del plan Premium (condiciones por WhatsApp).",
+                        incluye: "Todo lo del plan Smart + acompañamiento en el seguimiento del envío y recojo del pasaporte, modelo optimizado de carta de invitación en inglés y re-solicitud sin nuevos honorarios si tu visa es negada (ver cláusula 2.1).",
                       },
                       {
                         plan: "Visa México — Básico",
@@ -191,6 +191,15 @@ export default function TerminosYCondiciones() {
                 El servicio inicia una vez confirmado el pago y recibida la información del cliente. GoViaje no
                 garantiza aprobación. Una visa negada no da derecho a reembolso del servicio de asesoría ya prestado.
               </p>
+
+              {/* TODO (definir por el negocio): número máximo de re-solicitudes y plazo para usar el beneficio de la cláusula 2.1. No inventar límites. */}
+              <p className="mt-3 rounded-xl border border-[#E2E8F0] bg-[#F1F5F9] px-4 py-3 text-sm">
+                <strong>2.1 Re-solicitud sin nuevos honorarios (Plan Premium Canadá).</strong> Si la solicitud de
+                visa del cliente del plan Premium Canadá es negada y el cliente decide volver a presentarla,
+                GoViaje no cobra nuevos honorarios de asesoría por esa nueva presentación. Las tasas oficiales del
+                Gobierno de Canadá (solicitud y biométricos, si corresponden) deben pagarse nuevamente por el
+                cliente. Este beneficio no constituye garantía de aprobación.
+              </p>
             </section>
 
             {/* 3 */}
@@ -218,14 +227,7 @@ export default function TerminosYCondiciones() {
                   <strong>{ADELANTO.devolucion}</strong> El plazo del servicio es de 90 días calendario
                   desde la contratación.
                 </li>
-                <li>
-                  Cómo se solicita la devolución: una vez vencido el plazo, el cliente escribe a{" "}
-                  {EMPRESA.emailAtencion} o por WhatsApp al {EMPRESA.whatsapp} indicando su nombre y el
-                  comprobante de pago del Adelanto de Cita. La devolución es por el mismo medio de pago
-                  utilizado y se procesa en los plazos de la sección 6: máximo 30 días calendario si el pago
-                  fue con tarjeta de crédito o débito, y máximo 3 días hábiles si fue por transferencia
-                  bancaria o billetera electrónica (Yape, Plin u otras).
-                </li>
+                <li>{ADELANTO.solicitud}</li>
                 <li>
                   <strong>Si GoViaje no realiza el monitoreo activo durante el plazo acordado</strong>{" "}
                   (incumplimiento de nuestra parte): también corresponde el reembolso del{" "}

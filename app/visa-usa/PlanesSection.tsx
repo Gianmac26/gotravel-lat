@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { PAYMENTS, izipayLinksActive } from "../lib/payments";
-import { ADELANTO, EMPRESA } from "../lib/empresa";
+import { ADELANTO, EMPRESA, TASA_USA } from "../lib/empresa";
 import WALink from "../components/WALink";
 import LineaHonorarios from "../components/LineaHonorarios";
 
@@ -169,9 +169,17 @@ export default function PlanesSection() {
           Elige el nivel de acompañamiento según tu necesidad.
         </p>
         <p className="mx-auto mt-4 max-w-3xl rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm leading-6 text-amber-900">
-          <strong>Costos oficiales aparte:</strong> la tasa consular (MRV) de la visa B1/B2 (USD 185) se paga
-          directamente al gobierno de EE.UU. y no está incluida en nuestros honorarios. El formulario DS-160 es
-          gratuito en el sitio oficial (ceac.state.gov) y puedes presentarlo por tu cuenta.
+          <strong>Costos oficiales aparte:</strong> {TASA_USA.nota}{" "}
+          <a
+            href={TASA_USA.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold underline underline-offset-2"
+          >
+            Ver tarifas oficiales
+          </a>
+          . Estos montos no están incluidos en nuestros honorarios. El formulario DS-160 es gratuito en el sitio
+          oficial (ceac.state.gov) y puedes presentarlo por tu cuenta.
         </p>
       </div>
 
@@ -293,6 +301,7 @@ export default function PlanesSection() {
             <strong>No reemplaza el pago del plan.</strong>
           </p>
           <p className="mt-2 text-xs leading-relaxed text-slate-500">{ADELANTO.disponibilidad}</p>
+          <p className="mt-2 text-xs leading-relaxed text-slate-500">{ADELANTO.solicitud}</p>
         </div>
         <div className="mt-6 min-w-[220px] space-y-3 md:mt-0">
           <p className="text-center text-3xl font-black text-[#00A87D]">S/ {adelanto.amount}</p>

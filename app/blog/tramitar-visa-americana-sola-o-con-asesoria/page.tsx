@@ -82,7 +82,7 @@ const SECTIONS = [
       {
         type: "list" as const,
         items: [
-          "Costo — Solo: USD $185 (tarifa MRV). Con asesoría: USD $185 + costo de asesoría (varía según el plan y el tipo de solicitud).",
+          "Costo — Solo: USD $185 (tarifa MRV). Con asesoría: USD $185 + costo de asesoría (varía según el plan y el tipo de solicitud). Además, puede aplicarse la Visa Integrity Fee de USD 250, que se cobra solo si la visa es emitida.",
           "Preparación del DS-160 — Solo: tú lo haces, sin revisión externa. Con asesoría: revisión de consistencia con tus documentos antes de enviar.",
           "Preparación de entrevista — Solo: por tu cuenta, con guías públicas. Con asesoría: simulación de entrevista orientada a tu perfil específico.",
           "Revisión de riesgos — Solo: no la tienes. Con asesoría: el asesor identifica aspectos del perfil que pueden generar dudas antes de que llegues a ventanilla.",
@@ -171,7 +171,7 @@ const FAQS = [
   },
   {
     q: "¿Cuánto cuesta contratar una asesoría visa americana?",
-    a: "Varía según el tipo de solicitud y el nivel de servicio. En GoViaje los planes empiezan desde S/250. El costo de la asesoría se suma a la tarifa MRV de USD $185 que paga cualquier solicitante. La evaluación inicial de tu caso es gratuita.",
+    a: "Varía según el tipo de solicitud y el nivel de servicio. En GoViaje los planes empiezan desde S/250. El costo de la asesoría se suma a la tarifa MRV de USD $185 que paga cualquier solicitante; además, puede aplicarse la Visa Integrity Fee de USD 250, que se cobra solo si la visa es emitida. La evaluación inicial de tu caso es gratuita.",
   },
   {
     q: "¿Puedo tramitar la visa solo si tuve un rechazo previo?",
