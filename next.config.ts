@@ -13,6 +13,12 @@ const nextConfig: NextConfig = {
       destination: "/politica-de-privacidad",
       permanent: true,
     },
+    // Evaluación de Perfil IA descontinuada: 301 a la home (sin destino externo).
+    {
+      source: "/analisis-perfil-ia",
+      destination: "/",
+      statusCode: 301,
+    },
   ],
 };
 

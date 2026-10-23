@@ -889,15 +889,18 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <a
-                href="https://datosdeviaje.com?sca_ref=155885.qqrcgiz8z5q"
-                target="_blank"
-                rel="sponsored noopener noreferrer"
-                className="inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-full bg-[#00C896] px-6 py-3.5 text-sm font-black text-[#0B1F3A] shadow-lg shadow-[#00C896]/30 transition hover:bg-[#00A87D] sm:w-auto sm:text-base"
-              >
-                Usar código GOVIAJESIM
-                <IconArrow className="h-4 w-4" />
-              </a>
+              <div className="flex w-full shrink-0 flex-col items-center gap-1.5 sm:w-auto">
+                <a
+                  href="https://datosdeviaje.com?sca_ref=155885.qqrcgiz8z5q"
+                  target="_blank"
+                  rel="sponsored noopener noreferrer"
+                  className="inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-full bg-[#00C896] px-6 py-3.5 text-sm font-black text-[#0B1F3A] shadow-lg shadow-[#00C896]/30 transition hover:bg-[#00A87D] sm:w-auto sm:text-base"
+                >
+                  Usar código GOVIAJESIM
+                  <IconArrow className="h-4 w-4" />
+                </a>
+                <span className="text-xs text-slate-500">(enlace de afiliado)</span>
+              </div>
             </div>
           </div>
         </section>
