@@ -43,6 +43,9 @@ export const metadata: Metadata = {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
   },
+  other: {
+    "facebook-domain-verification": "bystbxnv9udg8avmapt1kpq86a8bmp",
+  },
 };
 
 export const viewport: Viewport = {
