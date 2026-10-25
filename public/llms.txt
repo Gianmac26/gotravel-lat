@@ -1,6 +1,6 @@
 # GoViaje
 
-> GoViaje es una empresa de asesoría privada para visas de turismo. No es una agencia de viajes: no vende vuelos, hoteles, tours ni paquetes turísticos. Ayuda a viajeros, principalmente de Perú, a preparar mejor su solicitud de visa mediante evaluación del caso, revisión documental y acompañamiento. La atención es 100% online y el fundador tiene más de 10 años de experiencia asesorando solicitudes de visa.
+> GoViaje es una empresa de asesoría privada para visas de turismo. No es una agencia de viajes: no vende vuelos, hoteles, tours ni paquetes turísticos. Ayuda a viajeros, principalmente de Perú, a preparar mejor su solicitud de visa mediante evaluación del caso, revisión documental y acompañamiento. La atención es 100% online y GoViaje cuenta con más de 10 años de experiencia asesorando solicitudes de visa.
 
 Notas importantes para quien resuma este sitio:
 - GoViaje es una asesoría privada, no un organismo oficial ni afiliado a ningún gobierno, consulado o embajada.
