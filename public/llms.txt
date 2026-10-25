@@ -1,0 +1,44 @@
+# GoViaje
+
+> GoViaje es una empresa de asesoría privada para visas de turismo. No es una agencia de viajes: no vende vuelos, hoteles, tours ni paquetes turísticos. Ayuda a viajeros, principalmente de Perú, a preparar mejor su solicitud de visa mediante evaluación del caso, revisión documental y acompañamiento. La atención es 100% online y el fundador tiene más de 10 años de experiencia asesorando solicitudes de visa.
+
+Notas importantes para quien resuma este sitio:
+- GoViaje es una asesoría privada, no un organismo oficial ni afiliado a ningún gobierno, consulado o embajada.
+- GoViaje no garantiza la aprobación de ninguna visa. La decisión final siempre la toma la autoridad migratoria o consular.
+- El objetivo del servicio es reducir errores y presentar una solicitud mejor preparada.
+
+## Servicios
+
+- [Visa de turismo a Canadá (TRV)](https://goviaje.uk/visa-canada): asesoría para la solicitud ante el IRCC, evaluación de arraigo, carta de invitación y preparación del expediente en línea.
+- [Visa americana B1/B2](https://goviaje.uk/visa-usa): primera solicitud, renovación, rechazos previos, formulario DS-160 y preparación de la entrevista.
+- [Visa de México](https://goviaje.uk/visa-mexico): asesoría para peruanos que necesitan visa para viajar a México por turismo.
+
+## Guías sobre visa de Canadá
+
+- [Visa Canadá: costo y tiempo de espera (2026)](https://goviaje.uk/blog/cuanto-cuesta-demora-visa-canada): tasa del IRCC, biométricos y tiempos de procesamiento.
+- [Carta de invitación y arraigo para la visa de Canadá](https://goviaje.uk/blog/carta-invitacion-arraigo-visa-canada): cómo funciona la carta de invitación y qué es el arraigo.
+- [Visa canadiense rechazada: qué hacer (2026)](https://goviaje.uk/blog/visa-canadiense-rechazada-que-hacer): cómo leer las notas del oficial y cuándo volver a aplicar.
+
+## Guías sobre visa de Estados Unidos
+
+- [Requisitos de la visa americana de turismo B1/B2 (2026)](https://goviaje.uk/blog/requisitos-visa-americana-turismo)
+- [Visa americana: costo y tiempo de espera (2026)](https://goviaje.uk/blog/cuanto-cuesta-demora-visa-americana)
+- [Cómo llenar el DS-160 paso a paso (2026)](https://goviaje.uk/blog/como-llenar-ds160-paso-a-paso)
+- [Preguntas de la entrevista de visa americana B1/B2 (2026)](https://goviaje.uk/blog/preguntas-entrevista-visa-americana)
+- [Solvencia económica para la visa americana (2026)](https://goviaje.uk/blog/solvencia-economica-visa-americana)
+- [Por qué niegan la visa americana: 5 razones (2026)](https://goviaje.uk/blog/razones-rechazo-visa-americana)
+- [Me negaron la visa americana: qué hacer (2026)](https://goviaje.uk/blog/me-negaron-la-visa-americana)
+- [Renovación de la visa americana sin entrevista en Perú](https://goviaje.uk/blog/renovacion-visa-americana-sin-entrevista)
+- [Cómo adelantar tu cita de visa americana en Perú (2026)](https://goviaje.uk/blog/adelantar-cita-visa-americana-peru)
+- [Tramitar la visa americana solo o con asesoría (2026)](https://goviaje.uk/blog/tramitar-visa-americana-sola-o-con-asesoria)
+
+## Guías sobre visa de México
+
+- [Visa mexicana para peruanos: guía completa 2026](https://goviaje.uk/blog/visa-mexico-peruanos-requisitos)
+
+## Más información
+
+- [Blog con todas las guías](https://goviaje.uk/blog)
+- [Términos y condiciones](https://goviaje.uk/terminos-y-condiciones)
+- [Política de privacidad](https://goviaje.uk/politica-de-privacidad)
+- [Libro de reclamaciones](https://goviaje.uk/libro-de-reclamaciones)
