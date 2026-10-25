@@ -81,6 +81,20 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   // ── Canadá ───────────────────────────────────────────────────────────────
   {
+    slug: "cuanto-dinero-necesito-visa-canadiense",
+    title: "¿Cuánto dinero necesito para la visa canadiense? Guía para peruanos (2026)",
+    excerpt:
+      "IRCC no fija un monto mínimo. Qué evalúa sobre tu solvencia, cómo estimar lo que necesita tu viaje y qué documentos presentar.",
+    tag: "Canadá",
+  },
+  {
+    slug: "visa-canada-sin-viajes-previos",
+    title: "Visa Canadá sin viajes previos: cómo aplicar por primera vez (2026)",
+    excerpt:
+      "No haber viajado antes no es un requisito de IRCC, pero cambia lo que debes reforzar. Cómo preparar una primera solicitud.",
+    tag: "Canadá",
+  },
+  {
     slug: "carta-invitacion-arraigo-visa-canada",
     title: "Carta de invitación y arraigo: qué evalúa Canadá en tu visa",
     excerpt:

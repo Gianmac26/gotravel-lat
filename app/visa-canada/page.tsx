@@ -850,6 +850,8 @@ export default function VisaCanada() {
       <GuideCards
         heading="Guías útiles para tu visa canadiense"
         posts={[
+          { href: "/blog/cuanto-dinero-necesito-visa-canadiense", title: "¿Cuánto dinero necesito para la visa canadiense? Guía para peruanos (2026)", excerpt: "IRCC no fija un monto mínimo: qué evalúa y qué documentos presentar." },
+          { href: "/blog/visa-canada-sin-viajes-previos", title: "Visa Canadá sin viajes previos: cómo aplicar por primera vez (2026)", excerpt: "Qué dice IRCC y cómo reforzar tu solicitud si es tu primera visa." },
           { href: "/blog/carta-invitacion-arraigo-visa-canada", title: "Carta de invitación y arraigo: qué evalúa Canadá en tu visa", excerpt: "Cómo funciona la carta de invitación y qué solvencia pide el IRCC." },
           { href: "/blog/cuanto-cuesta-demora-visa-canada", title: "Visa Canadá: costo y tiempo de espera (2026)", excerpt: "Tasa IRCC, biométricos y tiempos de procesamiento actualizados." },
           { href: "/blog/visa-canadiense-rechazada-que-hacer", title: "Visa canadiense rechazada: qué hacer y cómo volver a aplicar (2026)", excerpt: "Cómo leer las notas del oficial y qué documentación mejora tu caso." },

@@ -18,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/visa-canada`,
-      lastModified: new Date("2026-10-01"),
+      lastModified: new Date("2026-10-25"),
       changeFrequency: "weekly",
       priority: 0.9,
     },
@@ -30,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/blog`,
-      lastModified: new Date("2026-10-07"),
+      lastModified: new Date("2026-10-25"),
       changeFrequency: "weekly",
       priority: 0.8,
     },
@@ -117,6 +117,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date("2026-10-01"),
       changeFrequency: "monthly",
       priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/cuanto-dinero-necesito-visa-canadiense`,
+      lastModified: new Date("2026-10-25"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/blog/visa-canada-sin-viajes-previos`,
+      lastModified: new Date("2026-10-25"),
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
     {
       url: `${BASE_URL}/terminos-y-condiciones`,
