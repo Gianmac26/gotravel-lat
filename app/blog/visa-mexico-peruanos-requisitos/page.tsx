@@ -2,17 +2,24 @@ import type { Metadata } from "next";
 import ArticleLayout from "../../components/ArticleLayout";
 
 export const metadata: Metadata = {
-  title: "Visa Mexicana para Peruanos: Guía Completa 2026",
+  title: "¿Peruanos necesitan visa para México? Requisitos",
   description:
-    "Desde 2024 los peruanos necesitan visa para entrar a México por turismo. Requisitos, costo, excepciones y cómo tramitarla.",
+    "Sí, desde el 6 de mayo de 2024 según la SRE/INM. Exonerados con visa vigente de EE.UU., Canadá, Schengen, UK o Japón. Requisitos y cita consular en Lima.",
   alternates: { canonical: "https://goviaje.uk/blog/visa-mexico-peruanos-requisitos" },
+  openGraph: {
+    title: "¿Peruanos necesitan visa para México? Requisitos",
+    description:
+      "Sí, desde el 6 de mayo de 2024 según la SRE/INM. Exonerados con visa vigente de EE.UU., Canadá, Schengen, UK o Japón. Requisitos y cita consular en Lima.",
+    url: "https://goviaje.uk/blog/visa-mexico-peruanos-requisitos",
+    type: "article",
+  },
 };
 
 const SECTIONS = [
   {
     heading: "¿Por qué ahora se necesita visa para México?",
     blocks: [
-      { type: "p" as const, text: "Desde 2024, el gobierno de México estableció que los ciudadanos peruanos necesitan visa de visitante para ingresar al país, incluso por turismo. Antes de ese cambio, los peruanos podían viajar a México sin visa; hoy ya no es así." },
+      { type: "p" as const, text: "Desde el 6 de mayo de 2024, la Secretaría de Relaciones Exteriores (SRE) y el Instituto Nacional de Migración (INM) de México establecieron que los ciudadanos peruanos necesitan visa de visitante para ingresar al país, incluso por turismo. Antes de ese cambio, los peruanos podían viajar a México sin visa; hoy ya no es así." },
       { type: "callout" as const, text: "Este es uno de los cambios de política migratoria más recientes de la región y genera bastante confusión — muchos viajeros aún creen que pueden entrar sin visa." },
     ],
   },
@@ -50,6 +57,8 @@ const SECTIONS = [
 ];
 
 const FAQS = [
+  { q: "¿Los peruanos necesitan visa para México en 2026?", a: "Sí. Desde el 6 de mayo de 2024 los peruanos necesitan visa para viajar a México por turismo o negocios, salvo que tengan una visa vigente de Estados Unidos, Canadá, Reino Unido, Japón o el espacio Schengen, o residencia en esos países, según el INM. Verificado el 25 de octubre de 2026." },
+  { q: "¿Cuáles son los requisitos para viajar a México desde Perú en 2026?", a: "Pasaporte vigente, comprobante de solvencia económica, carta laboral, carta de motivos de viaje, comprobantes de arraigo y cita para la entrevista consular en la Embajada de México en Lima. Si tienes una de las visas o residencias de excepción, no necesitas tramitar la visa mexicana." },
   { q: "¿Los peruanos siempre necesitaron visa para México?", a: "No. El requisito de visa para peruanos que viajan a México por turismo es reciente, vigente desde 2024. Antes de ese cambio no se necesitaba." },
   { q: "¿Cuánto demora el trámite de la visa mexicana?", a: "Incluye una entrevista consular obligatoria; el tiempo total depende de la disponibilidad de citas en la Embajada de México en Lima, por lo que conviene iniciarlo con anticipación." },
   { q: "¿La visa mexicana garantiza mi ingreso al país?", a: "No. Al igual que con cualquier visa, la decisión final de admisión la toma el oficial de migración mexicano en el punto de entrada." },
@@ -70,11 +79,11 @@ export default function VisaMexicoPeruanos() {
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Visa Mexicana para Peruanos: Guía Completa 2026",
+    headline: "¿Peruanos necesitan visa para México? Requisitos",
     author: { "@type": "Organization", name: "GoViaje" },
     publisher: { "@type": "Organization", name: "GoViaje" },
     datePublished: "2026-07-30",
-    dateModified: "2026-07-30",
+    dateModified: "2026-10-25",
     about: "Visa de turista para México desde Perú",
   };
 
@@ -84,9 +93,9 @@ export default function VisaMexicoPeruanos() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <ArticleLayout
         tag="Visa México"
-        title="Visa Mexicana para Peruanos: Guía Completa 2026"
-        dek="Desde 2024 los peruanos necesitan visa para entrar a México por turismo. Requisitos, costo y excepciones."
-        updated="julio de 2026"
+        title="¿Peruanos necesitan visa para México? Requisitos"
+        dek="Desde el 6 de mayo de 2024 según la SRE/INM. Si tienes visa vigente de EE.UU., Canadá, Schengen, UK o Japón, estás exonerado. Requisitos y cita consular en Lima."
+        updated="octubre de 2026"
         sections={SECTIONS}
         faqs={FAQS}
         relatedHref="/visa-mexico"

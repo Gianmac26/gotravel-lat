@@ -2,10 +2,17 @@ import type { Metadata } from "next";
 import ArticleLayout from "../../components/ArticleLayout";
 
 export const metadata: Metadata = {
-  title: "Carta de Invitación y Arraigo para Visa Canadá",
+  title: "Carta de invitación Canadá: qué debe incluir 2026",
   description:
-    "Cómo funciona la carta de invitación y qué es el arraigo para la visa de turista TRV a Canadá desde Perú, Colombia, México y Ecuador.",
+    "Qué debe decir la carta de invitación, quién la firma, cuándo la necesitas y cómo demostrar arraigo desde Perú. Evita errores que causan rechazo.",
   alternates: { canonical: "https://goviaje.uk/blog/carta-invitacion-arraigo-visa-canada" },
+  openGraph: {
+    title: "Carta de invitación Canadá: qué debe incluir 2026",
+    description:
+      "Qué debe decir la carta de invitación, quién la firma, cuándo la necesitas y cómo demostrar arraigo desde Perú. Evita errores que causan rechazo.",
+    url: "https://goviaje.uk/blog/carta-invitacion-arraigo-visa-canada",
+    type: "article",
+  },
 };
 
 const SECTIONS = [

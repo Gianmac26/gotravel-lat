@@ -4,14 +4,14 @@ import ArticleLayout from "../../components/ArticleLayout";
 import WALink from "../../components/WALink";
 
 export const metadata: Metadata = {
-  title: "Visa canadiense rechazada: qué hacer (2026)",
+  title: "Visa canadiense rechazada: qué hacer ahora (2026)",
   description:
-    "Si te rechazaron la visa canadiense, aprende cómo leer las notas del oficial, cuándo conviene volver a aplicar y qué documentación mejora tu caso.",
+    "Lee las notas del oficial, entiende el motivo real y decide si conviene volver a aplicar. Guía para peruanos con fuentes oficiales de IRCC.",
   alternates: { canonical: "https://goviaje.uk/blog/visa-canadiense-rechazada-que-hacer" },
   openGraph: {
-    title: "Visa canadiense rechazada: qué hacer y cómo volver a aplicar (2026)",
+    title: "Visa canadiense rechazada: qué hacer ahora (2026)",
     description:
-      "Si te rechazaron la visa canadiense, aprende cómo leer las notas del oficial, cuándo conviene volver a aplicar y qué documentación mejora tu caso.",
+      "Lee las notas del oficial, entiende el motivo real y decide si conviene volver a aplicar. Guía para peruanos con fuentes oficiales de IRCC.",
     url: "https://goviaje.uk/blog/visa-canadiense-rechazada-que-hacer",
     type: "article",
   },

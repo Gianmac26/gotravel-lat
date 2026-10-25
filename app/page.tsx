@@ -157,6 +157,12 @@ const BLOG_POSTS = [
     tag: "Canadá",
     href: "/blog/visa-canadiense-rechazada-que-hacer",
   },
+  {
+    title: "¿Peruanos necesitan visa para México? Requisitos 2026",
+    excerpt: "Sí, desde mayo de 2024. Exonerados con visa de EE.UU., Canadá, Schengen, UK o Japón. Requisitos y cita consular en Lima.",
+    tag: "México",
+    href: "/blog/visa-mexico-peruanos-requisitos",
+  },
 ] as const;
 
 const FAQS = [

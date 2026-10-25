@@ -3,14 +3,14 @@ import ArticleLayout from "../../components/ArticleLayout";
 import WALink from "../../components/WALink";
 
 export const metadata: Metadata = {
-  title: "Solvencia económica para la visa americana (2026)",
+  title: "¿Cuánto dinero mostrar para la visa americana?",
   description:
-    "No hay un monto mínimo oficial para la visa americana. Te explicamos qué evalúa realmente el oficial, qué documentos ayudan y los errores más comunes con los estados de cuenta.",
+    "No hay monto mínimo oficial. Qué evalúa el cónsul sobre tus fondos, qué documentos llevar y los errores que causan rechazo. Evalúa tu caso gratis.",
   alternates: { canonical: "https://goviaje.uk/blog/solvencia-economica-visa-americana" },
   openGraph: {
-    title: "Solvencia económica para la visa americana (2026)",
+    title: "¿Cuánto dinero mostrar para la visa americana?",
     description:
-      "No hay un monto mínimo oficial para la visa americana. Te explicamos qué evalúa realmente el oficial, qué documentos ayudan y los errores más comunes con los estados de cuenta.",
+      "No hay monto mínimo oficial. Qué evalúa el cónsul sobre tus fondos, qué documentos llevar y los errores que causan rechazo. Evalúa tu caso gratis.",
     url: "https://goviaje.uk/blog/solvencia-economica-visa-americana",
     type: "article",
   },

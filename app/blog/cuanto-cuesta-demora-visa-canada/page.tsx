@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import ArticleLayout from "../../components/ArticleLayout";
 
 export const metadata: Metadata = {
@@ -6,6 +7,13 @@ export const metadata: Metadata = {
   description:
     "Costos reales de la visa canadiense de turismo (TRV) para peruanos, colombianos, mexicanos y ecuatorianos: tasa IRCC, biométricos, tiempos de procesamiento y qué esperar.",
   alternates: { canonical: "https://goviaje.uk/blog/cuanto-cuesta-demora-visa-canada" },
+  openGraph: {
+    title: "Visa Canadá: costo y tiempo de espera (2026)",
+    description:
+      "Costos reales de la visa canadiense de turismo (TRV) para peruanos, colombianos, mexicanos y ecuatorianos: tasa IRCC, biométricos, tiempos de procesamiento y qué esperar.",
+    url: "https://goviaje.uk/blog/cuanto-cuesta-demora-visa-canada",
+    type: "article",
+  },
 };
 
 const SECTIONS = [
@@ -29,7 +37,7 @@ const SECTIONS = [
         type: "list" as const,
         items: [
           "Tasa de solicitud IRCC: CAD 100 (aproximadamente USD 74 o S/285, según el tipo de cambio del día).",
-          "Biométricos: CAD 85 por persona si es la primera vez que los provees o si vencieron. Si viajaste a Canadá recientemente y ya tienes biométricos vigentes, no pagas de nuevo.",
+          "Biométricos: CAD 85 por persona. Una vez dados, tienen vigencia de 10 años, por lo que no se repiten en cada solicitud mientras estén vigentes.",
           "Total estimado: CAD 185 por persona adulta en la mayoría de los casos.",
         ],
       },
@@ -48,7 +56,7 @@ const SECTIONS = [
       },
       {
         type: "p" as const,
-        text: "Los biométricos se pagan como parte de la solicitud en línea y se programan en el punto de recolección de tu país. En Lima, por ejemplo, el Centro de Solicitudes de Visa está operado por VFS Global.",
+        text: "Los biométricos se pagan como parte de la solicitud en línea y se programan en el punto de recolección de tu país. En Lima, la recolección biométrica está operada por VFS Global; puedes consultar los puntos de atención disponibles en canada.ca/en/immigration-refugees-citizenship/services/biometrics/where-to-give.html.",
       },
     ],
   },
@@ -57,20 +65,20 @@ const SECTIONS = [
     blocks: [
       {
         type: "p" as const,
-        text: "El tiempo de procesamiento varía según la demanda, la temporada y la complejidad de cada caso. Como referencia general para 2026:",
+        text: "El tiempo de procesamiento varía según la demanda, la temporada y la complejidad de cada caso. Según el estimador oficial de IRCC, al 25 de octubre de 2026 el tiempo para solicitantes desde Perú es de aproximadamente 26 días calendario (sin contar el tiempo de entrega de biométricos):",
       },
       {
         type: "list" as const,
         items: [
-          "Procesamiento en línea (sin biométricos pendientes): entre 2 y 8 semanas.",
+          "Procesamiento en línea (sin biométricos pendientes): aproximadamente 26 días según IRCC al 25 de octubre de 2026.",
           "Si debes entregar biométricos primero: el reloj del procesamiento empieza a correr después de la cita de biométricos, no desde que envías la solicitud.",
           "Temporada alta (verano canadiense, diciembre-enero): los tiempos pueden extenderse hasta 10-12 semanas.",
-          "Recomendación general: iniciar el proceso con al menos 3 meses de anticipación a la fecha de viaje deseada.",
+          "Recomendación general: iniciar el proceso con al menos 2 meses de anticipación a la fecha de viaje deseada (3 meses si coincide con temporada alta).",
         ],
       },
       {
         type: "callout" as const,
-        text: "IRCC publica los tiempos de procesamiento actualizados en su sitio oficial. Esos tiempos son estimados, no garantizados: algunos casos tardan menos, otros más. Nunca compres pasajes aéreos antes de tener la visa aprobada.",
+        text: "Verificado: 25 de octubre de 2026. IRCC publica los tiempos actualizados en su estimador oficial (ircc.canada.ca). Esos tiempos son estimados, no garantizados: algunos casos tardan menos, otros más. Nunca compres pasajes aéreos antes de tener la visa aprobada.",
       },
     ],
   },
@@ -175,7 +183,7 @@ export default function CuantoCuestaVisaCanada() {
     author: { "@type": "Organization", name: "GoViaje" },
     publisher: { "@type": "Organization", name: "GoViaje" },
     datePublished: "2026-10-01",
-    dateModified: "2026-10-01",
+    dateModified: "2026-10-25",
     about: "Visa de visitante TRV Canadá costos y tiempos",
   };
 
