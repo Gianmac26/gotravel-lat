@@ -43,7 +43,7 @@ const SECTIONS = [
   {
     heading: "Solvencia económica",
     blocks: [
-      { type: "p" as const, text: "Debes demostrar capacidad financiera para cubrir alojamiento, transporte y gastos diarios durante tu estadía. Como referencia general se recomienda contar con el equivalente a CAD 1,000, aunque el monto real depende de la duración y naturaleza de tu viaje." },
+      { type: "p" as const, text: "Debes demostrar que tienes dinero suficiente para cubrir tu estadía: alojamiento, transporte y gastos diarios. IRCC no fija un monto mínimo: evalúa si tus fondos cubren el viaje que propones y si son coherentes con tu perfil, y la cantidad depende de cuánto tiempo te quedes y de dónde te alojes. Explicamos cómo estimarlo y qué estado de cuenta presentar en nuestra guía sobre cuánto dinero necesitas." },
     ],
   },
   {
@@ -79,7 +79,7 @@ export default function CartaInvitacionArraigoCanada() {
     author: { "@type": "Organization", name: "GoViaje" },
     publisher: { "@type": "Organization", name: "GoViaje" },
     datePublished: "2026-07-30",
-    dateModified: "2026-07-30",
+    dateModified: "2026-10-25",
     about: "Visa de turista TRV para Canadá",
   };
 
@@ -91,7 +91,7 @@ export default function CartaInvitacionArraigoCanada() {
         tag="Visa Canadá"
         title="Carta de Invitación y Arraigo: Qué Evalúa Canadá en tu Visa de Turista"
         dek="Cómo funciona la carta de invitación, qué es el arraigo y qué solvencia económica pide el IRCC."
-        updated="julio de 2026"
+        updated="octubre de 2026"
         sections={SECTIONS}
         faqs={FAQS}
         relatedHref="/visa-canada"
@@ -100,6 +100,11 @@ export default function CartaInvitacionArraigoCanada() {
         <nav className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-5">
           <p className="text-sm font-semibold text-[#0B1F3A]">Artículos relacionados</p>
           <ul className="mt-3 space-y-2">
+            <li>
+              <a href="/blog/cuanto-dinero-necesito-visa-canadiense" className="text-sm text-[#008F6B] hover:underline">
+                → ¿Cuánto dinero necesito para la visa canadiense? Guía para peruanos
+              </a>
+            </li>
             <li>
               <a href="/blog/visa-canadiense-rechazada-que-hacer" className="text-sm text-[#008F6B] hover:underline">
                 → Visa canadiense rechazada: qué hacer y cómo volver a aplicar

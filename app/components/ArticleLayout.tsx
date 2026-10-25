@@ -51,8 +51,25 @@ function Block({ block }: { block: ArticleBlock }) {
   );
 }
 
-const MID_CTA_WHATSAPP =
-  "https://wa.me/51928672932?text=Hola%20GoViaje%2C%20quisiera%20que%20revisen%20mi%20caso%20antes%20de%20mi%20cita.";
+const MID_CTA_MOMENT: Record<WAService, string> = {
+  "visa-usa": "antes de tu cita",
+  "visa-canada": "antes de enviar tu solicitud a IRCC",
+  "visa-mexico": "antes de iniciar tu trámite",
+  general: "antes de iniciar tu trámite",
+};
+
+const MID_CTA_WHATSAPP_MOMENT: Record<WAService, string> = {
+  "visa-usa": "antes de mi cita",
+  "visa-canada": "antes de enviar mi solicitud a IRCC",
+  "visa-mexico": "antes de iniciar mi trámite",
+  general: "antes de iniciar mi trámite",
+};
+
+const TAG_SERVICE: Record<string, WAService> = {
+  "Visa USA": "visa-usa",
+  "Visa Canadá": "visa-canada",
+  "Visa México": "visa-mexico",
+};
 
 export default function ArticleLayout({
   tag,
@@ -85,6 +102,11 @@ export default function ArticleLayout({
   const relatedPosts = blogTag
     ? BLOG_POSTS.filter((p) => p.tag === blogTag && p.title !== title).slice(0, 3)
     : [];
+
+  const midCtaService: WAService = service === "auto" ? (TAG_SERVICE[tag] ?? "general") : service;
+  const midCtaWhatsapp = `https://wa.me/51928672932?text=${encodeURIComponent(
+    `Hola GoViaje, quisiera que revisen mi caso ${MID_CTA_WHATSAPP_MOMENT[midCtaService]}.`,
+  )}`;
 
   const MID_CTA_INDEX = 2;
 
@@ -134,13 +156,13 @@ export default function ArticleLayout({
                 {idx === MID_CTA_INDEX && (
                   <div className="mt-6 rounded-2xl border border-[#25D366]/30 bg-[#25D366]/5 p-5">
                     <p className="text-sm font-semibold text-[#0B1F3A]">
-                      ¿Quieres que revisemos tu caso antes de tu cita?
+                      ¿Quieres que revisemos tu caso {MID_CTA_MOMENT[midCtaService]}?
                     </p>
                     <p className="mt-1 text-sm text-slate-600">
                       Escríbenos por WhatsApp y un asesor especializado evalúa tu perfil sin compromiso.
                     </p>
                     <WALink
-                      href={MID_CTA_WHATSAPP}
+                      href={midCtaWhatsapp}
                       cta_position="middle"
                       service={service}
                       className="mt-3 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#1fb855]"
