@@ -14,11 +14,38 @@ const WA_URL =
 
 const CONSULTATION_URL = WA_URL;
 
+const VISA_USA_PAGE_URL = "https://goviaje.uk/visa-usa";
+const VISA_USA_OG_IMAGE = "/og-visa-usa.jpg";
+const VISA_USA_TITLE = "Asesoría Visa Americana B1/B2 Lima, Perú";
+const VISA_USA_DESCRIPTION =
+  "Asesoría para tu visa americana B1/B2 desde Lima y Perú. Primera solicitud, renovación y rechazos previos. Evalúa tu caso gratis. Fundador con +10 años en asesoría de visas, 100% online.";
+
 export const metadata: Metadata = {
-  title: "Asesoría Visa Americana B1/B2 Lima, Perú",
-  description:
-    "Asesoría para tu visa americana B1/B2 desde Lima y Perú. Primera solicitud, renovación y rechazos previos. Evalúa tu caso gratis. Fundador con +10 años en asesoría de visas, 100% online.",
-  alternates: { canonical: "https://goviaje.uk/visa-usa" },
+  title: VISA_USA_TITLE,
+  description: VISA_USA_DESCRIPTION,
+  alternates: { canonical: VISA_USA_PAGE_URL },
+  openGraph: {
+    title: VISA_USA_TITLE,
+    description: VISA_USA_DESCRIPTION,
+    url: VISA_USA_PAGE_URL,
+    type: "website",
+    locale: "es_PE",
+    siteName: "GoViaje",
+    images: [
+      {
+        url: VISA_USA_OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "GoViaje — Asesoría profesional para visa americana B1/B2 en Lima, Perú",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: VISA_USA_TITLE,
+    description: VISA_USA_DESCRIPTION,
+    images: [VISA_USA_OG_IMAGE],
+  },
 };
 
 const USA_FAQS = [

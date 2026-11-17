@@ -36,6 +36,12 @@ const TRUST_ITEMS = [
   "Atención 100% online",
 ] as const;
 
+const HERO_TRUST_ITEMS = [
+  "+10 años de experiencia",
+  "Evaluación con IA",
+  "Atención 100% online",
+] as const;
+
 const QUICK_LINKS = [
   { label: "Visa USA", icon: "🇺🇸", href: "/visa-usa" },
   { label: "Visa Canadá", icon: "🇨🇦", href: "/visa-canada" },
@@ -383,20 +389,20 @@ export default function Home() {
           <div className="relative mx-auto w-full min-w-0 max-w-6xl">
             <div className="inline-flex max-w-[calc(100vw-2rem)] items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-[#00C896] sm:max-w-none sm:text-sm">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#00C896]" />
-              <span className="truncate">Especialistas en visas de turismo</span>
+              Especialistas en visas de turismo • 100% online
             </div>
 
-            <h1 className="mt-4 line-clamp-2 max-w-[calc(100vw-2rem)] text-[1.35rem] font-bold leading-[1.14] tracking-tight text-white min-[375px]:text-[1.5rem] sm:mt-6 sm:max-w-3xl sm:text-4xl lg:text-5xl lg:leading-[1.15]">
-              Presenta una solicitud mejor preparada
+            <h1 className="mt-4 line-clamp-2 max-w-[calc(100vw-2rem)] text-[1.35rem] font-bold leading-[1.18] tracking-tight text-white min-[375px]:text-[1.5rem] sm:mt-6 sm:max-w-3xl sm:text-4xl lg:text-5xl lg:leading-[1.15]">
+              Prepara tu visa con experiencia e inteligencia artificial
             </h1>
 
-            <p className="mt-3 max-w-[calc(100vw-2rem)] text-[0.8rem] leading-snug text-slate-300 min-[375px]:text-sm sm:mt-4 sm:max-w-3xl sm:text-lg sm:leading-relaxed">
-              Más de 10 años de experiencia de nuestro fundador en asesoría de visas, ayudando a viajeros a preparar solicitudes de visa para Estados Unidos y Canadá.
+            <p className="mt-3 line-clamp-2 max-w-[calc(100vw-2rem)] text-[0.8125rem] leading-snug text-slate-300 min-[375px]:text-sm sm:mt-4 sm:max-w-3xl sm:text-lg sm:leading-relaxed">
+              Visas de turismo para Estados Unidos, Canadá y México. Más de 10 años ayudando a viajeros a aplicar con mayor confianza.
             </p>
 
             <div className="mt-5 flex max-w-[calc(100vw-2rem)] flex-col gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:items-start">
               <BtnPrimary href={CONSULTATION_URL} external waPosition="top" waService="general" className="w-full max-w-full sm:w-auto">
-                Evalúa tu caso ahora
+                Evaluar mi perfil con IA
                 <IconArrow />
               </BtnPrimary>
               <WALink
@@ -410,8 +416,8 @@ export default function Home() {
               </WALink>
             </div>
 
-            <div className="mt-5 grid max-w-[calc(100vw-2rem)] gap-2 min-[375px]:grid-cols-3 sm:mt-8 sm:max-w-3xl sm:gap-3">
-              {TRUST_ITEMS.map((item) => (
+            <div className="mt-5 grid max-w-[calc(100vw-2rem)] gap-2 min-[375px]:grid-cols-3 sm:mt-6 sm:max-w-3xl sm:gap-3">
+              {HERO_TRUST_ITEMS.map((item) => (
                 <div
                   key={item}
                   className="flex min-h-10 min-w-0 items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs font-medium leading-snug text-slate-200 sm:text-sm"
