@@ -150,7 +150,7 @@ export default function AdelantoCitaVisaAmericana() {
             </h1>
             <p className="mt-3 text-[15px] leading-relaxed text-slate-300 sm:text-lg">
               Si ya tienes cita de visa americana y la fecha te queda lejos, monitoreamos cupos por ti
-              y te avisamos cuando aparece una más cercana. Dejas de refrescar el sistema. La
+              y te avisamos si aparece una más cercana. Dejas de refrescar el sistema. La
               disponibilidad la decide solo el consulado.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
