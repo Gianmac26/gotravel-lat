@@ -111,15 +111,15 @@ const STEPS = [
 
 const GAINS = [
   {
-    title: "Ahorra semanas de espera",
+    title: "Evita retrabajos por errores en el formulario",
     text: "Una contradicción corregida a tiempo evita retrabajos que empujan tu viaje. Los plazos del consulado no los controlamos.",
   },
   {
-    title: "Protege tu exención de entrevista",
+    title: "Verifica si calificas para la exención de entrevista",
     text: "Alineamos visa previa y respuestas con los criterios de dropbox. Si no calzas, lo ves antes. La exención la concede el consulado.",
   },
   {
-    title: "Cero errores técnicos en tu DS-160",
+    title: "Revisión técnica de tu DS-160 antes de enviarlo",
     text: "Revisamos omisiones e inconsistencias del formulario oficial antes de enviarlo. Eso no cambia la decisión del oficial consular.",
   },
   {
