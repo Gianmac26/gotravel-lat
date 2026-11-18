@@ -17,6 +17,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${BASE_URL}/renovacion-visa-americana`,
+      lastModified: new Date("2026-11-17"),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/adelanto-cita-visa-americana`,
+      lastModified: new Date("2026-11-18"),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${BASE_URL}/visa-canada`,
       lastModified: new Date("2026-10-25"),
       changeFrequency: "weekly",

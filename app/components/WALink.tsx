@@ -15,7 +15,9 @@ declare global {
 function detectService(pathname: string): WAService {
   if (
     pathname.startsWith("/visa-usa") ||
-    /visa-americana|adelantar-cita|me-negaron|renovacion-visa|tramitar-visa|solvencia-economica|preguntas-entrevista|razones-rechazo|cuanto-cuesta-demora-visa-americana|como-llenar-ds|requisitos-visa-americana/.test(pathname)
+    pathname.startsWith("/renovacion-visa-americana") ||
+    pathname.startsWith("/adelanto-cita-visa-americana") ||
+    /visa-americana|adelantar-cita|adelanto-cita|me-negaron|renovacion-visa|tramitar-visa|solvencia-economica|preguntas-entrevista|razones-rechazo|cuanto-cuesta-demora-visa-americana|como-llenar-ds|requisitos-visa-americana/.test(pathname)
   ) return "visa-usa";
   if (
     pathname.startsWith("/visa-canada") ||

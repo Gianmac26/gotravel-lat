@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { PAYMENTS, izipayLinksActive } from "../lib/payments";
-import { ADELANTO, EMPRESA, TASA_USA } from "../lib/empresa";
+import { EMPRESA, TASA_USA } from "../lib/empresa";
 import WALink from "../components/WALink";
 import LineaHonorarios from "../components/LineaHonorarios";
 
@@ -39,7 +39,7 @@ const PLANES = [
       "Todo lo del plan Preferente",
       "Preparación para entrevista",
       "Preguntas frecuentes reales",
-      "Descuento en adelanto de cita",
+      "Acompañamiento hasta tu entrevista",
     ],
   },
 ] as const;
@@ -151,7 +151,6 @@ export function PayPalSection({
 
 export default function PlanesSection() {
   const active = izipayLinksActive();
-  const adelanto = PAYMENTS.izipay.links.adelanto;
 
   const waAfterPay = (planLabel: string) =>
     `${EMPRESA.whatsappHref}?text=${encodeURIComponent(
@@ -289,59 +288,20 @@ export default function PlanesSection() {
         })}
       </div>
 
-      {/* ─── Adelanto de Cita (addon) ─── */}
-      <div className="mt-10 rounded-3xl border border-slate-200 bg-[#F8FAFC] p-6 md:flex md:items-center md:gap-8">
-        <div className="flex-1">
-          <p className="text-xs font-bold uppercase tracking-widest text-[#00A87D]">Complemento opcional</p>
-          <h3 className="mt-1 text-xl font-black text-[#0B1F3A]">{adelanto.label}</h3>
-          <p className="mt-2 text-sm leading-relaxed text-slate-600">
-            Monitoreo automatizado de fechas con VisaBot hasta <strong>90 días calendario</strong> para
-            encontrar una fecha anterior a la que ya tienes. {ADELANTO.proveedor}{" "}
-            <strong>{ADELANTO.devolucion}</strong>{" "}
-            <strong>No reemplaza el pago del plan.</strong>
-          </p>
-          <p className="mt-2 text-xs leading-relaxed text-slate-500">{ADELANTO.disponibilidad}</p>
-          <p className="mt-2 text-xs leading-relaxed text-slate-500">{ADELANTO.solicitud}</p>
-        </div>
-        <div className="mt-6 min-w-[220px] space-y-3 md:mt-0">
-          <p className="text-center text-3xl font-black text-[#00A87D]">S/ {adelanto.amount}</p>
-          <div className="text-center"><LineaHonorarios /></div>
-          {active ? (
-            <>
-              <a
-                href={adelanto.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => fireCheckout(adelanto.label, adelanto.amount, "PEN")}
-                className="inline-flex w-full justify-center rounded-full bg-[#0B1F3A] px-5 py-3 font-bold text-white transition hover:bg-[#162d52]"
-              >
-                Contratar Adelanto
-              </a>
-              <IzipayMicrocopy />
-              <p className="text-center text-xs text-slate-500">
-                Después de pagar,{" "}
-                <WALink
-                  href={waAfterPay(adelanto.label)}
-                  cta_position="middle"
-                  service="visa-usa"
-                  event="payment_proof_click"
-                  className="font-medium text-[#25D366] hover:underline"
-                >
-                  envía tu comprobante por WhatsApp
-                </WALink>.
-              </p>
-            </>
-          ) : (
-            <WALink
-              href={`${EMPRESA.whatsappHref}?text=${encodeURIComponent("Hola GoViaje, quiero contratar el Adelanto de Cita.")}`}
-              cta_position="middle"
-              service="visa-usa"
-              className="inline-flex w-full justify-center rounded-full bg-[#0B1F3A] px-5 py-3 font-bold text-white transition hover:bg-[#162d52]"
-            >
-              Consultar por WhatsApp
-            </WALink>
-          )}
-          <PayPalSection planKey="adelanto" instance="addon" />
+      <div className="mt-10 rounded-3xl border border-slate-200 bg-white p-6">
+        <h3 className="text-lg font-bold text-[#0B1F3A]">
+          ¿Buscas renovar tu visa vencida o adelantar una cita que ya tienes programada?
+        </h3>
+        <p className="mt-2 text-sm leading-relaxed text-slate-600">
+          Estos planes son para una solicitud nueva. Renovación y adelanto tienen su propia página, con su propio pago.
+        </p>
+        <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+          <a href="/renovacion-visa-americana" className="inline-flex min-h-[48px] flex-1 items-center justify-center rounded-full bg-[#00C896] px-5 py-3 text-sm font-bold text-slate-950">
+            Ir a renovación
+          </a>
+          <a href="/adelanto-cita-visa-americana" className="inline-flex min-h-[48px] flex-1 items-center justify-center rounded-full border border-slate-200 px-5 py-3 text-sm font-bold text-[#0B1F3A]">
+            Ir a adelanto de cita
+          </a>
         </div>
       </div>
     </section>

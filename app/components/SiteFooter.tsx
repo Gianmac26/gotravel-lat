@@ -70,10 +70,11 @@ export default function SiteFooter({ waEvent = "whatsapp_click" }: { waEvent?: s
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wide text-[#0B1F3A]">Servicios</h3>
             <ul className="mt-4 space-y-2.5">
-              <li><Link href="/visa-usa" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Visa USA</Link></li>
+              <li><Link href="/visa-usa" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Visa USA nueva</Link></li>
+              <li><Link href="/renovacion-visa-americana" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Renovación de visa USA</Link></li>
+              <li><Link href="/adelanto-cita-visa-americana" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Adelanto de cita USA</Link></li>
               <li><Link href="/visa-canada" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Visa Canadá</Link></li>
               <li><Link href="/visa-mexico" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Visa México</Link></li>
-              <li><Link href="/#adelanto-citas" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Adelanto de cita</Link></li>
             </ul>
           </div>
 

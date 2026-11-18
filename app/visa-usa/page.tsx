@@ -3,9 +3,7 @@ import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import AvisoNoAfiliacion from "../components/AvisoNoAfiliacion";
 import LineaHonorarios from "../components/LineaHonorarios";
-import PlanesSection, { PayPalSection, IzipayMicrocopy } from "./PlanesSection";
-import { PAYMENTS, izipayLinksActive } from "../lib/payments";
-import { ADELANTO, EMPRESA } from "../lib/empresa";
+import PlanesSection from "./PlanesSection";
 import WALink from "../components/WALink";
 import GuideCards from "../components/GuideCards";
 
@@ -18,7 +16,7 @@ const VISA_USA_PAGE_URL = "https://goviaje.uk/visa-usa";
 const VISA_USA_OG_IMAGE = "/og-visa-usa.jpg";
 const VISA_USA_TITLE = "Asesoría Visa Americana B1/B2 Lima, Perú";
 const VISA_USA_DESCRIPTION =
-  "Asesoría para tu visa americana B1/B2 desde Lima y Perú. Primera solicitud, renovación y rechazos previos. Evalúa tu caso gratis. Fundador con +10 años en asesoría de visas, 100% online.";
+  "Asesoría para tu primera visa americana B1/B2 o para volver a aplicar tras un rechazo. DS-160, documentos y entrevista en Lima. Evalúa tu caso gratis. 100% online.";
 
 export const metadata: Metadata = {
   title: VISA_USA_TITLE,
@@ -62,12 +60,12 @@ const USA_FAQS = [
     a: "No. Ninguna empresa puede garantizar la aprobación de una visa. La decisión es exclusiva del oficial consular. Nuestro trabajo es preparar el mejor expediente posible según tu situación.",
   },
   {
-    q: "¿Ayudan con renovaciones y casos con rechazo previo?",
-    a: "Sí. La renovación de visa americana y los casos con rechazo previo son parte de nuestros servicios. En cada caso evaluamos el perfil antes de iniciar cualquier trámite.",
+    q: "¿Ayudan si me negaron la visa antes?",
+    a: "Sí. Volver a aplicar después de un rechazo entra en esta asesoría de solicitud nueva. Revisamos qué cambió en tu perfil antes de armar el DS-160. La decisión sigue siendo del oficial consular.",
   },
   {
-    q: "¿Pueden adelantar mi cita consular?",
-    a: `Sí, ofrecemos un servicio de monitoreo automatizado de fechas con VisaBot y te avisamos cuando aparece una fecha más cercana. ${ADELANTO.proveedor} ${ADELANTO.disponibilidad} ${ADELANTO.devolucion}`,
+    q: "¿Esta página incluye renovación o adelanto de cita?",
+    a: "No. Si tu visa venció y quieres renovarla, el camino es la asesoría de renovación. Si ya tienes una cita lejana y quieres una fecha más cercana, el camino es el adelanto de cita. Aquí preparamos la solicitud nueva.",
   },
 ];
 
@@ -89,7 +87,7 @@ const serviceJsonLd = {
   areaServed: ["PE", "CO", "MX", "EC"],
   serviceArea: { "@type": "City", name: "Lima", containedIn: { "@type": "Country", name: "Perú" } },
   description:
-    "Asesoría profesional para la solicitud de visa americana de turismo B1/B2 desde Lima y Perú: evaluación de perfil, formulario DS-160, preparación de entrevista consular, renovación y casos con rechazo previo.",
+    "Asesoría profesional para la primera solicitud de visa americana de turismo B1/B2 y para volver a aplicar tras un rechazo: evaluación de perfil, formulario DS-160 y preparación de entrevista consular.",
 };
 
 export default function VisaUSA() {
@@ -110,20 +108,20 @@ export default function VisaUSA() {
       <section className="relative overflow-hidden bg-[#0B1F3A] text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,#10b98133,transparent_35%),radial-gradient(circle_at_bottom_left,#3b82f633,transparent_35%)]" />
 
-        <div className="relative mx-auto max-w-6xl px-6 py-16 md:py-24">
+        <div className="relative mx-auto max-w-6xl px-6 py-8 sm:py-16">
           <div className="max-w-3xl">
             <span className="inline-flex rounded-full border border-[#00C896]/30 bg-[#00C896]/10 px-4 py-2 text-sm text-[#00C896]">
               Visa de Turismo B1/B2 • Estados Unidos
             </span>
 
-            <h1 className="mt-6 text-4xl font-black leading-tight md:text-6xl">
-              Asesoría profesional para tu visa americana en Lima, Perú
+            <h1 className="mt-4 text-[28px] font-bold leading-[1.15] tracking-tight sm:text-5xl">
+              Prepara tu visa americana nueva sin improvisar el DS-160
             </h1>
 
-            <p className="mt-6 text-lg leading-8 text-slate-300">
-              Más de 10 años de experiencia de nuestro fundador en asesoría de visas B1/B2
-              para la Embajada de EE.UU. en Lima: primera solicitud, renovación y casos con rechazo previo. Evaluación
-              previa de tu caso incluida, 100% online.
+            <p className="mt-3 text-[15px] leading-relaxed text-slate-300 sm:text-lg">
+              Para tu primera solicitud B1/B2 o para volver a aplicar después de un rechazo.
+              Revisamos tu perfil, ordenamos el formulario y te dejamos listo para la entrevista
+              en Lima. 100% online. La decisión la toma solo el oficial consular.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -131,9 +129,9 @@ export default function VisaUSA() {
                 href={CONSULTATION_URL}
                 cta_position="top"
                 service="visa-usa"
-                className="rounded-full bg-[#00C896] px-6 py-4 text-center font-bold text-slate-950 shadow-lg shadow-[#00C896]/20"
+                className="inline-flex min-h-[50px] w-full items-center justify-center rounded-full bg-[#00C896] px-6 py-3 text-center text-[15px] font-bold text-slate-950 shadow-lg shadow-[#00C896]/20 sm:w-auto"
               >
-                Agendar asesoría gratuita
+                Evaluar mi solicitud nueva
               </WALink>
 
               <WALink
@@ -163,34 +161,38 @@ export default function VisaUSA() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 -mt-8 relative z-10">
-        <div className="grid gap-5 md:grid-cols-3">
+      <section className="relative z-10 mx-auto max-w-6xl px-6">
+        <div className="grid gap-4 md:grid-cols-2">
           <ServiceCard
-            title="Visa Nueva B1/B2"
+            title="Visa nueva B1/B2"
             price="Desde S/250"
-            text="Asesoría completa para preparar tu solicitud de visa de turismo."
+            text="Llegas a la entrevista con el formulario ordenado y un checklist que evita errores de primera solicitud o de un rechazo anterior."
             href="#planes"
-            cta="Ver planes"
+            cta="Ver planes de solicitud nueva"
             featured
           />
-          <ServiceCard
-            title="Renovación de Visa"
-            price={`S/${PAYMENTS.izipay.links.renovacion.amount} · USD ${PAYMENTS.paypal.usdAmounts.renovacion}`}
-            text="Acompañamiento para renovar tu visa americana de forma ordenada. Incluye evaluación de caso, asesoría en el llenado del DS-160, revisión de historial migratorio y checklist."
-            href={WA_URL}
-            cta="Solicitar renovación"
-            paypalKey="renovacion"
-            izipayKey="renovacion"
-          />
-          <ServiceCard
-            title="Adelanto de Cita"
-            price={`S/${PAYMENTS.izipay.links.adelanto.amount} · USD ${PAYMENTS.paypal.usdAmounts.adelanto}`}
-            text={`Monitoreo automatizado de disponibilidad para adelantar tu cita. ${ADELANTO.disponibilidad}`}
-            href={WA_URL}
-            cta="Solicitar adelanto"
-            paypalKey="adelanto"
-            izipayKey="adelanto"
-          />
+          <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl">
+            <h2 className="text-2xl font-black text-[#0B1F3A]">
+              ¿Buscas renovar tu visa vencida o adelantar una cita que ya tienes programada?
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-slate-600">
+              Esos dos caminos tienen su propia asesoría. Aquí solo preparamos la solicitud nueva.
+            </p>
+            <div className="mt-5 flex flex-col gap-3">
+              <a
+                href="/renovacion-visa-americana"
+                className="inline-flex min-h-[48px] w-full items-center justify-center rounded-full bg-[#00C896] px-5 py-3 text-center text-sm font-bold text-slate-950"
+              >
+                Renovar mi visa
+              </a>
+              <a
+                href="/adelanto-cita-visa-americana"
+                className="inline-flex min-h-[48px] w-full items-center justify-center rounded-full border border-slate-200 px-5 py-3 text-center text-sm font-bold text-[#0B1F3A]"
+              >
+                Adelantar una cita que ya tengo
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -211,19 +213,20 @@ export default function VisaUSA() {
             href={CONSULTATION_URL}
           />
 
-          <InfoBox
-            title="Adelanto de cita"
-            text={`Monitoreo automatizado de fechas con VisaBot: te avisamos cuando aparece una fecha más cercana. ${ADELANTO.proveedor} ${ADELANTO.disponibilidad} ${ADELANTO.devolucion}`}
-            items={[
-              "Un asesor revisa la disponibilidad por ti",
-              "Búsqueda de fechas cercanas",
-              "Proceso supervisado",
-              "Sujeto a disponibilidad oficial",
-            ]}
-            button="Consultar adelanto"
-            href={WA_URL}
-            blogHref="/blog/adelantar-cita-visa-americana-peru"
-          />
+          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8">
+            <h2 className="text-3xl font-black">Si tu caso no es una solicitud nueva</h2>
+            <p className="mt-4 text-slate-600">
+              Renovar una visa vencida o mover una cita que ya pagaste son servicios aparte. Así no mezclas el pago de una solicitud nueva con otro trámite.
+            </p>
+            <div className="mt-6 grid gap-3">
+              <a href="/renovacion-visa-americana" className="rounded-xl bg-white p-3 text-sm font-medium text-[#008F6B] hover:underline">
+                Renovación de visa americana
+              </a>
+              <a href="/adelanto-cita-visa-americana" className="rounded-xl bg-white p-3 text-sm font-medium text-[#008F6B] hover:underline">
+                Adelanto de una cita que ya tienes
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -308,8 +311,6 @@ function ServiceCard({
   href,
   cta,
   featured = false,
-  paypalKey,
-  izipayKey,
 }: {
   title: string;
   price: string;
@@ -317,73 +318,24 @@ function ServiceCard({
   href: string;
   cta: string;
   featured?: boolean;
-  paypalKey?: "renovacion" | "adelanto";
-  izipayKey?: "renovacion" | "adelanto";
 }) {
-  const active = izipayLinksActive();
-  const izipay = izipayKey ? PAYMENTS.izipay.links[izipayKey] : null;
-
-  const waAfterPay = izipay
-    ? `${EMPRESA.whatsappHref}?text=${encodeURIComponent(
-        `Hola, acabo de pagar ${izipay.label} por Izipay. Adjunto mi comprobante para iniciar mi trámite.`
-      )}`
-    : href;
-
   return (
-    <div
-      className={`rounded-3xl p-6 shadow-xl ${
-        featured
-          ? "bg-[#00C896] text-slate-950"
-          : "bg-white text-slate-900"
-      }`}
-    >
+    <div className={`rounded-3xl p-6 shadow-xl ${featured ? "bg-[#00C896] text-slate-950" : "bg-white text-slate-900"}`}>
       {featured && (
         <span className="rounded-full bg-slate-950 px-3 py-1 text-xs font-bold text-white">
-          Servicio principal
+          Solicitud nueva
         </span>
       )}
       <h2 className="mt-4 text-2xl font-black">{title}</h2>
       <p className="mt-3 text-3xl font-black">{price}</p>
       <LineaHonorarios />
       <p className="mt-4 opacity-80">{text}</p>
-
-      {izipay && active ? (
-        <div className="mt-6 space-y-3">
-          <a
-            href={izipay.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex w-full justify-center rounded-full bg-[#0B1F3A] px-5 py-4 font-bold text-white transition hover:bg-[#162d52]"
-          >
-            Pagar S/ {izipay.amount} con Izipay
-          </a>
-          <IzipayMicrocopy />
-          <p className="text-center text-xs text-slate-500">
-            Después de pagar,{" "}
-            <WALink
-              href={waAfterPay}
-              cta_position="middle"
-              service="visa-usa"
-              event="payment_proof_click"
-              className="font-medium text-[#25D366] hover:underline"
-            >
-              envía tu comprobante por WhatsApp
-            </WALink>{" "}
-            para iniciar tu trámite.
-          </p>
-        </div>
-      ) : (
-        <WALink
-          href={href}
-          cta_position="middle"
-          service="visa-usa"
-          className="mt-6 inline-flex w-full justify-center rounded-full bg-slate-950 px-5 py-4 font-bold text-white"
-        >
-          {cta}
-        </WALink>
-      )}
-
-      {paypalKey && <PayPalSection planKey={paypalKey} instance="card" />}
+      <a
+        href={href}
+        className="mt-6 inline-flex min-h-[48px] w-full items-center justify-center rounded-full bg-slate-950 px-5 py-3 font-bold text-white"
+      >
+        {cta}
+      </a>
     </div>
   );
 }

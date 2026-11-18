@@ -4,8 +4,13 @@ import WALink from "./WALink";
 const WHATSAPP_URL =
   "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20asesor%C3%ADa%20para%20mi%20visa";
 
+const USA_LINKS = [
+  { label: "Visa de Turismo Nueva", href: "/visa-usa" },
+  { label: "Renovación de Visa de Turismo", href: "/renovacion-visa-americana" },
+  { label: "Adelanto de citas", href: "/adelanto-cita-visa-americana" },
+] as const;
+
 const NAV_LINKS = [
-  { label: "Visa USA", href: "/visa-usa" },
   { label: "Visa Canadá", href: "/visa-canada" },
   { label: "Visa México", href: "/visa-mexico" },
   { label: "Blog", href: "/blog" },
@@ -34,6 +39,31 @@ export default function SiteHeader({ waEvent = "whatsapp_click" }: { waEvent?: s
         </Link>
 
         <nav className="flex items-center gap-6 max-lg:hidden">
+          <div className="group relative">
+            <a
+              href="/visa-usa"
+              className="inline-flex items-center gap-1 text-sm font-medium text-slate-600 transition hover:text-[#0B1F3A]"
+              aria-haspopup="true"
+            >
+              Visa USA
+              <svg className="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
+              </svg>
+            </a>
+            <div className="invisible absolute left-0 top-full z-50 w-72 pt-2 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+              <div className="rounded-xl border border-slate-200/80 bg-white p-2 shadow-lg">
+                {USA_LINKS.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 transition hover:bg-[#F1F5F9] hover:text-[#008F6B]"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
           {NAV_LINKS.map((link) => (
             <a key={link.href} href={link.href} className="text-sm font-medium text-slate-600 transition hover:text-[#0B1F3A]">
               {link.label}
@@ -60,7 +90,14 @@ export default function SiteHeader({ waEvent = "whatsapp_click" }: { waEvent?: s
               </svg>
               <span className="sr-only">Abrir menú</span>
             </summary>
-            <nav className="absolute right-0 mt-2 w-60 rounded-2xl border border-[#E2E8F0] bg-white p-3 shadow-xl">
+            <nav className="absolute right-0 mt-2 w-72 rounded-xl border border-slate-200/80 bg-white p-3 shadow-lg">
+              <p className="px-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">Visa USA</p>
+              {USA_LINKS.map((link) => (
+                <a key={link.href} href={link.href} className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-[#F1F5F9] hover:text-[#008F6B]">
+                  {link.label}
+                </a>
+              ))}
+              <div className="my-2 border-t border-slate-100" />
               {NAV_LINKS.map((link) => (
                 <a key={link.href} href={link.href} className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-[#F1F5F9]">
                   {link.label}

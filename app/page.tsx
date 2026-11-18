@@ -25,8 +25,6 @@ const WHATSAPP_CANADA_URL =
   "https://wa.me/51928672932?text=Hola%20GoViaje,%20quiero%20información%20sobre%20la%20visa%20de%20turismo%20para%20Canadá.";
 const WHATSAPP_MEXICO_URL =
   "https://wa.me/51928672932?text=Hola%20GoViaje,%20quiero%20información%20sobre%20la%20visa%20de%20turismo%20para%20México.";
-const WHATSAPP_CITA_URL =
-  "https://wa.me/51928672932?text=Hola%20GoViaje,%20quiero%20consultar%20disponibilidad%20para%20adelantar%20mi%20cita.";
 const CONSULTATION_URL = WHATSAPP_HERO_URL;
 
 
@@ -43,10 +41,41 @@ const HERO_TRUST_ITEMS = [
 ] as const;
 
 const QUICK_LINKS = [
-  { label: "Visa USA", icon: "🇺🇸", href: "/visa-usa" },
-  { label: "Visa Canadá", icon: "🇨🇦", href: "/visa-canada" },
-  { label: "Visa México", icon: "🇲🇽", href: "/visa-mexico" },
-  { label: "Adelanto de cita", icon: "📅", href: "#adelanto-citas" },
+  {
+    label: "Visa nueva a USA",
+    benefit: "Empieza tu B1/B2 con orden",
+    icon: "🇺🇸",
+    href: "/visa-usa",
+    featured: true,
+  },
+  {
+    label: "Renovación de Visa USA",
+    benefit: "Cuida tu exención de entrevista",
+    icon: "🔄",
+    href: "/renovacion-visa-americana",
+    featured: false,
+  },
+  {
+    label: "Adelanto de cita USA",
+    benefit: "Deja de refrescar el sistema",
+    icon: "📅",
+    href: "/adelanto-cita-visa-americana",
+    featured: false,
+  },
+  {
+    label: "Visa Canadá",
+    benefit: "Prepara tu solicitud al IRCC",
+    icon: "🇨🇦",
+    href: "/visa-canada",
+    featured: false,
+  },
+  {
+    label: "Visa México",
+    benefit: "Trámite claro, 100% online",
+    icon: "🇲🇽",
+    href: "/visa-mexico",
+    featured: false,
+  },
 ] as const;
 
 const WHY_CHOOSE = [
@@ -78,21 +107,21 @@ const WHY_CHOOSE = [
 
 const SERVICES = [
   {
-    title: "Visa Americana",
-    description: "Perfilado previo, DS-160 y documentación para tu entrevista consular B1/B2.",
+    title: "Visa Americana nueva",
+    description: "Llegas a la entrevista con el DS-160 ordenado y sabiendo qué revisar antes de aplicar.",
     href: "/visa-usa",
     featured: true,
   },
   {
-    title: "Renovación Visa Americana",
-    description: "Evaluamos tu historial y te guiamos según tu caso particular.",
-    href: "/visa-usa",
+    title: "Renovación de Visa USA",
+    description: "Evitas contradecir tu visa anterior y cuidas la posibilidad de renovar sin entrevista.",
+    href: "/renovacion-visa-americana",
     featured: false,
   },
   {
-    title: "Adelanto de Cita",
-    description: "Monitoreo automatizado con Agenda VisaBot ante disponibilidad consular.",
-    href: "#adelanto-citas",
+    title: "Adelanto de cita USA",
+    description: "Si ya tienes fecha lejana, dejas de refrescar el sistema y te avisamos si aparece un cupo.",
+    href: "/adelanto-cita-visa-americana",
     featured: false,
   },
   {
@@ -111,11 +140,11 @@ const SERVICES = [
 
 const USA_FEATURES = [
   "Visa de turismo B1/B2 — primera solicitud",
-  "Renovación de visa americana",
+  "Volver a aplicar después de un rechazo",
   "Asesoría para el formulario DS-160",
   "Perfilado previo del caso",
   "Orientación para entrevista consular",
-  "Adelanto de cita con Agenda VisaBot",
+  "Claridad antes de pagar la tasa consular",
 ] as const;
 
 const CANADA_FEATURES = [
@@ -437,17 +466,26 @@ export default function Home() {
               ¿Qué necesitas hoy?
             </h2>
 
-            <div className="mt-4 grid max-w-[calc(100vw-2rem)] grid-cols-2 gap-3 sm:max-w-none sm:grid-cols-4 sm:gap-4">
+            <div className="mt-4 grid max-w-[calc(100vw-2rem)] grid-cols-2 gap-3 sm:max-w-none lg:grid-cols-5 lg:gap-4">
               {QUICK_LINKS.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="flex min-h-20 min-w-0 items-center gap-3 rounded-2xl border border-[#E2E8F0] bg-[#F1F5F9] px-4 py-4 text-left text-sm font-semibold text-[#0B1F3A] shadow-sm transition hover:border-[#00C896]/40 hover:bg-white hover:shadow-md sm:min-h-24 sm:flex-col sm:items-start sm:justify-center sm:text-base"
+                  className={`flex min-h-[64px] min-w-0 items-center gap-3 rounded-2xl border px-4 py-3 text-left shadow-sm transition hover:border-[#00C896]/40 hover:bg-white hover:shadow-md sm:min-h-24 sm:flex-col sm:items-start sm:justify-center ${
+                    link.featured
+                      ? "col-span-2 border-[#00C896]/40 bg-[#0B1F3A] text-white lg:col-span-1 lg:bg-[#F1F5F9] lg:text-[#0B1F3A]"
+                      : "border-[#E2E8F0] bg-[#F1F5F9] text-[#0B1F3A]"
+                  }`}
                 >
                   <span className="text-2xl leading-none sm:text-3xl" aria-hidden>
                     {link.icon}
                   </span>
-                  <span className="min-w-0 leading-tight">{link.label}</span>
+                  <span className="min-w-0">
+                    <span className="block text-sm font-semibold leading-tight sm:text-base">{link.label}</span>
+                    <span className={`mt-0.5 block text-xs leading-snug ${link.featured ? "text-slate-300 lg:text-slate-500" : "text-slate-500"}`}>
+                      {link.benefit}
+                    </span>
+                  </span>
                 </a>
               ))}
             </div>
@@ -546,7 +584,10 @@ export default function Home() {
                 <SectionLabel>Estados Unidos</SectionLabel>
                 <SectionTitle className="mt-3">Visa de turismo a USA</SectionTitle>
                 <p className="mt-4 text-base leading-relaxed text-slate-600">
-                  Somos especialistas en visa americana B1/B2. Desde la primera solicitud hasta la renovación, te acompañamos con un proceso riguroso de perfilado previo y preparación consular.
+                  Esta asesoría es para tu primera visa americana B1/B2 o para volver a aplicar tras un rechazo. Si tu visa venció, ve a la{" "}
+                  <a href="/renovacion-visa-americana" className="font-semibold text-[#008F6B] underline">renovación</a>.
+                  Si ya tienes una cita lejana, ve al{" "}
+                  <a href="/adelanto-cita-visa-americana" className="font-semibold text-[#008F6B] underline">adelanto de cita</a>.
                 </p>
                 <FeatureList items={USA_FEATURES} />
                 <p className="mt-5 rounded-xl border border-[#00C896]/20 bg-[#00C896]/5 px-4 py-3 text-sm leading-relaxed text-slate-700">
@@ -574,7 +615,7 @@ export default function Home() {
                     { label: "Formulario DS-160", value: "Revisión experta" },
                     { label: "Documentación", value: "Checklist personalizado" },
                     { label: "Entrevista consular", value: "Simulación y tips" },
-                    { label: "Adelanto de cita", value: "Monitoreo automatizado 24/7" },
+                    { label: "Rechazo previo", value: "Revisión antes de reaplicar" },
                   ].map((row) => (
                     <div key={row.label} className="flex items-center justify-between rounded-xl bg-[#F1F5F9] px-4 py-3">
                       <span className="text-sm font-medium text-slate-700">{row.label}</span>
@@ -720,8 +761,8 @@ export default function Home() {
                 <p className="mt-4 rounded-xl border border-amber-200/80 bg-amber-50 px-4 py-3 text-xs leading-relaxed text-amber-900 sm:text-sm">
                   {ADELANTO.disponibilidad} {ADELANTO.devolucion}
                 </p>
-                <BtnOutline href={WHATSAPP_CITA_URL} external waPosition="middle" waService="visa-usa" className="mt-8 w-full sm:w-auto">
-                  Consultar disponibilidad
+                <BtnOutline href="/adelanto-cita-visa-americana" className="mt-8 w-full sm:w-auto">
+                  Ver adelanto de cita
                   <IconArrow />
                 </BtnOutline>
               </div>
