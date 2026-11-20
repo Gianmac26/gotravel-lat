@@ -185,6 +185,10 @@ export default function RenovacionVisaAmericana() {
               </WALink>
             </div>
             <AvisoNoAfiliacion />
+            <p className="mt-2 max-w-xl border-l-2 border-[#00C896]/50 pl-3 text-xs leading-relaxed text-slate-300">
+              No brindamos asesoría legal ni migratoria: solo apoyo administrativo y documental
+              para el formulario DS-160 y la cita.
+            </p>
             <div className="mt-5 flex flex-wrap gap-2 text-xs text-slate-200">
               <span className="rounded-full bg-white/10 px-3 py-1.5">Fundador con +10 años en asesoría de visas</span>
               <span className="rounded-full bg-white/10 px-3 py-1.5">Exención de entrevista y DS-160</span>
