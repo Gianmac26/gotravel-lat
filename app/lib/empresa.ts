@@ -11,6 +11,10 @@ export const EMPRESA = {
   ciudadJurisdiccion: "Lima (jueces y tribunales del Distrito Judicial de Lima)",
 } as const;
 
+/** Plazo único de devolución: se usa en Adelanto y en Términos §6. */
+export const PLAZO_DEVOLUCION =
+  "La procesamos en un máximo de 7 días hábiles desde tu solicitud. Si pagaste con tarjeta, el abono puede tardar hasta 30 días adicionales según tu banco.";
+
 /** Adelanto de cita: textos únicos para web y Términos. */
 export const ADELANTO = {
   proveedor:
@@ -19,7 +23,7 @@ export const ADELANTO = {
     "La disponibilidad de fechas depende exclusivamente del consulado; no garantizamos conseguir una fecha más próxima.",
   devolucion:
     "Si no conseguimos adelantar tu cita dentro del plazo del servicio, te devolvemos el 100 % de lo pagado por este servicio.",
-  solicitud: `Tras los 90 días sin conseguir un adelanto, solicita la devolución por WhatsApp o a ${EMPRESA.emailAtencion} con tu nombre y comprobante de pago. La procesamos en un máximo de 7 días hábiles desde tu solicitud. Si pagaste con tarjeta, el abono puede tardar hasta 30 días adicionales según tu banco.`,
+  solicitud: `Tras los 90 días sin conseguir un adelanto, solicita la devolución por WhatsApp o a ${EMPRESA.emailAtencion} con tu nombre y comprobante de pago. ${PLAZO_DEVOLUCION}`,
 } as const;
 
 /** Tasas oficiales de la visa USA: no se publica un total fijo. */

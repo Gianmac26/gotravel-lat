@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
-import { ADELANTO, EMPRESA } from "../lib/empresa";
+import { ADELANTO, EMPRESA, PLAZO_DEVOLUCION } from "../lib/empresa";
 import WALink from "../components/WALink";
 
 export const metadata: Metadata = {
@@ -40,7 +40,7 @@ export default function TerminosYCondiciones() {
             <p className="mt-3 text-sm text-slate-300">
               {EMPRESA.razonSocial} · RUC {EMPRESA.ruc}
             </p>
-            <p className="mt-1 text-sm text-slate-400">Última actualización: septiembre de 2026</p>
+            <p className="mt-1 text-sm text-slate-400">Última actualización: noviembre de 2026</p>
           </div>
         </section>
 
@@ -291,11 +291,8 @@ export default function TerminosYCondiciones() {
                   La decisión consular es ajena al control de GoViaje.
                 </li>
                 <li>
-                  Plazo de devolución desde la resolución del reclamo:{" "}
-                  <strong>máximo 30 días calendario</strong> si el pago se realizó con tarjeta de crédito
-                  o débito; <strong>máximo 3 días hábiles</strong> si el pago se realizó por transferencia
-                  bancaria o billetera electrónica (Yape, Plin u otras). La devolución se realiza por el
-                  mismo medio de pago utilizado.
+                  Plazo de devolución: {PLAZO_DEVOLUCION} La devolución se realiza por el mismo medio de
+                  pago utilizado.
                 </li>
                 <li>
                   Antes de solicitar un contracargo bancario, el cliente debe presentar su reclamo a través
