@@ -32,8 +32,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: VISA_USA_OG_IMAGE,
-        width: 1200,
-        height: 630,
+        width: 2752,
+        height: 1536,
         alt: "GoViaje — Asesoría profesional para visa americana B1/B2 en Lima, Perú",
       },
     ],
