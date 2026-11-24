@@ -72,6 +72,7 @@ export default function WALink({
       target="_blank"
       rel="noopener noreferrer"
       className={className}
+      data-wa-event={event}
       onClick={handleClick}
     >
       {children}

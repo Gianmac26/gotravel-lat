@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { EMPRESA } from "./lib/empresa";
+import { OPENAI_PIXEL_SCRIPT } from "./lib/openai-pixel";
 
 const GTM_ID = "GTM-NQJPCLZW";
 const GA4_ID = "G-TGH47QLJXD";
@@ -103,6 +104,11 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
       <head>
+        {/* OpenAI Ads pixel + lead_created en clics a WhatsApp: primero en el head, async, 1 vez por carga */}
+        <script
+          id="openai-pixel"
+          dangerouslySetInnerHTML={{ __html: OPENAI_PIXEL_SCRIPT }}
+        />
         {/* GA4 — carga después de interactiva para no bloquear el render */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}
