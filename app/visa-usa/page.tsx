@@ -6,9 +6,9 @@ import LineaHonorarios from "../components/LineaHonorarios";
 import PlanesSection from "./PlanesSection";
 import WALink from "../components/WALink";
 import GuideCards from "../components/GuideCards";
+import { WA_MENSAJES, waUrl as wa } from "../lib/wa-mensajes";
 
-const WA_URL =
-  "https://wa.me/51928672932?text=Hola%20GoViaje,%20quiero%20asesor%C3%ADa%20para%20mi%20visa%20americana";
+const WA_URL = wa(WA_MENSAJES.usa);
 
 const CONSULTATION_URL = WA_URL;
 

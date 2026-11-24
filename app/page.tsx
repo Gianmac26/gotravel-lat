@@ -10,21 +10,17 @@ import SiteFooter from "./components/SiteFooter";
 import WALink, { type WAService, type WAPosition } from "./components/WALink";
 import GuideCards from "./components/GuideCards";
 import { ADELANTO } from "./lib/empresa";
+import { WA_MENSAJES, waUrl as wa } from "./lib/wa-mensajes";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://goviaje.uk" },
 };
 
-const WHATSAPP_URL =
-  "https://wa.me/51928672932?text=Hola%20GoViaje,%20quiero%20asesoría%20para%20mi%20visa";
-const WHATSAPP_HERO_URL =
-  "https://wa.me/51928672932?text=Hola%20GoViaje,%20quiero%20evaluar%20mi%20caso%20para%20una%20visa%20de%20turismo.";
-const WHATSAPP_USA_URL =
-  "https://wa.me/51928672932?text=Hola%20GoViaje,%20quiero%20información%20sobre%20la%20visa%20de%20turismo%20para%20Estados%20Unidos.";
-const WHATSAPP_CANADA_URL =
-  "https://wa.me/51928672932?text=Hola%20GoViaje,%20quiero%20información%20sobre%20la%20visa%20de%20turismo%20para%20Canadá.";
-const WHATSAPP_MEXICO_URL =
-  "https://wa.me/51928672932?text=Hola%20GoViaje,%20quiero%20información%20sobre%20la%20visa%20de%20turismo%20para%20México.";
+const WHATSAPP_URL = wa(WA_MENSAJES.general);
+const WHATSAPP_HERO_URL = WHATSAPP_URL;
+const WHATSAPP_USA_URL = wa(WA_MENSAJES.usa);
+const WHATSAPP_CANADA_URL = wa(WA_MENSAJES.canada);
+const WHATSAPP_MEXICO_URL = wa(WA_MENSAJES.mexico);
 const CONSULTATION_URL = WHATSAPP_HERO_URL;
 
 

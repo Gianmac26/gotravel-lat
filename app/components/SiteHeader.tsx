@@ -1,8 +1,5 @@
 import Link from "next/link";
-import WALink from "./WALink";
-
-const WHATSAPP_URL =
-  "https://wa.me/51928672932?text=Hola%20Goviaje,%20quiero%20asesor%C3%ADa%20para%20mi%20visa";
+import WASectionLink from "./WASectionLink";
 
 const USA_LINKS = [
   { label: "Visa de Turismo Nueva", href: "/visa-usa" },
@@ -72,16 +69,14 @@ export default function SiteHeader({ waEvent = "whatsapp_click" }: { waEvent?: s
         </nav>
 
         <div className="flex items-center gap-2">
-          <WALink
-            href={WHATSAPP_URL}
+          <WASectionLink
             cta_position="top"
-            service="auto"
             event={waEvent}
             className="inline-flex min-h-10 items-center gap-2 rounded-full bg-[#25D366] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#1fb855] max-sm:hidden"
           >
             <IconWhatsApp className="h-4 w-4" />
             WhatsApp
-          </WALink>
+          </WASectionLink>
 
           <details className="relative lg:hidden">
             <summary className="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-xl border border-[#E2E8F0] bg-[#F1F5F9] text-[#0B1F3A] [&::-webkit-details-marker]:hidden">
@@ -103,16 +98,14 @@ export default function SiteHeader({ waEvent = "whatsapp_click" }: { waEvent?: s
                   {link.label}
                 </a>
               ))}
-              <WALink
-                href={WHATSAPP_URL}
+              <WASectionLink
                 cta_position="top"
-                service="auto"
                 event={waEvent}
                 className="mt-2 flex min-h-10 w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-4 py-2 text-sm font-semibold text-white"
               >
                 <IconWhatsApp className="h-4 w-4" />
                 WhatsApp
-              </WALink>
+              </WASectionLink>
             </nav>
           </details>
         </div>

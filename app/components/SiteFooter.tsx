@@ -1,10 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import WALink from "./WALink";
+import WASectionLink from "./WASectionLink";
 import { AVISO_NO_AFILIACION, EMPRESA } from "../lib/empresa";
-
-const WHATSAPP_URL =
-  "https://wa.me/51928672932?text=Hola%20GoViaje,%20quiero%20asesor%C3%ADa%20para%20mi%20visa";
 
 function IconLibro({ className = "h-4 w-4" }: { className?: string }) {
   return (
@@ -89,7 +86,7 @@ export default function SiteFooter({ waEvent = "whatsapp_click" }: { waEvent?: s
                 <Link href="/#faq" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">FAQ</Link>
               </li>
               <li>
-                <WALink href={WHATSAPP_URL} cta_position="bottom" service="auto" event={waEvent} className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Contacto</WALink>
+                <WASectionLink cta_position="bottom" event={waEvent} className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Contacto</WASectionLink>
               </li>
               <li>
                 <Link href="/terminos-y-condiciones" className="text-sm text-slate-600 transition hover:text-[#0B1F3A]">Términos y condiciones</Link>

@@ -8,12 +8,13 @@ import { PAYMENTS, izipayLinksActive } from "../lib/payments";
 import { EMPRESA } from "../lib/empresa";
 import WALink, { type WAPosition } from "../components/WALink";
 import GuideCards from "../components/GuideCards";
+import { WA_MENSAJES } from "../lib/wa-mensajes";
 
 function wa(text: string) {
   return `https://wa.me/51928672932?text=${encodeURIComponent(text)}`;
 }
 
-const WA_GENERAL = wa("Hola GoViaje, quiero información sobre la visa de turismo para Canadá.");
+const WA_GENERAL = wa(WA_MENSAJES.canada);
 const WA_BASICO = wa("Hola GoViaje, quiero cotizar el plan Básico para visa de turismo a Canadá.");
 const WA_SMART = wa("Hola GoViaje, quiero cotizar el plan Smart para visa de turismo a Canadá.");
 const WA_PREMIUM = wa("Hola GoViaje, quiero cotizar el plan Premium para visa de turismo a Canadá.");
