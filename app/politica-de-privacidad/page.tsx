@@ -25,7 +25,7 @@ export default function PoliticaDePrivacidad() {
             <p className="mt-3 text-sm text-slate-300">
               {EMPRESA.razonSocial} · RUC {EMPRESA.ruc}
             </p>
-            <p className="mt-1 text-sm text-slate-400">Última actualización: septiembre de 2026</p>
+            <p className="mt-1 text-sm text-slate-400">Última actualización: noviembre de 2026</p>
           </div>
         </section>
 
@@ -82,7 +82,7 @@ export default function PoliticaDePrivacidad() {
               </li>
               <li>
                 <strong>Datos de navegación:</strong> páginas visitadas, dispositivo, origen del tráfico,
-                recopilados mediante Google Analytics y, si aplica, píxeles de Google Ads y Meta Ads, con
+                recopilados mediante Google Analytics y, si aplica, píxeles de Google Ads, Meta Ads y OpenAI Ads, con
                 fines de medición y mejora del sitio.
               </li>
             </ul>
@@ -121,7 +121,7 @@ export default function PoliticaDePrivacidad() {
                 la transacción. No compartimos datos de tarjeta; el procesamiento es externo.
               </li>
               <li>
-                <strong>Proveedores de medición (Google Analytics, Google Ads, Meta Ads):</strong> datos de
+                <strong>Proveedores de medición (Google Analytics, Google Ads, Meta Ads, OpenAI Ads):</strong> datos de
                 navegación agregados y seudoanonimizados.
               </li>
               <li>
@@ -187,6 +187,13 @@ export default function PoliticaDePrivacidad() {
               de páginas, clics en WhatsApp y compras) para medir y optimizar nuestras campañas. Meta trata esos
               datos conforme a su propia política de privacidad. Puede desactivar estas cookies desde su navegador
               o desde la configuración de anuncios de su cuenta de Meta.
+            </p>
+            <p className="mt-3">
+              <strong>Píxel de OpenAI Ads:</strong> usamos el píxel de OpenAI Ads (ID: WpsARU4HLn7AK9v47YVhvR), que
+              registra eventos de navegación —como visitas a páginas y clics en WhatsApp— para medir el rendimiento
+              de nuestras campañas en la plataforma de OpenAI. OpenAI trata esos datos conforme a su propia política
+              de privacidad (openai.com/policies/privacy-policy). Puede desactivar estas cookies desde la
+              configuración de su navegador.
             </p>
           </section>
 
