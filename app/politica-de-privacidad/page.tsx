@@ -178,7 +178,7 @@ export default function PoliticaDePrivacidad() {
             <h2 id="h-cookies" className="mb-3 text-xl font-bold text-[#0B1F3A]">7. Cookies y tecnologías similares</h2>
             <p>
               Utilizamos cookies y tecnologías similares para analizar el tráfico del sitio y medir el
-              rendimiento de nuestras campañas publicitarias (Google Analytics, Google Ads, Meta Ads). Puede
+              rendimiento de nuestras campañas publicitarias (Google Analytics, Google Ads, Meta Ads, OpenAI Ads). Puede
               gestionar o desactivar las cookies desde la configuración de su navegador.
             </p>
             <p className="mt-3">
